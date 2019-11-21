@@ -21,7 +21,7 @@
 
 
 module pdm_to_pcm #(
-	 parameter BIT_WIDTH=6,
+	 parameter BIT_WIDTH=8,
 	 parameter NUM_MICS=25,
 	 parameter PDM_CLK_DEC_FACTOR=12
 	 ) 
@@ -61,7 +61,7 @@ module pdm_to_pcm #(
 	 reg[1:0] accu_clk_edge;
 	 
 	 // SPI interface registers
-	 reg[7:0] spi_data_to_send;
+	 reg[7:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
 	 
 	 // FIFO interface registers
 	 reg[BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
@@ -95,7 +95,7 @@ module pdm_to_pcm #(
 				 .q(accum_val[i])
 			 );
 			 // Instances of FIFO buffers for storing PDM samples
-			 fifo fifo_i(
+			 fifo2 fifo_i(
 				 .data(fifo_data_in[i]), 
 				 .rdclk(fifo_rdclk), 
 				 .rdreq(fifo_rdreq[i]),
@@ -149,7 +149,7 @@ module pdm_to_pcm #(
 		  else if(~data_needed_edge[1] & data_needed_edge[0]) begin
 				// Create the next packet to send out over SPI
 				if(~fifo_rdempty[mic_counter])
-					spi_data_to_send = {2'b00, fifo_data_out[mic_counter]};
+					spi_data_to_send = fifo_data_out[mic_counter]; // MODIFY BASED ON BIT WIDTH
 				else
 					spi_data_to_send = 0;
 					
@@ -192,14 +192,14 @@ endmodule
 
 // Divides input by DEC_FACTOR
 module gen_ACC_clk #(
-	 parameter DEC_FACTOR_DIV2=24 // 48/2
+	 parameter DEC_FACTOR_DIV2=64 // 64/2
 	 )
     (
     input inclk,
     output reg outclk
     );
     
-    reg [4:0] counter = 0; // calculated as roundup(log2(DEC_FACTOR_DIV2))
+    reg [7:0] counter = 0; // calculated as roundup(log2(DEC_FACTOR_DIV2))+1
 
     always@(posedge inclk) begin
         counter = counter + 1;
