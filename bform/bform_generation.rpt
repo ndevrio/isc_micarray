@@ -1,0 +1,34 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform.qsys --block-symbol-file --output-directory=/home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading isc_micarray/bform.qsys
+Progress: Reading input file
+Progress: Adding CORDIC_0 [altera_CORDIC 19.1]
+Progress: Parameterizing module CORDIC_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform.qsys --synthesis=VERILOG --output-directory=/home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading isc_micarray/bform.qsys
+Progress: Reading input file
+Progress: Adding CORDIC_0 [altera_CORDIC 19.1]
+Progress: Parameterizing module CORDIC_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bform: Generating bform "bform" for QUARTUS_SYNTH
+Info: CORDIC_0: /home/tejas/intelFPGA_lite/19.1/ip/altera/dsp/altera_CORDIC/source//cmdPolyEval.sh /home/tejas/intelFPGA_lite/19.1/quartus/dspba/backend/linux64 -target MAX10 -frequency 200 -name bform_CORDIC_0 -noChanValid -faithfulRounding -printMachineReadable -lang VHDL -speedgrade 8 FXPVecTranslate 7 0 1 5 0
+Info: CORDIC_0: Latency on MAX 10 is 8 cycles
+Info: CORDIC_0: DSP Blocks Used: 0
+Info: CORDIC_0: LUTs Used: 531
+Info: CORDIC_0: Memory Bits Used: 0
+Info: CORDIC_0: Memory Blocks Used: 0
+Info: CORDIC_0: "bform" instantiated altera_CORDIC "CORDIC_0"
+Info: bform: Done "bform" with 2 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

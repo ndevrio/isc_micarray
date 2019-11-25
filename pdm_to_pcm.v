@@ -77,6 +77,8 @@ module pdm_to_pcm #(
 	 reg[1:0] data_needed_edge;
 	 reg[4:0] mic_counter; // calculated as roundup(log2(NUM_MICS))
 	 
+	 reg[BIT_WIDTH-1:0] PCM_averager1 [0:NUM_MICS-1], PCM_averager2 [0:NUM_MICS-1], PCM_averager3 [0:NUM_MICS-1], PCM_averager4 [0:NUM_MICS-1];
+	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   MODULE INSTANTIATION   //////////////////////////////////
 	 ///////////////////////////////////////////////////////////////
@@ -169,14 +171,18 @@ module pdm_to_pcm #(
 	 integer j;
 	 always@(posedge pdm_clk) begin
 		  // Update accumulator edge FF
-		  accu_clk_edge[1] = accu_clk_edge[0];
-		  accu_clk_edge[0] = accum_clk;
+		  accu_clk_edge[1] <= accu_clk_edge[0];
+		  accu_clk_edge[0] <= accum_clk;
 		  
 		  // Perform latching of accumulator values into the FIFO buffer if we are on a (rising) clock edge
 		  if(!accu_clk_edge[1] & accu_clk_edge[0]) begin
 				for (j=0; j<NUM_MICS; j=j+1) begin
-					fifo_data_in[j] = accum_val[j];
-					fifo_wrreq[j] = ~fifo_wrfull[j];// & ssel;
+					fifo_data_in[j] <= accum_val[j];//(PCM_averager1[j] + PCM_averager2[j] + PCM_averager3[j] + PCM_averager4[j]) >> 4;
+					//PCM_averager1[j] <= accum_val[j];
+					//PCM_averager2[j] <= PCM_averager1[j];
+					//PCM_averager3[j] <= PCM_averager2[j];
+					//PCM_averager4[j] <= PCM_averager3[j];
+					fifo_wrreq[j] <= ~fifo_wrfull[j];// & ssel;
 				end
 		  end
 	 end
@@ -192,7 +198,7 @@ endmodule
 
 // Divides input by DEC_FACTOR
 module gen_ACC_clk #(
-	 parameter DEC_FACTOR_DIV2=64 // 64/2
+	 parameter DEC_FACTOR_DIV2=64 // 128/2
 	 )
     (
     input inclk,

@@ -1,0 +1,11 @@
+	component beamforming_delay_calc is
+		port (
+			areset : in  std_logic                    := 'X';             -- reset
+			clk    : in  std_logic                    := 'X';             -- clk
+			q      : out std_logic_vector(1 downto 0);                    -- q
+			r      : out std_logic_vector(2 downto 0);                    -- r
+			x      : in  std_logic_vector(7 downto 0) := (others => 'X'); -- x
+			y      : in  std_logic_vector(7 downto 0) := (others => 'X')  -- y
+		);
+	end component beamforming_delay_calc;
+

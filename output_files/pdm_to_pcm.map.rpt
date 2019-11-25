@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pdm_to_pcm
-Wed Nov 20 19:22:37 2019
+Fri Nov 22 16:39:35 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -331,15 +331,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 20 19:22:37 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 16:39:35 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,443                                       ;
+; Total logic elements               ; 3,444                                       ;
 ;     Total combinational functions  ; 1,866                                       ;
-;     Dedicated logic registers      ; 2,477                                       ;
-; Total registers                    ; 2477                                        ;
+;     Dedicated logic registers      ; 2,478                                       ;
+; Total registers                    ; 2478                                        ;
 ; Total pins                         ; 32                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 31,925                                      ;
@@ -468,6 +468,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; bform/synthesis/bform.v          ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/bform.v    ; bform   ;
 ; pdm_to_pcm.v                     ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v               ;         ;
 ; spi_slave.v                      ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/spi_slave.v                ;         ;
 ; accum.v                          ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/accum.v                    ;         ;
@@ -507,7 +508,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimated Total logic elements              ; 3,443                  ;
+; Estimated Total logic elements              ; 3,444                  ;
 ;                                             ;                        ;
 ; Total combinational functions               ; 1866                   ;
 ; Logic element usage by number of LUT inputs ;                        ;
@@ -519,8 +520,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- normal mode                          ; 1476                   ;
 ;     -- arithmetic mode                      ; 390                    ;
 ;                                             ;                        ;
-; Total registers                             ; 2477                   ;
-;     -- Dedicated logic registers            ; 2477                   ;
+; Total registers                             ; 2478                   ;
+;     -- Dedicated logic registers            ; 2478                   ;
 ;     -- I/O registers                        ; 0                      ;
 ;                                             ;                        ;
 ; I/O pins                                    ; 32                     ;
@@ -529,8 +530,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                      ;
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; gen_ACC_clk:gpc|outclk ;
-; Maximum fan-out                             ; 1279                   ;
-; Total fan-out                               ; 15550                  ;
+; Maximum fan-out                             ; 1278                   ;
+; Total fan-out                               ; 15552                  ;
 ; Average fan-out                             ; 3.36                   ;
 +---------------------------------------------+------------------------+
 
@@ -540,7 +541,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                        ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |pdm_to_pcm                               ; 1866 (266)          ; 2477 (272)                ; 31925       ; 0          ; 0            ; 0       ; 0         ; 32   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                                ; pdm_to_pcm         ; work         ;
+; |pdm_to_pcm                               ; 1866 (266)          ; 2478 (273)                ; 31925       ; 0          ; 0            ; 0       ; 0         ; 32   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                                ; pdm_to_pcm         ; work         ;
 ;    |accum:module_gen[0].accum_i|          ; 36 (17)             ; 17 (9)                    ; 6325        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i                                                                                                    ; accum              ; work         ;
 ;       |altshift_taps:buffer_rtl_0|        ; 19 (0)              ; 8 (0)                     ; 6325        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0                                                                         ; altshift_taps      ; work         ;
 ;          |shift_taps_bkl:auto_generated|  ; 19 (0)              ; 8 (0)                     ; 6325        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_bkl:auto_generated                                           ; shift_taps_bkl     ; work         ;
@@ -1758,7 +1759,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2477  ;
+; Total registers                              ; 2478  ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -5656,11 +5657,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 32                          ;
-; cycloneiii_ff         ; 2477                        ;
+; cycloneiii_ff         ; 2478                        ;
 ;     ENA               ; 839                         ;
 ;     ENA SCLR          ; 9                           ;
 ;     SCLR              ; 1                           ;
-;     plain             ; 1628                        ;
+;     plain             ; 1629                        ;
 ; cycloneiii_lcell_comb ; 1866                        ;
 ;     arith             ; 390                         ;
 ;         2 data inputs ; 365                         ;
@@ -5693,13 +5694,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Nov 20 19:22:25 2019
+    Info: Processing started: Fri Nov 22 16:39:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file bform/synthesis/bform.v
+    Info (12023): Found entity 1: bform File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/bform.v Line: 6
+Info (12021): Found 1 design units, including 0 entities, in source file bform/synthesis/submodules/dspba_library_package.vhd
+    Info (12022): Found design unit 1: dspba_library_package (bform) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library_package.vhd Line: 17
+Info (12021): Found 6 design units, including 3 entities, in source file bform/synthesis/submodules/dspba_library.vhd
+    Info (12022): Found design unit 1: dspba_delay-delay File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 34
+    Info (12022): Found design unit 2: dspba_sync_reg-sync_reg File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 117
+    Info (12022): Found design unit 3: dspba_pipe-rtl File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 356
+    Info (12023): Found entity 1: dspba_delay File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 18
+    Info (12023): Found entity 2: dspba_sync_reg File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 93
+    Info (12023): Found entity 3: dspba_pipe File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 343
+Info (12021): Found 2 design units, including 1 entities, in source file bform/synthesis/submodules/bform_CORDIC_0.vhd
+    Info (12022): Found design unit 1: bform_CORDIC_0-normal File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/bform_CORDIC_0.vhd Line: 45
+    Info (12023): Found entity 1: bform_CORDIC_0 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/bform_CORDIC_0.vhd Line: 34
 Info (12021): Found 2 design units, including 2 entities, in source file pdm_to_pcm.v
     Info (12023): Found entity 1: pdm_to_pcm File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 23
-    Info (12023): Found entity 2: gen_ACC_clk File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 194
+    Info (12023): Found entity 2: gen_ACC_clk File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 200
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.v
     Info (12023): Found entity 1: spi_slave File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/spi_slave.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file fifo.v
@@ -5708,13 +5723,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file accum.v
     Info (12023): Found entity 1: accum File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/accum.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file fifo2.v
     Info (12023): Found entity 1: fifo2 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file delayline.v
+    Info (12023): Found entity 1: delayline File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/delayline.v Line: 40
 Info (12127): Elaborating entity "pdm_to_pcm" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(130): truncated value with size 32 to match size of target (4) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 130
-Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(156): truncated value with size 32 to match size of target (5) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 156
-Info (12128): Elaborating entity "gen_ACC_clk" for hierarchy "gen_ACC_clk:gpc" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 85
-Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(205): truncated value with size 32 to match size of target (8) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 205
-Info (12128): Elaborating entity "accum" for hierarchy "accum:module_gen[0].accum_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 96
-Info (12128): Elaborating entity "fifo2" for hierarchy "fifo2:module_gen[0].fifo_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 107
+Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(132): truncated value with size 32 to match size of target (4) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 132
+Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(158): truncated value with size 32 to match size of target (5) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 158
+Info (12128): Elaborating entity "gen_ACC_clk" for hierarchy "gen_ACC_clk:gpc" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 87
+Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(211): truncated value with size 32 to match size of target (8) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 211
+Info (12128): Elaborating entity "accum" for hierarchy "accum:module_gen[0].accum_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 98
+Info (12128): Elaborating entity "fifo2" for hierarchy "fifo2:module_gen[0].fifo_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 109
 Info (12128): Elaborating entity "dcfifo" for hierarchy "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 80
 Info (12130): Elaborated megafunction instantiation "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 80
 Info (12133): Instantiated megafunction "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component" with the following parameter: File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 80
@@ -5757,7 +5774,7 @@ Info (12128): Elaborating entity "dffpipe_7v8" for hierarchy "fifo2:module_gen[0
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_4h5.tdf
     Info (12023): Found entity 1: cmpr_4h5 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/cmpr_4h5.tdf Line: 23
 Info (12128): Elaborating entity "cmpr_4h5" for hierarchy "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/dcfifo_csi1.tdf Line: 60
-Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:spislv" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 121
+Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:spislv" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 123
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276034): Inferred altshift_taps megafunction from the following design logic: "accum:module_gen[0].accum_i|buffer_rtl_0"
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
@@ -5777,18 +5794,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_krb.tdf
     Info (12023): Found entity 1: cmpr_krb File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/cmpr_krb.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 19 assignments for entity "bform" -- entity does not exist in design
+Warning (20013): Ignored 38 assignments for entity "bform_CORDIC_0" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mosi" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 38
-Info (21057): Implemented 3733 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3734 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 29 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 3476 logic cells
+    Info (21061): Implemented 3477 logic cells
     Info (21064): Implemented 225 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1113 megabytes
-    Info: Processing ended: Wed Nov 20 19:22:37 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 1132 megabytes
+    Info: Processing ended: Fri Nov 22 16:39:35 2019
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:23
 
