@@ -36,74 +36,12 @@ module delayline (
 	clock,
 	shiftin,
 	shiftout,
-	taps0x,
-	taps10x,
-	taps11x,
-	taps12x,
-	taps13x,
-	taps14x,
-	taps15x,
-	taps16x,
-	taps17x,
-	taps18x,
-	taps19x,
-	taps1x,
-	taps20x,
-	taps21x,
-	taps22x,
-	taps23x,
-	taps24x,
-	taps25x,
-	taps26x,
-	taps27x,
-	taps28x,
-	taps29x,
-	taps2x,
-	taps30x,
-	taps31x,
-	taps3x,
-	taps4x,
-	taps5x,
-	taps6x,
-	taps7x,
-	taps8x,
-	taps9x);
+	taps);
 
 	input	  clock;
 	input	[7:0]  shiftin;
 	output	[7:0]  shiftout;
-	output	[7:0]  taps0x;
-	output	[7:0]  taps10x;
-	output	[7:0]  taps11x;
-	output	[7:0]  taps12x;
-	output	[7:0]  taps13x;
-	output	[7:0]  taps14x;
-	output	[7:0]  taps15x;
-	output	[7:0]  taps16x;
-	output	[7:0]  taps17x;
-	output	[7:0]  taps18x;
-	output	[7:0]  taps19x;
-	output	[7:0]  taps1x;
-	output	[7:0]  taps20x;
-	output	[7:0]  taps21x;
-	output	[7:0]  taps22x;
-	output	[7:0]  taps23x;
-	output	[7:0]  taps24x;
-	output	[7:0]  taps25x;
-	output	[7:0]  taps26x;
-	output	[7:0]  taps27x;
-	output	[7:0]  taps28x;
-	output	[7:0]  taps29x;
-	output	[7:0]  taps2x;
-	output	[7:0]  taps30x;
-	output	[7:0]  taps31x;
-	output	[7:0]  taps3x;
-	output	[7:0]  taps4x;
-	output	[7:0]  taps5x;
-	output	[7:0]  taps6x;
-	output	[7:0]  taps7x;
-	output	[7:0]  taps8x;
-	output	[7:0]  taps9x;
+	output	[255:0]  taps;
 
 endmodule
 
@@ -112,7 +50,7 @@ endmodule
 // ============================================================
 // Retrieval info: PRIVATE: ACLR NUMERIC "0"
 // Retrieval info: PRIVATE: CLKEN NUMERIC "0"
-// Retrieval info: PRIVATE: GROUP_TAPS NUMERIC "1"
+// Retrieval info: PRIVATE: GROUP_TAPS NUMERIC "0"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "MAX 10"
 // Retrieval info: PRIVATE: NUMBER_OF_TAPS NUMERIC "32"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "1"
@@ -129,73 +67,11 @@ endmodule
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 // Retrieval info: USED_PORT: shiftin 0 0 8 0 INPUT NODEFVAL "shiftin[7..0]"
 // Retrieval info: USED_PORT: shiftout 0 0 8 0 OUTPUT NODEFVAL "shiftout[7..0]"
-// Retrieval info: USED_PORT: taps0x 0 0 8 0 OUTPUT NODEFVAL "taps0x[7..0]"
-// Retrieval info: USED_PORT: taps10x 0 0 8 0 OUTPUT NODEFVAL "taps10x[7..0]"
-// Retrieval info: USED_PORT: taps11x 0 0 8 0 OUTPUT NODEFVAL "taps11x[7..0]"
-// Retrieval info: USED_PORT: taps12x 0 0 8 0 OUTPUT NODEFVAL "taps12x[7..0]"
-// Retrieval info: USED_PORT: taps13x 0 0 8 0 OUTPUT NODEFVAL "taps13x[7..0]"
-// Retrieval info: USED_PORT: taps14x 0 0 8 0 OUTPUT NODEFVAL "taps14x[7..0]"
-// Retrieval info: USED_PORT: taps15x 0 0 8 0 OUTPUT NODEFVAL "taps15x[7..0]"
-// Retrieval info: USED_PORT: taps16x 0 0 8 0 OUTPUT NODEFVAL "taps16x[7..0]"
-// Retrieval info: USED_PORT: taps17x 0 0 8 0 OUTPUT NODEFVAL "taps17x[7..0]"
-// Retrieval info: USED_PORT: taps18x 0 0 8 0 OUTPUT NODEFVAL "taps18x[7..0]"
-// Retrieval info: USED_PORT: taps19x 0 0 8 0 OUTPUT NODEFVAL "taps19x[7..0]"
-// Retrieval info: USED_PORT: taps1x 0 0 8 0 OUTPUT NODEFVAL "taps1x[7..0]"
-// Retrieval info: USED_PORT: taps20x 0 0 8 0 OUTPUT NODEFVAL "taps20x[7..0]"
-// Retrieval info: USED_PORT: taps21x 0 0 8 0 OUTPUT NODEFVAL "taps21x[7..0]"
-// Retrieval info: USED_PORT: taps22x 0 0 8 0 OUTPUT NODEFVAL "taps22x[7..0]"
-// Retrieval info: USED_PORT: taps23x 0 0 8 0 OUTPUT NODEFVAL "taps23x[7..0]"
-// Retrieval info: USED_PORT: taps24x 0 0 8 0 OUTPUT NODEFVAL "taps24x[7..0]"
-// Retrieval info: USED_PORT: taps25x 0 0 8 0 OUTPUT NODEFVAL "taps25x[7..0]"
-// Retrieval info: USED_PORT: taps26x 0 0 8 0 OUTPUT NODEFVAL "taps26x[7..0]"
-// Retrieval info: USED_PORT: taps27x 0 0 8 0 OUTPUT NODEFVAL "taps27x[7..0]"
-// Retrieval info: USED_PORT: taps28x 0 0 8 0 OUTPUT NODEFVAL "taps28x[7..0]"
-// Retrieval info: USED_PORT: taps29x 0 0 8 0 OUTPUT NODEFVAL "taps29x[7..0]"
-// Retrieval info: USED_PORT: taps2x 0 0 8 0 OUTPUT NODEFVAL "taps2x[7..0]"
-// Retrieval info: USED_PORT: taps30x 0 0 8 0 OUTPUT NODEFVAL "taps30x[7..0]"
-// Retrieval info: USED_PORT: taps31x 0 0 8 0 OUTPUT NODEFVAL "taps31x[7..0]"
-// Retrieval info: USED_PORT: taps3x 0 0 8 0 OUTPUT NODEFVAL "taps3x[7..0]"
-// Retrieval info: USED_PORT: taps4x 0 0 8 0 OUTPUT NODEFVAL "taps4x[7..0]"
-// Retrieval info: USED_PORT: taps5x 0 0 8 0 OUTPUT NODEFVAL "taps5x[7..0]"
-// Retrieval info: USED_PORT: taps6x 0 0 8 0 OUTPUT NODEFVAL "taps6x[7..0]"
-// Retrieval info: USED_PORT: taps7x 0 0 8 0 OUTPUT NODEFVAL "taps7x[7..0]"
-// Retrieval info: USED_PORT: taps8x 0 0 8 0 OUTPUT NODEFVAL "taps8x[7..0]"
-// Retrieval info: USED_PORT: taps9x 0 0 8 0 OUTPUT NODEFVAL "taps9x[7..0]"
+// Retrieval info: USED_PORT: taps 0 0 256 0 OUTPUT NODEFVAL "taps[255..0]"
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @shiftin 0 0 8 0 shiftin 0 0 8 0
 // Retrieval info: CONNECT: shiftout 0 0 8 0 @shiftout 0 0 8 0
-// Retrieval info: CONNECT: taps0x 0 0 8 0 @taps 0 0 8 0
-// Retrieval info: CONNECT: taps10x 0 0 8 0 @taps 0 0 8 80
-// Retrieval info: CONNECT: taps11x 0 0 8 0 @taps 0 0 8 88
-// Retrieval info: CONNECT: taps12x 0 0 8 0 @taps 0 0 8 96
-// Retrieval info: CONNECT: taps13x 0 0 8 0 @taps 0 0 8 104
-// Retrieval info: CONNECT: taps14x 0 0 8 0 @taps 0 0 8 112
-// Retrieval info: CONNECT: taps15x 0 0 8 0 @taps 0 0 8 120
-// Retrieval info: CONNECT: taps16x 0 0 8 0 @taps 0 0 8 128
-// Retrieval info: CONNECT: taps17x 0 0 8 0 @taps 0 0 8 136
-// Retrieval info: CONNECT: taps18x 0 0 8 0 @taps 0 0 8 144
-// Retrieval info: CONNECT: taps19x 0 0 8 0 @taps 0 0 8 152
-// Retrieval info: CONNECT: taps1x 0 0 8 0 @taps 0 0 8 8
-// Retrieval info: CONNECT: taps20x 0 0 8 0 @taps 0 0 8 160
-// Retrieval info: CONNECT: taps21x 0 0 8 0 @taps 0 0 8 168
-// Retrieval info: CONNECT: taps22x 0 0 8 0 @taps 0 0 8 176
-// Retrieval info: CONNECT: taps23x 0 0 8 0 @taps 0 0 8 184
-// Retrieval info: CONNECT: taps24x 0 0 8 0 @taps 0 0 8 192
-// Retrieval info: CONNECT: taps25x 0 0 8 0 @taps 0 0 8 200
-// Retrieval info: CONNECT: taps26x 0 0 8 0 @taps 0 0 8 208
-// Retrieval info: CONNECT: taps27x 0 0 8 0 @taps 0 0 8 216
-// Retrieval info: CONNECT: taps28x 0 0 8 0 @taps 0 0 8 224
-// Retrieval info: CONNECT: taps29x 0 0 8 0 @taps 0 0 8 232
-// Retrieval info: CONNECT: taps2x 0 0 8 0 @taps 0 0 8 16
-// Retrieval info: CONNECT: taps30x 0 0 8 0 @taps 0 0 8 240
-// Retrieval info: CONNECT: taps31x 0 0 8 0 @taps 0 0 8 248
-// Retrieval info: CONNECT: taps3x 0 0 8 0 @taps 0 0 8 24
-// Retrieval info: CONNECT: taps4x 0 0 8 0 @taps 0 0 8 32
-// Retrieval info: CONNECT: taps5x 0 0 8 0 @taps 0 0 8 40
-// Retrieval info: CONNECT: taps6x 0 0 8 0 @taps 0 0 8 48
-// Retrieval info: CONNECT: taps7x 0 0 8 0 @taps 0 0 8 56
-// Retrieval info: CONNECT: taps8x 0 0 8 0 @taps 0 0 8 64
-// Retrieval info: CONNECT: taps9x 0 0 8 0 @taps 0 0 8 72
+// Retrieval info: CONNECT: taps 0 0 256 0 @taps 0 0 256 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL delayline.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL delayline.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL delayline.cmp FALSE

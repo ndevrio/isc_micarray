@@ -1,0 +1,17 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_filter.qsys --synthesis=VERILOG --greybox --output-directory=/home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_filter/synthesis --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading isc_micarray/cic_filter.qsys
+Progress: Reading input file
+Progress: Adding cic_ii_0 [altera_cic_ii 19.1]
+Progress: Parameterizing module cic_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: cic_filter: Generating cic_filter "cic_filter" for QUARTUS_SYNTH
+Info: cic_ii_0: "cic_filter" instantiated altera_cic_ii "cic_ii_0"
+Info: cic_filter: Done "cic_filter" with 2 modules, 30 files
+Info: Generating third-party timing and resource estimation model ...
+Info: Done generating third-party timing and resource estimation model.
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

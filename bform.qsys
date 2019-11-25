@@ -56,9 +56,11 @@
  <interface name="x" internal="CORDIC_0.x" type="conduit" dir="end">
   <port name="x" internal="x" />
  </interface>
+ <interface name="xo" internal="CORDIC_0.xo" />
  <interface name="y" internal="CORDIC_0.y" type="conduit" dir="end">
   <port name="y" internal="y" />
  </interface>
+ <interface name="yo" internal="CORDIC_0.yo" />
  <module
    name="CORDIC_0"
    kind="altera_CORDIC"
