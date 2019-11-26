@@ -68,9 +68,16 @@ module beamformer #(
 	// ROM lookup table
 	micloc miclocROM(.address_a(idx_hori), .address_b(idx_vert), .clock(clk), .rden_a(ROM_rd_en), .rden_b(ROM_rd_en), .q_a(hori_delay), .q_b(vert_delay));
 	
+	wire abs_steering_angle_vert, abs_steering_angle_hori;
+	assign abs_steering_angle_vert = (steering_angle_vert > 0) ? steering_angle_vert : -steering_angle_vert;
+	assign abs_steering_angle_hori = (steering_angle_hori > 0) ? steering_angle_hori : -steering_angle_hori;
+	
 	assign calcDelays = steering_angle_en_sync == 2'b01;
-	assign idx_vert = ROMcounter_vert << 6 + steering_angle_vert;
-	assign idx_hori = ROMcounter_hori << 6 + steering_angle_hori;
+	assign raw_idx_vert = ROMcounter_vert << 6 + abs_steering_angle_vert;
+	assign raw_idx_hori = ROMcounter_hori << 6 + abs_steering_angle_hori;
+	
+	assign idx_vert = (steering_angle_vert > 0) ? raw_idx_vert : 5'd5 - ROMcounter_vert << 6 + abs_steering_angle_vert;
+	assign idx_hori = (steering_angle_hori > 0) ? raw_idx_hori : 5'd5 - ROMcounter_hori << 6 + abs_steering_angle_hori;
 	
 	// Sweep mics from left to right, top to bottom
 	always @ (posedge clk)begin
@@ -104,7 +111,7 @@ module beamformer #(
 		else 
 			ROM_rd_en <= 0;
 			
-		lookup_delays[mic_count] <= hori_delay + vert_delay;
+		lookup_delays[mic_count] <= hori_delay + vert_delay;	// latch. kinda ugly
 	end
 	
 	///////////////////////

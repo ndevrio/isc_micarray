@@ -1,5 +1,5 @@
 Fitter report for pdm_to_pcm
-Tue Nov 26 15:19:52 2019
+Tue Nov 26 15:55:30 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Nov 26 15:19:52 2019       ;
+; Fitter Status                      ; Successful - Tue Nov 26 15:55:30 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
@@ -155,18 +155,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.54        ;
+; Average used               ; 1.56        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.4%      ;
-;     Processor 3            ;   7.9%      ;
-;     Processor 4            ;   7.8%      ;
-;     Processor 5            ;   7.7%      ;
-;     Processor 6            ;   7.6%      ;
-;     Processor 7            ;   7.5%      ;
-;     Processor 8            ;   7.5%      ;
+;     Processor 2            ;   8.6%      ;
+;     Processor 3            ;   8.2%      ;
+;     Processor 4            ;   8.0%      ;
+;     Processor 5            ;   7.9%      ;
+;     Processor 6            ;   7.8%      ;
+;     Processor 7            ;   7.8%      ;
+;     Processor 8            ;   7.7%      ;
 +----------------------------+-------------+
 
 
@@ -1697,7 +1697,7 @@ Info (170195): Router estimated average interconnect usage is 8% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 2.54 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 2.51 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1734,10 +1734,10 @@ Warning (169177): 28 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin pdm[24] uses I/O standard 3.3-V LVCMOS at 119 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
 Info (144001): Generated suppressed messages file /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/output_files/pdm_to_pcm.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1949 megabytes
-    Info: Processing ended: Tue Nov 26 15:19:53 2019
+    Info: Peak virtual memory: 1940 megabytes
+    Info: Processing ended: Tue Nov 26 15:55:31 2019
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +----------------------------+
