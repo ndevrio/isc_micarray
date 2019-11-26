@@ -1,5 +1,5 @@
 Power Analyzer report for pdm_to_pcm
-Tue Nov 26 15:55:35 2019
+Tue Nov 26 16:00:42 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -53,19 +53,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.25        ;
+; Average used               ; 2.14        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;  17.9%      ;
+;     Processors 2-8         ;  16.3%      ;
 +----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Tue Nov 26 15:55:35 2019            ;
+; Power Analyzer Status                  ; Successful - Tue Nov 26 16:00:42 2019            ;
 ; Quartus Prime Version                  ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition      ;
 ; Revision Name                          ; pdm_to_pcm                                       ;
 ; Top-level Entity Name                  ; pdm_to_pcm                                       ;
@@ -604,9 +604,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 4 (0.1%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 4 (0.1%)      ;
 ;                                                                                        ;              ;            ;               ;               ;
 ; Vectorless estimation                                                                  ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 5861 (99.4%) ; 4 (10.0%)  ; 2703 (100.0%) ; 3154 (100.0%) ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 71 (1.2%)    ; 1 (2.5%)   ; 3 (0.1%)      ; 67 (2.1%)     ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 5857 (99.3%) ; 4 (10.0%)  ; 2703 (100.0%) ; 3150 (99.9%)  ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 5877 (99.4%) ; 4 (10.0%)  ; 2703 (100.0%) ; 3170 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 70 (1.2%)    ; 1 (2.5%)   ; 3 (0.1%)      ; 66 (2.1%)     ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 5873 (99.3%) ; 4 (10.0%)  ; 2703 (100.0%) ; 3166 (99.9%)  ;
 ;                                                                                        ;              ;            ;               ;               ;
 ; Default assignment                                                                     ;              ;            ;               ;               ;
 ;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
@@ -631,7 +631,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 26 15:55:33 2019
+    Info: Processing started: Tue Nov 26 16:00:39 2019
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (125092): Tcl Script File ../synthesis/bform.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
@@ -646,11 +646,11 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'pdm
 Warning (332060): Node: clk was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register spi_slave:spislv|dataToSendBuffer[7] is being clocked by clk
 Warning (332060): Node: fifo_rdclk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|rdptr_g[4] is being clocked by fifo_rdclk
+    Info (13166): Register fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|rdptr_g[1] is being clocked by fifo_rdclk
 Warning (332060): Node: gen_ACC_clk:gpc|outclk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register fifo2:module_gen[10].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|delayed_wrptr_g[3] is being clocked by gen_ACC_clk:gpc|outclk
+    Info (13166): Register fifo2:module_gen[19].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|delayed_wrptr_g[3] is being clocked by gen_ACC_clk:gpc|outclk
 Warning (332060): Node: pdm_clk_gen was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register fifo_wrreq[10] is being clocked by pdm_clk_gen
+    Info (13166): Register fifo_wrreq[19] is being clocked by pdm_clk_gen
 Warning (332068): No clocks defined in design.
 Info (223000): Starting Vectorless Power Activity Estimation
 Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
@@ -661,9 +661,9 @@ Info (334004): Delay annotation completed successfully
 Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
 Info (215031): Total thermal power estimate for the design is 140.99 mW
 Info: Quartus Prime Power Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 1322 megabytes
-    Info: Processing ended: Tue Nov 26 15:55:35 2019
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 1323 megabytes
+    Info: Processing ended: Tue Nov 26 16:00:42 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:05
 
 

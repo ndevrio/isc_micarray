@@ -25,12 +25,12 @@ pdm[21] => pdm[21].IN1
 pdm[22] => pdm[22].IN1
 pdm[23] => pdm[23].IN1
 pdm[24] => pdm[24].IN1
-pdm_clk << pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
+pdm_clk <= pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
 ssel => ssel.IN1
 sck => sck.IN1
 mosi => mosi.IN1
-miso << spi_slave:spislv.miso
-accum_clk << accum_clk.DB_MAX_OUTPUT_PORT_TYPE
+miso <= spi_slave:spislv.miso
+accum_clk <= accum_clk.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |pdm_to_pcm|gen_ACC_clk:gpc

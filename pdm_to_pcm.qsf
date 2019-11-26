@@ -104,6 +104,7 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE beamformer.v
 set_global_assignment -name QIP_FILE ../synthesis/bform.qip
 set_global_assignment -name VERILOG_FILE pdm_to_pcm.v
@@ -113,4 +114,3 @@ set_global_assignment -name VERILOG_FILE accum.v
 set_global_assignment -name QIP_FILE fifo2.qip
 set_global_assignment -name QIP_FILE delayline.qip
 set_global_assignment -name QIP_FILE micloc.qip
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

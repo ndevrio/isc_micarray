@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Nov 26 15:55:30 2019
+Fitter Status : Successful - Tue Nov 26 16:00:37 2019
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : pdm_to_pcm
 Top-level Entity Name : pdm_to_pcm
 Family : MAX 10
 Device : 10M08SAE144C8G
 Timing Models : Final
-Total logic elements : 3,191 / 8,064 ( 40 % )
+Total logic elements : 3,201 / 8,064 ( 40 % )
     Total combinational functions : 1,867 / 8,064 ( 23 % )
     Dedicated logic registers : 2,478 / 8,064 ( 31 % )
 Total registers : 2478

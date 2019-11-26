@@ -72,6 +72,20 @@ module pdm_to_pcm #(
 	 wire[NUM_MICS-1:0] fifo_rdempty;
 	 wire[NUM_MICS-1:0] fifo_wrfull;
 	 
+	 // CIC interface registers
+	 reg[1:0] cic_in_error = 2'b00;
+	 reg cic_in_valid = 1; // ?
+	 reg cic_out_ready = 1; // ?
+	 reg cic_out_startofpacket;
+	 reg cic_out_endofpacket;
+	 reg[3:0] cic_out_channel;
+	 reg cic_clk;
+	 reg cic_reset_n;
+	 wire cic_in_ready;
+	 wire[18:0] cic_out_data;
+	 wire[1:0] cic_out_error;
+	 wire cic_out_valid;
+	 
 	 wire accum_rst;
 	 reg[1:0] ssel_edge;
 	 reg[1:0] data_needed_edge;
@@ -110,6 +124,31 @@ module pdm_to_pcm #(
 		 end
 	 endgenerate
 	 
+	 // Instances of CIC filters
+	 cic cic_filter(
+		 .in_error(cic_in_error),
+		 .in_valid(cic_in_valid),
+		 .in_ready(cic_in_ready),
+		 .in0_data(pdm[0]),
+		 .in1_data(pdm[1]),
+		 .in2_data(pdm[2]),
+		 .in3_data(pdm[3]),
+		 .in4_data(pdm[4]),
+		 .in5_data(pdm[5]),
+		 .in6_data(pdm[6]),
+		 .in7_data(pdm[7]),
+		 .in8_data(pdm[8]),
+		 .out_data(cic_out_data),
+		 .out_error(cic_out_error),
+		 .out_valid(cic_out_valid),
+		 .out_ready(cic_out_ready),
+		 .clk(pdm_clk),
+		 .reset_n(cic_reset_n),
+		 .out_startofpacket(cic_out_startofpacket),
+		 .out_endofpacket(cic_out_endofpacket),
+		 .out_channel(cic_out_channel),
+	 );
+	 
 	 // Create an instance of our SPI slave controller
 	 spi_slave spislv(
 		 .clk(clk),
@@ -120,7 +159,8 @@ module pdm_to_pcm #(
 		 .byteReceived(spi_byte_received),
 		 .receivedData(spi_received_data),
 		 .dataNeeded(spi_data_needed),
-		 .dataToSend(spi_data_to_send));
+		 .dataToSend(spi_data_to_send)
+	 );
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   SYNCHRONOUS BLOCKS   ////////////////////////////////////
@@ -198,7 +238,7 @@ endmodule
 
 // Divides input by DEC_FACTOR
 module gen_ACC_clk #(
-	 parameter DEC_FACTOR_DIV2=64 // 128/2
+	 parameter DEC_FACTOR_DIV2=128 // 128/2
 	 )
     (
     input inclk,
