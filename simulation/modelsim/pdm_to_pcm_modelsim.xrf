@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v
 source_file = 1, ../synthesis/bform.qip
 source_file = 1, /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v
 source_file = 1, /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/spi_slave.v

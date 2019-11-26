@@ -1,5 +1,5 @@
 Flow report for pdm_to_pcm
-Mon Nov 25 22:50:25 2019
+Tue Nov 26 15:20:01 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov 25 22:50:25 2019       ;
+; Flow Status                        ; Successful - Tue Nov 26 15:20:01 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/25/2019 22:49:44 ;
+; Start date & time ; 11/26/2019 15:19:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pdm_to_pcm          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 5311873721677.157474018432466          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 5311873721677.157479956307724          ; --            ; --          ; --                                ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Precision Synthesis                    ; <None>        ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -113,13 +113,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 1104 MB             ; 00:00:24                           ;
-; Fitter               ; 00:00:15     ; 1.6                     ; 1940 MB             ; 00:00:33                           ;
-; Assembler            ; 00:00:00     ; 1.0                     ; 846 MB              ; 00:00:01                           ;
-; Power Analyzer       ; 00:00:05     ; 1.5                     ; 1326 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.9                     ; 940 MB              ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1122 MB             ; 00:00:01                           ;
-; Total                ; 00:00:36     ; --                      ; --                  ; 00:01:13                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 1102 MB             ; 00:00:25                           ;
+; Fitter               ; 00:00:16     ; 1.5                     ; 1949 MB             ; 00:00:34                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 855 MB              ; 00:00:01                           ;
+; Power Analyzer       ; 00:00:02     ; 2.2                     ; 1323 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:02     ; 2.3                     ; 947 MB              ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1123 MB             ; 00:00:01                           ;
+; Total                ; 00:00:33     ; --                      ; --                  ; 00:01:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
