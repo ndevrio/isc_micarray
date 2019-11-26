@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pdm_to_pcm
-Fri Nov 22 16:39:35 2019
+Mon Nov 25 22:49:56 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -331,7 +331,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 22 16:39:35 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 25 22:49:56 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
@@ -448,7 +448,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -468,7 +468,6 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
-; bform/synthesis/bform.v          ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/bform.v    ; bform   ;
 ; pdm_to_pcm.v                     ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v               ;         ;
 ; spi_slave.v                      ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/spi_slave.v                ;         ;
 ; accum.v                          ; yes             ; User Verilog HDL File        ; /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/accum.v                    ;         ;
@@ -5694,24 +5693,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Nov 22 16:39:23 2019
+    Info: Processing started: Mon Nov 25 22:49:44 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
+Warning (125092): Tcl Script File ../synthesis/bform.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file bform/synthesis/bform.v
-    Info (12023): Found entity 1: bform File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/bform.v Line: 6
-Info (12021): Found 1 design units, including 0 entities, in source file bform/synthesis/submodules/dspba_library_package.vhd
-    Info (12022): Found design unit 1: dspba_library_package (bform) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library_package.vhd Line: 17
-Info (12021): Found 6 design units, including 3 entities, in source file bform/synthesis/submodules/dspba_library.vhd
-    Info (12022): Found design unit 1: dspba_delay-delay File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 34
-    Info (12022): Found design unit 2: dspba_sync_reg-sync_reg File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 117
-    Info (12022): Found design unit 3: dspba_pipe-rtl File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 356
-    Info (12023): Found entity 1: dspba_delay File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 18
-    Info (12023): Found entity 2: dspba_sync_reg File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 93
-    Info (12023): Found entity 3: dspba_pipe File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/dspba_library.vhd Line: 343
-Info (12021): Found 2 design units, including 1 entities, in source file bform/synthesis/submodules/bform_CORDIC_0.vhd
-    Info (12022): Found design unit 1: bform_CORDIC_0-normal File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/bform_CORDIC_0.vhd Line: 45
-    Info (12023): Found entity 1: bform_CORDIC_0 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/bform/synthesis/submodules/bform_CORDIC_0.vhd Line: 34
 Info (12021): Found 2 design units, including 2 entities, in source file pdm_to_pcm.v
     Info (12023): Found entity 1: pdm_to_pcm File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 23
     Info (12023): Found entity 2: gen_ACC_clk File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 200
@@ -5725,6 +5712,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file fifo2.v
     Info (12023): Found entity 1: fifo2 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file delayline.v
     Info (12023): Found entity 1: delayline File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/delayline.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file micloc.v
+    Info (12023): Found entity 1: micloc File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/micloc.v Line: 40
 Info (12127): Elaborating entity "pdm_to_pcm" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(132): truncated value with size 32 to match size of target (4) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 132
 Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(158): truncated value with size 32 to match size of target (5) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 158
@@ -5794,8 +5783,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_krb.tdf
     Info (12023): Found entity 1: cmpr_krb File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/cmpr_krb.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
-Warning (20013): Ignored 19 assignments for entity "bform" -- entity does not exist in design
-Warning (20013): Ignored 38 assignments for entity "bform_CORDIC_0" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -5805,10 +5792,10 @@ Info (21057): Implemented 3734 device resources after synthesis - the final reso
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 3477 logic cells
     Info (21064): Implemented 225 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1132 megabytes
-    Info: Processing ended: Fri Nov 22 16:39:35 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 1116 megabytes
+    Info: Processing ended: Mon Nov 25 22:49:56 2019
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
