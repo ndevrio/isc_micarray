@@ -9,5 +9,9 @@
  </systemtable>
  <library expandedCategories="Library,Project" />
  <window width="1682" height="1470" x="947" y="345" />
- <generation path="" block_symbol_file="0" simulation="NONE" greybox="1" />
+ <generation
+   path="_PROJECT_NAME_"
+   block_symbol_file="0"
+   simulation="NONE"
+   greybox="1" />
 </preferences>

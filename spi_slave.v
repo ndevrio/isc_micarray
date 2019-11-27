@@ -6,15 +6,15 @@ module spi_slave(clk, sck, mosi, miso, ssel, byteReceived, receivedData, dataNee
 	input wire mosi;
 	output wire miso;
 	input wire ssel;
-	output reg byteReceived = 1'b0;
-	output reg[7:0] receivedData = 8'h00;
+	output reg byteReceived = 0;
+	output reg[23:0] receivedData = 0;
 	output wire dataNeeded;
-	input wire[7:0] dataToSend;
+	input wire[23:0] dataToSend;
 
 	reg[1:0] sckr;
 	reg[1:0] mosir;
-	reg[2:0] bitcnt; // SPI is 8-bits, so we need a 3 bits counter to count the bits as they come in
-	reg[7:0] dataToSendBuffer;
+	reg[4:0] bitcnt; // SPI is 24-bits, so we need a 5 bit counter to count the bits as they come in
+	reg[23:0] dataToSendBuffer;
 
 	wire ssel_active = ~ssel;
 
@@ -37,29 +37,32 @@ module spi_slave(clk, sck, mosi, miso, ssel, byteReceived, receivedData, dataNee
 
 	always @(posedge clk) begin
 	   if(~ssel_active) begin
-		   bitcnt <= 3'b000;
-		   receivedData <= 8'h00;
+		   bitcnt <= 0;
+		   receivedData <= 0;
 	   end
 	   else if(sck_risingEdge) begin
-		   bitcnt <= bitcnt + 3'b001;
-		   receivedData <= { receivedData[6:0], mosi_data };
+			if(bitcnt < 23)
+				bitcnt <= bitcnt + 1;
+			else
+				bitcnt <= 0;
+		   receivedData <= { receivedData[22:0], mosi_data };
 	   end
 	end
 
 	always @(posedge clk)
-	   byteReceived <= ssel_active && sck_risingEdge && (bitcnt == 3'b111);
+	   byteReceived <= ssel_active && sck_risingEdge && (bitcnt == 23);
 
 	always @(posedge clk) begin
 	   if(~ssel_active)
-		   dataToSendBuffer <= 8'h00;
-	   else if(bitcnt == 3'b000)
+		   dataToSendBuffer <= 0;
+	   else if(bitcnt == 0)
 		   dataToSendBuffer <= dataToSend;
 	   else if(sck_fallingEdge)
 		   dataToSendBuffer <= dataToSendBuffer << 1;
 	end
 	 
 	// Used to indicate if we can load new data into the SPI module
-	assign dataNeeded = ssel_active && (bitcnt == 3'b000);
-	assign miso = dataToSendBuffer[7];
+	assign dataNeeded = ssel_active && (bitcnt == 0);
+	assign miso = dataToSendBuffer[23];
 	
 endmodule 

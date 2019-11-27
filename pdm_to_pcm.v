@@ -21,8 +21,8 @@
 
 
 module pdm_to_pcm #(
-	 parameter BIT_WIDTH=8,
-	 parameter NUM_MICS=25,
+	 parameter BIT_WIDTH=19,
+	 parameter NUM_MICS=9,
 	 parameter PDM_CLK_DEC_FACTOR=12
 	 ) 
 	 (
@@ -47,7 +47,7 @@ module pdm_to_pcm #(
 	 ///////////////////////////////////////////////////////////////
 	 
 	 wire spi_byte_received;
-	 wire[7:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
+	 wire[23:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
 	 wire spi_data_needed;
 	 
 	 // Counter used in PDM clock divider
@@ -61,7 +61,7 @@ module pdm_to_pcm #(
 	 reg[1:0] accu_clk_edge;
 	 
 	 // SPI interface registers
-	 reg[7:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
+	 reg[23:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
 	 
 	 // FIFO interface registers
 	 reg[BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
@@ -76,46 +76,38 @@ module pdm_to_pcm #(
 	 reg[1:0] cic_in_error = 2'b00;
 	 reg cic_in_valid = 1; // ?
 	 reg cic_out_ready = 1; // ?
-	 reg cic_out_startofpacket;
-	 reg cic_out_endofpacket;
-	 reg[3:0] cic_out_channel;
-	 reg cic_clk;
-	 reg cic_reset_n;
+	 reg[1:0] cic_reset_n = 2'b11;
 	 wire cic_in_ready;
 	 wire[18:0] cic_out_data;
 	 wire[1:0] cic_out_error;
 	 wire cic_out_valid;
+	 wire cic_out_startofpacket;
+	 wire cic_out_endofpacket;
+	 wire[3:0] cic_out_channel;
 	 
-	 wire accum_rst;
 	 reg[1:0] ssel_edge;
 	 reg[1:0] data_needed_edge;
 	 reg[4:0] mic_counter; // calculated as roundup(log2(NUM_MICS))
 	 
-	 reg[BIT_WIDTH-1:0] PCM_averager1 [0:NUM_MICS-1], PCM_averager2 [0:NUM_MICS-1], PCM_averager3 [0:NUM_MICS-1], PCM_averager4 [0:NUM_MICS-1];
+	 reg[3:0] cic_channel_counter = 0;
+	 reg fifo_wrclk;
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   MODULE INSTANTIATION   //////////////////////////////////
 	 ///////////////////////////////////////////////////////////////
 	 
 	 // Generate a special clock that will go high whenever our accumulator is full
-	 gen_ACC_clk gpc(pdm_clk, accum_clk);
+	 //gen_ACC_clk gpc(pdm_clk, accum_clk);
 		
 	 generate
 		 genvar i;
 		 for (i=0; i<NUM_MICS; i=i+1) begin : module_gen
-			 // Instances of accumulator modules for integrating PDM values
-			 accum accum_i(
-				 .clk(pdm_clk),
-				 .rst(accum_rst),
-				 .d(pdm[i]),
-				 .q(accum_val[i])
-			 );
 			 // Instances of FIFO buffers for storing PDM samples
 			 fifo2 fifo_i(
 				 .data(fifo_data_in[i]), 
 				 .rdclk(fifo_rdclk), 
 				 .rdreq(fifo_rdreq[i]),
-				 .wrclk(accum_clk),
+				 .wrclk(fifo_wrclk),
 				 .wrreq(fifo_wrreq[i]),
 				 .q(fifo_data_out[i]),
 				 .rdempty(fifo_rdempty[i]),
@@ -143,7 +135,7 @@ module pdm_to_pcm #(
 		 .out_valid(cic_out_valid),
 		 .out_ready(cic_out_ready),
 		 .clk(pdm_clk),
-		 .reset_n(cic_reset_n),
+		 .reset_n(cic_reset_n[0]),
 		 .out_startofpacket(cic_out_startofpacket),
 		 .out_endofpacket(cic_out_endofpacket),
 		 .out_channel(cic_out_channel),
@@ -191,14 +183,14 @@ module pdm_to_pcm #(
 		  else if(~data_needed_edge[1] & data_needed_edge[0]) begin
 				// Create the next packet to send out over SPI
 				if(~fifo_rdempty[mic_counter])
-					spi_data_to_send = fifo_data_out[mic_counter]; // MODIFY BASED ON BIT WIDTH
+					spi_data_to_send = {5'b00001, fifo_data_out[mic_counter]}; // MODIFY BASED ON BIT WIDTH
 				else
-					spi_data_to_send = 0;
+					spi_data_to_send = 7;
 					
 				mic_counter = mic_counter + 1;
-				if(mic_counter == 25) begin
-					mic_counter = 0;
+				if(mic_counter == NUM_MICS) begin
 					fifo_rdclk = 1;
+					mic_counter = 0;
 				end
 				else begin
 					fifo_rdclk = 0;
@@ -208,7 +200,7 @@ module pdm_to_pcm #(
 		  end
 	 end
 	 
-	 integer j;
+	 /*integer j;
 	 always@(posedge pdm_clk) begin
 		  // Update accumulator edge FF
 		  accu_clk_edge[1] <= accu_clk_edge[0];
@@ -225,10 +217,34 @@ module pdm_to_pcm #(
 					fifo_wrreq[j] <= ~fifo_wrfull[j];// & ssel;
 				end
 		  end
+	 end*/
+	 
+	 always@(posedge pdm_clk) begin
+		 // Disable reset for the CIC filter
+		 if(cic_reset_n > 1)
+			cic_reset_n = cic_reset_n - 2'b01;
+		 
+		 // Check to see if there is valid CIC data available
+		 if(cic_out_valid) begin
+			 if(cic_out_startofpacket) begin
+				 cic_channel_counter = 0;
+				 fifo_wrclk = 0;
+			 end
+			 else begin
+				 cic_channel_counter = cic_channel_counter + 1;
+			 end
+			 
+			 fifo_data_in[cic_channel_counter] = cic_out_data;
+			 fifo_wrreq[cic_channel_counter] = ~fifo_wrfull[cic_channel_counter];
+			 
+			 if(cic_out_endofpacket) begin
+				 fifo_wrclk = 1;
+			 end
+		 end
 	 end
 	 
 	 assign pdm_clk = pdm_clk_gen;
-	 assign accum_rst = !accu_clk_edge[1] & accu_clk_edge[0];
+	 assign accum_clk = cic_reset_n[0];
      
 endmodule 
 
@@ -237,7 +253,7 @@ endmodule
 ///////////////////////////////////////////////////////////////
 
 // Divides input by DEC_FACTOR
-module gen_ACC_clk #(
+/*module gen_ACC_clk #(
 	 parameter DEC_FACTOR_DIV2=128 // 128/2
 	 )
     (
@@ -255,4 +271,4 @@ module gen_ACC_clk #(
         end
     end    
 	 
-endmodule  
+endmodule  */
