@@ -30,9 +30,9 @@ module beamformer #(
 	input steering_angle_en_async,
 	input [7:0] steering_angle_hori,
 	input [7:0] steering_angle_vert,
-	input [BIT_WIDTH-1:0] pcm_data_in_packed,
+	input [BIT_WIDTH-1:0] pcm_data_in_packed [0:NUM_MICS-1],
 
-	output reg [(NUM_MICS*BIT_WIDTH)-1:0] delay_sum_data_out
+	output reg [BIT_WIDTH-1:0] delay_sum_data_out
 	);
 	
 	integer i;

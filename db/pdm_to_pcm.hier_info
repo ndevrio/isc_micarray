@@ -9,12 +9,12 @@ pdm[5] => pdm[5].IN1
 pdm[6] => pdm[6].IN1
 pdm[7] => pdm[7].IN1
 pdm[8] => pdm[8].IN1
-pdm_clk <= pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
+pdm_clk << pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
 ssel => ssel.IN1
 sck => sck.IN1
 mosi => mosi.IN1
-miso <= spi_slave:spislv.miso
-accum_clk <= cic_reset_n[0].DB_MAX_OUTPUT_PORT_TYPE
+miso << spi_slave:spislv.miso
+accum_clk << cic_reset_n[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |pdm_to_pcm|fifo2:module_gen[0].fifo_i

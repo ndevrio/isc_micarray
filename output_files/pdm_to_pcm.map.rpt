@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pdm_to_pcm
-Tue Nov 26 23:21:51 2019
+Wed Nov 27 12:36:36 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -147,7 +147,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 26 23:21:51 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 27 12:36:36 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
@@ -175,6 +175,8 @@ https://fpgasoftware.intel.com/eula.
 ; Top-level entity name                                            ; pdm_to_pcm         ; pdm_to_pcm         ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Intel FPGA IP Evaluation Mode                                    ; Disable            ; Enable             ;
+; Verilog Show LMF Mapping Messages                                ; Off                ;                    ;
+; Verilog Version                                                  ; SystemVerilog_2005 ; Verilog_2001       ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
 ; Physical Synthesis Level for Resynthesis                         ; Normal             ;                    ;
@@ -185,7 +187,6 @@ https://fpgasoftware.intel.com/eula.
 ; Restructure Multiplexers                                         ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
 ; Preserve fewer node names                                        ; On                 ; On                 ;
-; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                         ; Auto               ; Auto               ;
 ; Safe State Machine                                               ; Off                ; Off                ;
@@ -4809,25 +4810,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 26 23:21:31 2019
+    Info: Processing started: Wed Nov 27 12:36:15 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (125092): Tcl Script File ../synthesis/bform.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "cic.qsys"
-Info (12250): 2019.11.26.23:21:37 Progress: Loading isc_micarray/cic.qsys
-Info (12250): 2019.11.26.23:21:38 Progress: Reading input file
-Info (12250): 2019.11.26.23:21:38 Progress: Adding cic_ii_0 [altera_cic_ii 19.1]
-Info (12250): 2019.11.26.23:21:38 Progress: Parameterizing module cic_ii_0
-Info (12250): 2019.11.26.23:21:38 Progress: Building connections
-Info (12250): 2019.11.26.23:21:38 Progress: Parameterizing connections
-Info (12250): 2019.11.26.23:21:38 Progress: Validating
-Info (12250): 2019.11.26.23:21:38 Progress: Done reading input file
+Info (12250): 2019.11.27.12:36:21 Progress: Loading isc_micarray/cic.qsys
+Info (12250): 2019.11.27.12:36:21 Progress: Reading input file
+Info (12250): 2019.11.27.12:36:21 Progress: Adding cic_ii_0 [altera_cic_ii 19.1]
+Info (12250): 2019.11.27.12:36:22 Progress: Parameterizing module cic_ii_0
+Info (12250): 2019.11.27.12:36:22 Progress: Building connections
+Info (12250): 2019.11.27.12:36:22 Progress: Parameterizing connections
+Info (12250): 2019.11.27.12:36:22 Progress: Validating
+Info (12250): 2019.11.27.12:36:22 Progress: Done reading input file
 Info (12250): Cic: Generating cic "cic" for QUARTUS_SYNTH
 Info (12250): Cic_ii_0: "cic" instantiated altera_cic_ii "cic_ii_0"
 Info (12250): Cic: Done "cic" with 2 modules, 30 files
 Info (12249): Finished elaborating Platform Designer system entity "cic.qsys"
+Info (12021): Found 1 design units, including 1 entities, in source file cic_core/integrator.sv
+    Info (12023): Found entity 1: integrator File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/integrator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cic_core/downsampler.sv
+    Info (12023): Found entity 1: downsampler File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/downsampler.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cic_core/comb.sv
+    Info (12023): Found entity 1: comb File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/comb.sv Line: 1
+Info (12021): Found 1 design units, including 0 entities, in source file cic_core/cic_package.sv
+    Info (12022): Found design unit 1: cic_package (SystemVerilog) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_package.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cic_core/cic_i.sv
+    Info (12023): Found entity 1: cic_i File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_i.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cic_core/cic_d.sv
+    Info (12023): Found entity 1: cic_d File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file beamformer.v
     Info (12023): Found entity 1: beamformer File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v Line: 23
 Warning (10275): Verilog HDL Module Instantiation warning at pdm_to_pcm.v(142): ignored dangling comma in List of Port Connections File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 142
@@ -5505,9 +5518,9 @@ Info (21057): Implemented 1693 device resources after synthesis - the final reso
     Info (21061): Implemented 1483 logic cells
     Info (21064): Implemented 194 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 409 warnings
-    Info: Peak virtual memory: 1147 megabytes
-    Info: Processing ended: Tue Nov 26 23:21:51 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 1128 megabytes
+    Info: Processing ended: Wed Nov 27 12:36:36 2019
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:46
 
 
