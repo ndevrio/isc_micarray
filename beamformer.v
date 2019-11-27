@@ -22,7 +22,8 @@
 
 module beamformer #(
 	parameter BIT_WIDTH=8,
-	parameter NUM_MICS=25
+	parameter NUM_MICS=9,
+	parameter GRID_SIZE=3
 	) 
 	(
 	input clk,
@@ -30,21 +31,11 @@ module beamformer #(
 	input steering_angle_en_async,
 	input [7:0] steering_angle_hori,
 	input [7:0] steering_angle_vert,
-	input [*BIT_WIDTH-1:0] pcm_data_in_packed [0:NUM_MICS-1],
+	input [*BIT_WIDTH-1:0] pcm_data_in [0:NUM_MICS-1],
 
 	output reg [BIT_WIDTH-1:0] delay_sum_data_out
 	);
 	
-	integer i;
-	
-	wire [BIT_WIDTH-1:0] pcm_data_in [0:NUM_MICS-1];
-	
-	genvar j;
-	generate 
-		for(j = 0; j < NUM_MICS; j=j+BIT_WIDTH) begin : mod_gen_unpacking
-			assign pcm_data_in[j] = pcm_data_in_packed[BIT_WIDTH -1 + j : j];
-		end
-	endgenerate
 	/////////////////////////
 	// DELAY DETERMINATION //
 	/////////////////////////
@@ -76,8 +67,8 @@ module beamformer #(
 	assign raw_idx_vert = ROMcounter_vert << 6 + abs_steering_angle_vert;
 	assign raw_idx_hori = ROMcounter_hori << 6 + abs_steering_angle_hori;
 	
-	assign idx_vert = (steering_angle_vert > 0) ? raw_idx_vert : 5'd5 - ROMcounter_vert << 6 + abs_steering_angle_vert;
-	assign idx_hori = (steering_angle_hori > 0) ? raw_idx_hori : 5'd5 - ROMcounter_hori << 6 + abs_steering_angle_hori;
+	assign idx_vert = (steering_angle_vert > 0) ? raw_idx_vert : GRID_SIZE - ROMcounter_vert << 6 + abs_steering_angle_vert;
+	assign idx_hori = (steering_angle_hori > 0) ? raw_idx_hori : GRID_SIZE - ROMcounter_hori << 6 + abs_steering_angle_hori;
 	
 	// Sweep mics from left to right, top to bottom
 	always @ (posedge clk)begin
@@ -88,25 +79,25 @@ module beamformer #(
 		end
 		else begin
 			mic_count <= mic_count + 5'd1;
-			if( ROMcounter_vert < 3'd5 )
-				if( ROMcounter_hori < 3'd5 ) 
-					ROMcounter_hori <= ROMcounter_hori + 3'd1;
+			if( ROMcounter_vert < GRID_SIZE )
+				if( ROMcounter_hori < GRID_SIZE ) 
+					ROMcounter_hori <= ROMcounter_hori + 1;
 				else
-					ROMcounter_hori <= 3'd5;
+					ROMcounter_hori <= GRID_SIZE;
 			else 
-				ROMcounter_vert <= 3'd5;
+				ROMcounter_vert <= GRID_SIZE;
 		end
-		row_done <= (ROMcounter_hori == 3'd5);
+		row_done <= (ROMcounter_hori == GRID_SIZE);
 	end
 	
 	always @(posedge row_done) begin
-		ROMcounter_hori <= 3'd0;
-		ROMcounter_vert <= ROMcounter_vert + 3'd1;
+		ROMcounter_hori <= 0;
+		ROMcounter_vert <= ROMcounter_vert + 1;
 	end
 	
 	// Read ROM data into delay registers
 	always @ (posedge clk) begin
-		if(ROMcounter_vert < 5) 
+		if(ROMcounter_vert < GRID_SIZE) 
 			ROM_rd_en <= 1;
 		else 
 			ROM_rd_en <= 0;
