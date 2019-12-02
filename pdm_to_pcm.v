@@ -117,7 +117,7 @@ module pdm_to_pcm #(
 	 endgenerate
 	 
 	 // Instances of CIC filters
-	 cic cic_filter(
+	 /*cic cic_filter(
 		 .in_error(cic_in_error),
 		 .in_valid(cic_in_valid),
 		 .in_ready(cic_in_ready),
@@ -139,6 +139,14 @@ module pdm_to_pcm #(
 		 .out_startofpacket(cic_out_startofpacket),
 		 .out_endofpacket(cic_out_endofpacket),
 		 .out_channel(cic_out_channel),
+	 );*/
+	 
+	 cic_d cic_filter(
+		 .clk(pdm_clk),
+		 .reset_n(cic_reset_n[0]),
+		 .data_in(pdm[0]),
+		 .data_out(cic_out_data),
+		 .out_dv(cic_out_valid)
 	 );
 	 
 	 // Create an instance of our SPI slave controller
@@ -183,9 +191,9 @@ module pdm_to_pcm #(
 		  else if(~data_needed_edge[1] & data_needed_edge[0]) begin
 				// Create the next packet to send out over SPI
 				if(~fifo_rdempty[mic_counter])
-					spi_data_to_send = {5'b00001, fifo_data_out[mic_counter]}; // MODIFY BASED ON BIT WIDTH
+					spi_data_to_send = {5'b00000, fifo_data_out[mic_counter]}; // MODIFY BASED ON BIT WIDTH
 				else
-					spi_data_to_send = 7;
+					spi_data_to_send = 0;
 					
 				mic_counter = mic_counter + 1;
 				if(mic_counter == NUM_MICS) begin
@@ -219,6 +227,7 @@ module pdm_to_pcm #(
 		  end
 	 end*/
 	 
+	 integer j;
 	 always@(posedge pdm_clk) begin
 		 // Disable reset for the CIC filter
 		 if(cic_reset_n > 1)
@@ -226,7 +235,7 @@ module pdm_to_pcm #(
 		 
 		 // Check to see if there is valid CIC data available
 		 if(cic_out_valid) begin
-			 if(cic_out_startofpacket) begin
+			 /*if(cic_out_startofpacket) begin
 				 cic_channel_counter = 0;
 				 fifo_wrclk = 0;
 			 end
@@ -239,12 +248,24 @@ module pdm_to_pcm #(
 			 
 			 if(cic_out_endofpacket) begin
 				 fifo_wrclk = 1;
+			 end*/
+			 
+			 for (j=0; j<NUM_MICS; j=j+1) begin
+				 if(j == 1)
+					fifo_data_in[j] = cic_out_data;
+				 else
+				   fifo_data_in[j] = 0;
+				 fifo_wrreq[j] = ~fifo_wrfull[j];
 			 end
+			 
+			 fifo_wrclk = 1;
 		 end
+		 else
+			 fifo_wrclk = 0;
 	 end
 	 
 	 assign pdm_clk = pdm_clk_gen;
-	 assign accum_clk = cic_reset_n[0];
+	 assign accum_clk = fifo_wrclk;
      
 endmodule 
 

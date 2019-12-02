@@ -26,6 +26,10 @@
 				{
 					"name" : "sck",
 					"strict" : false
+				},
+				{
+					"name" : "pdm[0]",
+					"strict" : false
 				}
 			]
 		}

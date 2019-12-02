@@ -1,26 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="40bd69117343d6c40977"/>
+    <hash md5_digest_80b="d317a6aee96d4afecb00"/>
   </project>
   <file_info>
-    <file device="10M08SAE144C8G" path="pdm_to_pcm_time_limited.sof" usercode="0xFFFFFFFF"/>
+    <file device="10M08SAE144C8G" path="pdm_to_pcm.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <hub_info hub_ir_width="4" ir_width="2" node_addr_width="1" node_count="1"/>
-  <node_info>
-    <node hpath="pzdyqx:nabboc" instance_id="0" mfg_id="110" node_id="1" sld_node_info="0x86E00" version="0"/>
-  </node_info>
-  <sld_infos>
-    <sld_info hpath="cic:cic_filter" name="cic_filter">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME cic HAS_SOPCINFO 1 GENERATION_ID 1574828144"/>
-      </assignment_values>
-      <parameters/>
-    </sld_info>
-    <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_sld_fab HAS_SOPCINFO 1"/>
-      </assignment_values>
-      <parameters/>
-    </sld_info>
-  </sld_infos>
 </sld_project_info>

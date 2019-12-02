@@ -3,8 +3,8 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Cfg)
-		Device PartName(10M08SAE144) Path("/home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/output_files/") File("pdm_to_pcm_time_limited.sof") MfrSpec(OpMask(1));
+	P ActionCode(Ign)
+		Device PartName(10M08SAE144) MfrSpec(OpMask(0) Child_OpMask(2 1 1) FullPath("/home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/output_files/pdm_to_pcm.pof"));
 
 ChainEnd;
 
