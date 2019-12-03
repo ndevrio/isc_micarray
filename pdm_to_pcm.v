@@ -21,7 +21,7 @@
 
 
 module pdm_to_pcm #(
-	 parameter BIT_WIDTH=19,
+	 parameter BIT_WIDTH=15,
 	 parameter NUM_MICS=9,
 	 parameter PDM_CLK_DEC_FACTOR=12
 	 ) 
@@ -191,7 +191,7 @@ module pdm_to_pcm #(
 		  else if(~data_needed_edge[1] & data_needed_edge[0]) begin
 				// Create the next packet to send out over SPI
 				if(~fifo_rdempty[mic_counter])
-					spi_data_to_send = {5'b00000, fifo_data_out[mic_counter]}; // MODIFY BASED ON BIT WIDTH
+					spi_data_to_send = {9'b000000000, fifo_data_out[mic_counter]}; // MODIFY BASED ON BIT WIDTH
 				else
 					spi_data_to_send = 0;
 					

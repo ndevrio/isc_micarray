@@ -1,6 +1,6 @@
 module cic_d
 /*********************************************************************************************/
-#(parameter idw = 1, odw = 19, r = 64, m = 3, g = 1)
+#(parameter idw = 1, odw = 15, r = 128, m = 2, g = 1)
 /*********************************************************************************************/
 //m - CIC order (comb chain length, integrator chain length)
 //r - interpolation ratio
