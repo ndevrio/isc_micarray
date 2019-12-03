@@ -1,5 +1,5 @@
 Timing Analyzer report for pdm_to_pcm
-Tue Nov 26 15:55:38 2019
+Mon Dec  2 21:51:44 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -92,15 +92,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.28        ;
+; Average used               ; 1.79        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  19.9%      ;
-;     Processor 3            ;  18.4%      ;
-;     Processor 4            ;  18.0%      ;
-;     Processors 5-8         ;  18.0%      ;
+;     Processor 2            ;  12.0%      ;
+;     Processor 3            ;  11.3%      ;
+;     Processor 4            ;  11.1%      ;
+;     Processors 5-8         ;  11.1%      ;
 +----------------------------+-------------+
 
 
@@ -121,24 +121,24 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                           ;
 +------------+-----------------+------------------------+------------------------------------------------+
-; 126.81 MHz ; 126.81 MHz      ; clk                    ;                                                ;
-; 161.79 MHz ; 161.79 MHz      ; pdm_clk_gen            ;                                                ;
-; 207.08 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
-; 215.38 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
+; 52.49 MHz  ; 52.49 MHz       ; clk                    ;                                                ;
+; 164.96 MHz ; 164.96 MHz      ; pdm_clk_gen            ;                                                ;
+; 213.63 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
+; 232.18 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary             ;
-+------------------------+--------+---------------+
-; Clock                  ; Slack  ; End Point TNS ;
-+------------------------+--------+---------------+
-; clk                    ; -8.769 ; -301.302      ;
-; pdm_clk_gen            ; -5.181 ; -1437.943     ;
-; fifo_rdclk             ; -3.829 ; -2160.846     ;
-; gen_ACC_clk:gpc|outclk ; -3.643 ; -1823.450     ;
-+------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary              ;
++------------------------+---------+---------------+
+; Clock                  ; Slack   ; End Point TNS ;
++------------------------+---------+---------------+
+; clk                    ; -18.053 ; -591.903      ;
+; pdm_clk_gen            ; -5.062  ; -384.978      ;
+; fifo_rdclk             ; -3.681  ; -797.875      ;
+; gen_ACC_clk:gpc|outclk ; -3.307  ; -628.444      ;
++------------------------+---------+---------------+
 
 
 +------------------------------------------------+
@@ -146,10 +146,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; gen_ACC_clk:gpc|outclk ; 0.303 ; 0.000         ;
-; fifo_rdclk             ; 0.316 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.287 ; 0.000         ;
+; fifo_rdclk             ; 0.332 ; 0.000         ;
 ; clk                    ; 0.341 ; 0.000         ;
-; pdm_clk_gen            ; 0.486 ; 0.000         ;
+; pdm_clk_gen            ; 0.342 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -170,10 +170,10 @@ No paths to report.
 +------------------------+--------+-----------------+
 ; Clock                  ; Slack  ; End Point TNS   ;
 +------------------------+--------+-----------------+
-; fifo_rdclk             ; -3.901 ; -2178.850       ;
-; gen_ACC_clk:gpc|outclk ; -3.901 ; -1891.100       ;
-; pdm_clk_gen            ; -3.901 ; -806.631        ;
-; clk                    ; -3.000 ; -90.733         ;
+; fifo_rdclk             ; -3.901 ; -784.386        ;
+; gen_ACC_clk:gpc|outclk ; -3.901 ; -680.796        ;
+; clk                    ; -3.901 ; -378.787        ;
+; pdm_clk_gen            ; -3.901 ; -214.843        ;
 +------------------------+--------+-----------------+
 
 
@@ -189,24 +189,24 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                           ;
 +------------+-----------------+------------------------+------------------------------------------------+
-; 133.62 MHz ; 133.62 MHz      ; clk                    ;                                                ;
-; 173.58 MHz ; 173.58 MHz      ; pdm_clk_gen            ;                                                ;
-; 215.52 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
-; 229.15 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
+; 56.88 MHz  ; 56.88 MHz       ; clk                    ;                                                ;
+; 176.49 MHz ; 176.49 MHz      ; pdm_clk_gen            ;                                                ;
+; 223.26 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
+; 243.25 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary              ;
-+------------------------+--------+---------------+
-; Clock                  ; Slack  ; End Point TNS ;
-+------------------------+--------+---------------+
-; clk                    ; -8.333 ; -284.841      ;
-; pdm_clk_gen            ; -4.761 ; -1321.112     ;
-; fifo_rdclk             ; -3.640 ; -2006.856     ;
-; gen_ACC_clk:gpc|outclk ; -3.364 ; -1693.732     ;
-+------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary               ;
++------------------------+---------+---------------+
+; Clock                  ; Slack   ; End Point TNS ;
++------------------------+---------+---------------+
+; clk                    ; -16.580 ; -545.350      ;
+; pdm_clk_gen            ; -4.666  ; -351.222      ;
+; fifo_rdclk             ; -3.479  ; -741.543      ;
+; gen_ACC_clk:gpc|outclk ; -3.111  ; -584.219      ;
++------------------------+---------+---------------+
 
 
 +------------------------------------------------+
@@ -214,10 +214,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; gen_ACC_clk:gpc|outclk ; 0.273 ; 0.000         ;
-; fifo_rdclk             ; 0.285 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.261 ; 0.000         ;
+; fifo_rdclk             ; 0.298 ; 0.000         ;
 ; clk                    ; 0.305 ; 0.000         ;
-; pdm_clk_gen            ; 0.435 ; 0.000         ;
+; pdm_clk_gen            ; 0.307 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -238,10 +238,10 @@ No paths to report.
 +------------------------+--------+----------------+
 ; Clock                  ; Slack  ; End Point TNS  ;
 +------------------------+--------+----------------+
-; fifo_rdclk             ; -3.901 ; -2178.850      ;
-; gen_ACC_clk:gpc|outclk ; -3.901 ; -1891.100      ;
-; pdm_clk_gen            ; -3.901 ; -806.631       ;
-; clk                    ; -3.000 ; -90.733        ;
+; fifo_rdclk             ; -3.901 ; -784.386       ;
+; gen_ACC_clk:gpc|outclk ; -3.901 ; -680.796       ;
+; clk                    ; -3.901 ; -378.787       ;
+; pdm_clk_gen            ; -3.901 ; -214.843       ;
 +------------------------+--------+----------------+
 
 
@@ -257,10 +257,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+--------+---------------+
 ; Clock                  ; Slack  ; End Point TNS ;
 +------------------------+--------+---------------+
-; clk                    ; -2.878 ; -88.311       ;
-; pdm_clk_gen            ; -1.555 ; -328.728      ;
-; fifo_rdclk             ; -0.973 ; -390.331      ;
-; gen_ACC_clk:gpc|outclk ; -0.899 ; -296.665      ;
+; clk                    ; -5.974 ; -143.401      ;
+; pdm_clk_gen            ; -1.375 ; -88.269       ;
+; fifo_rdclk             ; -0.928 ; -151.386      ;
+; gen_ACC_clk:gpc|outclk ; -0.756 ; -105.046      ;
 +------------------------+--------+---------------+
 
 
@@ -269,10 +269,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; fifo_rdclk             ; 0.100 ; 0.000         ;
-; gen_ACC_clk:gpc|outclk ; 0.102 ; 0.000         ;
-; clk                    ; 0.143 ; 0.000         ;
-; pdm_clk_gen            ; 0.152 ; 0.000         ;
+; clk                    ; 0.094 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.094 ; 0.000         ;
+; pdm_clk_gen            ; 0.094 ; 0.000         ;
+; fifo_rdclk             ; 0.109 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -293,10 +293,10 @@ No paths to report.
 +------------------------+--------+----------------+
 ; Clock                  ; Slack  ; End Point TNS  ;
 +------------------------+--------+----------------+
-; clk                    ; -3.000 ; -64.145        ;
-; gen_ACC_clk:gpc|outclk ; -1.000 ; -1150.000      ;
-; fifo_rdclk             ; -1.000 ; -1100.000      ;
-; pdm_clk_gen            ; -1.000 ; -497.000       ;
+; clk                    ; -3.000 ; -228.460       ;
+; gen_ACC_clk:gpc|outclk ; -1.000 ; -414.000       ;
+; fifo_rdclk             ; -1.000 ; -396.000       ;
+; pdm_clk_gen            ; -1.000 ; -125.000       ;
 +------------------------+--------+----------------+
 
 
@@ -307,22 +307,22 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+----------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                    ;
-+-------------------------+-----------+-------+----------+---------+---------------------+
-; Clock                   ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack        ; -8.769    ; 0.100 ; N/A      ; N/A     ; -3.901              ;
-;  clk                    ; -8.769    ; 0.143 ; N/A      ; N/A     ; -3.000              ;
-;  fifo_rdclk             ; -3.829    ; 0.100 ; N/A      ; N/A     ; -3.901              ;
-;  gen_ACC_clk:gpc|outclk ; -3.643    ; 0.102 ; N/A      ; N/A     ; -3.901              ;
-;  pdm_clk_gen            ; -5.181    ; 0.152 ; N/A      ; N/A     ; -3.901              ;
-; Design-wide TNS         ; -5723.541 ; 0.0   ; 0.0      ; 0.0     ; -4967.314           ;
-;  clk                    ; -301.302  ; 0.000 ; N/A      ; N/A     ; -90.733             ;
-;  fifo_rdclk             ; -2160.846 ; 0.000 ; N/A      ; N/A     ; -2178.850           ;
-;  gen_ACC_clk:gpc|outclk ; -1823.450 ; 0.000 ; N/A      ; N/A     ; -1891.100           ;
-;  pdm_clk_gen            ; -1437.943 ; 0.000 ; N/A      ; N/A     ; -806.631            ;
-+-------------------------+-----------+-------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                   ;
++-------------------------+----------+-------+----------+---------+---------------------+
+; Clock                   ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack        ; -18.053  ; 0.094 ; N/A      ; N/A     ; -3.901              ;
+;  clk                    ; -18.053  ; 0.094 ; N/A      ; N/A     ; -3.901              ;
+;  fifo_rdclk             ; -3.681   ; 0.109 ; N/A      ; N/A     ; -3.901              ;
+;  gen_ACC_clk:gpc|outclk ; -3.307   ; 0.094 ; N/A      ; N/A     ; -3.901              ;
+;  pdm_clk_gen            ; -5.062   ; 0.094 ; N/A      ; N/A     ; -3.901              ;
+; Design-wide TNS         ; -2403.2  ; 0.0   ; 0.0      ; 0.0     ; -2058.812           ;
+;  clk                    ; -591.903 ; 0.000 ; N/A      ; N/A     ; -378.787            ;
+;  fifo_rdclk             ; -797.875 ; 0.000 ; N/A      ; N/A     ; -784.386            ;
+;  gen_ACC_clk:gpc|outclk ; -628.444 ; 0.000 ; N/A      ; N/A     ; -680.796            ;
+;  pdm_clk_gen            ; -384.978 ; 0.000 ; N/A      ; N/A     ; -214.843            ;
++-------------------------+----------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -346,31 +346,15 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; clk                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ssel                ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; sck                 ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[22]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[21]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[20]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[23]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[9]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[5]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[1]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[13]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[10]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[6]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[2]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[14]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; pdm[8]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[4]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[0]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[12]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; pdm[7]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[11]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[6]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[5]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[4]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; pdm[3]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[15]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[17]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[18]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[16]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[19]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[24]             ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[2]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[1]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[0]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -422,17 +406,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+------------------------+----------+----------+----------+----------+
 ; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------+------------------------+----------+----------+----------+----------+
-; clk                    ; clk                    ; 6452     ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; clk                    ; 23400    ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; clk                    ; 1        ; 1        ; 0        ; 0        ;
-; clk                    ; fifo_rdclk             ; 700      ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; fifo_rdclk             ; 13325    ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 200      ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 200      ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 11325    ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 775      ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 402      ; 2        ; 0        ; 0        ;
-; pdm_clk_gen            ; pdm_clk_gen            ; 4882     ; 0        ; 0        ; 0        ;
+; clk                    ; clk                    ; 12574104 ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; clk                    ; 3816     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; clk                    ; 69       ; 1        ; 0        ; 0        ;
+; clk                    ; fifo_rdclk             ; 252      ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; fifo_rdclk             ; 4797     ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 72       ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 72       ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 4077     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 243      ; 0        ; 0        ; 0        ;
+; clk                    ; pdm_clk_gen            ; 4        ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 146      ; 2        ; 0        ; 0        ;
+; pdm_clk_gen            ; pdm_clk_gen            ; 1730     ; 0        ; 0        ; 0        ;
 +------------------------+------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -442,17 +427,18 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------+------------------------+----------+----------+----------+----------+
 ; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------+------------------------+----------+----------+----------+----------+
-; clk                    ; clk                    ; 6452     ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; clk                    ; 23400    ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; clk                    ; 1        ; 1        ; 0        ; 0        ;
-; clk                    ; fifo_rdclk             ; 700      ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; fifo_rdclk             ; 13325    ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 200      ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 200      ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 11325    ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 775      ; 0        ; 0        ; 0        ;
-; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 402      ; 2        ; 0        ; 0        ;
-; pdm_clk_gen            ; pdm_clk_gen            ; 4882     ; 0        ; 0        ; 0        ;
+; clk                    ; clk                    ; 12574104 ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; clk                    ; 3816     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; clk                    ; 69       ; 1        ; 0        ; 0        ;
+; clk                    ; fifo_rdclk             ; 252      ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; fifo_rdclk             ; 4797     ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 72       ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 72       ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 4077     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 243      ; 0        ; 0        ; 0        ;
+; clk                    ; pdm_clk_gen            ; 4        ; 0        ; 0        ; 0        ;
+; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 146      ; 2        ; 0        ; 0        ;
+; pdm_clk_gen            ; pdm_clk_gen            ; 1730     ; 0        ; 0        ; 0        ;
 +------------------------+------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -476,8 +462,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 27    ; 27   ;
-; Unconstrained Input Port Paths  ; 280   ; 280  ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 120   ; 120  ;
 ; Unconstrained Output Ports      ; 3     ; 3    ;
 ; Unconstrained Output Port Paths ; 3     ; 3    ;
 +---------------------------------+-------+------+
@@ -509,22 +495,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; pdm[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[16]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[17]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[18]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[19]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[20]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[21]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[22]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[23]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[24]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; sck        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssel       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
@@ -555,22 +525,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; pdm[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[16]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[17]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[18]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[19]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[20]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[21]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[22]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[23]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pdm[24]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; sck        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssel       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
@@ -593,7 +547,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 26 15:55:36 2019
+    Info: Processing started: Mon Dec  2 21:51:43 2019
 Info: Command: quartus_sta pdm_to_pcm -c pdm_to_pcm
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -617,95 +571,95 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -8.769
+Info (332146): Worst-case setup slack is -18.053
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.769            -301.302 clk 
-    Info (332119):    -5.181           -1437.943 pdm_clk_gen 
-    Info (332119):    -3.829           -2160.846 fifo_rdclk 
-    Info (332119):    -3.643           -1823.450 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.303
+    Info (332119):   -18.053            -591.903 clk 
+    Info (332119):    -5.062            -384.978 pdm_clk_gen 
+    Info (332119):    -3.681            -797.875 fifo_rdclk 
+    Info (332119):    -3.307            -628.444 gen_ACC_clk:gpc|outclk 
+Info (332146): Worst-case hold slack is 0.287
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.303               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.316               0.000 fifo_rdclk 
+    Info (332119):     0.287               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.332               0.000 fifo_rdclk 
     Info (332119):     0.341               0.000 clk 
-    Info (332119):     0.486               0.000 pdm_clk_gen 
+    Info (332119):     0.342               0.000 pdm_clk_gen 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.901
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.901           -2178.850 fifo_rdclk 
-    Info (332119):    -3.901           -1891.100 gen_ACC_clk:gpc|outclk 
-    Info (332119):    -3.901            -806.631 pdm_clk_gen 
-    Info (332119):    -3.000             -90.733 clk 
-Info (332114): Report Metastability: Found 425 synchronizer chains.
+    Info (332119):    -3.901            -784.386 fifo_rdclk 
+    Info (332119):    -3.901            -680.796 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -3.901            -378.787 clk 
+    Info (332119):    -3.901            -214.843 pdm_clk_gen 
+Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -8.333
+Info (332146): Worst-case setup slack is -16.580
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.333            -284.841 clk 
-    Info (332119):    -4.761           -1321.112 pdm_clk_gen 
-    Info (332119):    -3.640           -2006.856 fifo_rdclk 
-    Info (332119):    -3.364           -1693.732 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.273
+    Info (332119):   -16.580            -545.350 clk 
+    Info (332119):    -4.666            -351.222 pdm_clk_gen 
+    Info (332119):    -3.479            -741.543 fifo_rdclk 
+    Info (332119):    -3.111            -584.219 gen_ACC_clk:gpc|outclk 
+Info (332146): Worst-case hold slack is 0.261
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.273               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.285               0.000 fifo_rdclk 
+    Info (332119):     0.261               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.298               0.000 fifo_rdclk 
     Info (332119):     0.305               0.000 clk 
-    Info (332119):     0.435               0.000 pdm_clk_gen 
+    Info (332119):     0.307               0.000 pdm_clk_gen 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.901
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.901           -2178.850 fifo_rdclk 
-    Info (332119):    -3.901           -1891.100 gen_ACC_clk:gpc|outclk 
-    Info (332119):    -3.901            -806.631 pdm_clk_gen 
-    Info (332119):    -3.000             -90.733 clk 
-Info (332114): Report Metastability: Found 425 synchronizer chains.
+    Info (332119):    -3.901            -784.386 fifo_rdclk 
+    Info (332119):    -3.901            -680.796 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -3.901            -378.787 clk 
+    Info (332119):    -3.901            -214.843 pdm_clk_gen 
+Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.878
+Info (332146): Worst-case setup slack is -5.974
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.878             -88.311 clk 
-    Info (332119):    -1.555            -328.728 pdm_clk_gen 
-    Info (332119):    -0.973            -390.331 fifo_rdclk 
-    Info (332119):    -0.899            -296.665 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.100
+    Info (332119):    -5.974            -143.401 clk 
+    Info (332119):    -1.375             -88.269 pdm_clk_gen 
+    Info (332119):    -0.928            -151.386 fifo_rdclk 
+    Info (332119):    -0.756            -105.046 gen_ACC_clk:gpc|outclk 
+Info (332146): Worst-case hold slack is 0.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.100               0.000 fifo_rdclk 
-    Info (332119):     0.102               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.143               0.000 clk 
-    Info (332119):     0.152               0.000 pdm_clk_gen 
+    Info (332119):     0.094               0.000 clk 
+    Info (332119):     0.094               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.094               0.000 pdm_clk_gen 
+    Info (332119):     0.109               0.000 fifo_rdclk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -64.145 clk 
-    Info (332119):    -1.000           -1150.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):    -1.000           -1100.000 fifo_rdclk 
-    Info (332119):    -1.000            -497.000 pdm_clk_gen 
-Info (332114): Report Metastability: Found 425 synchronizer chains.
+    Info (332119):    -3.000            -228.460 clk 
+    Info (332119):    -1.000            -414.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -1.000            -396.000 fifo_rdclk 
+    Info (332119):    -1.000            -125.000 pdm_clk_gen 
+Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 943 megabytes
-    Info: Processing ended: Tue Nov 26 15:55:38 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 927 megabytes
+    Info: Processing ended: Mon Dec  2 21:51:44 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:03
 
 

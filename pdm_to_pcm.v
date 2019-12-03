@@ -22,7 +22,7 @@
 
 module pdm_to_pcm #(
 	 parameter BIT_WIDTH=8,
-	 parameter NUM_MICS=25,
+	 parameter NUM_MICS=9,
 	 parameter PDM_CLK_DEC_FACTOR=12
 	 ) 
 	 (
@@ -121,6 +121,14 @@ module pdm_to_pcm #(
 		 .receivedData(spi_received_data),
 		 .dataNeeded(spi_data_needed),
 		 .dataToSend(spi_data_to_send));
+		 
+	 wire update_steering_angle;
+	 wire [BIT_WIDTH-1:0] steering_angle_hori_in, steering_angle_vert_in;
+	 wire[BIT_WIDTH-1:0] tmp;
+	 assign steering_angle_hori_in = 8'd00;
+	 assign steering_angle_vert_in = 8'd20;
+	 assign update_steering_angle = 0;
+	 beamformer beaf(.clk(clk), .steering_angle_en_async(update_steering_angle), .steering_angle_hori(steering_angle_hori_in), .steering_angle_vert(steering_angle_vert_in), .pcm_data_in(accum_val), .delay_sum_data_out(tmp));
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   SYNCHRONOUS BLOCKS   ////////////////////////////////////
@@ -177,7 +185,7 @@ module pdm_to_pcm #(
 		  // Perform latching of accumulator values into the FIFO buffer if we are on a (rising) clock edge
 		  if(!accu_clk_edge[1] & accu_clk_edge[0]) begin
 				for (j=0; j<NUM_MICS; j=j+1) begin
-					fifo_data_in[j] <= accum_val[j];//(PCM_averager1[j] + PCM_averager2[j] + PCM_averager3[j] + PCM_averager4[j]) >> 4;
+					fifo_data_in[j] <= tmp;//accum_val[j];//(PCM_averager1[j] + PCM_averager2[j] + PCM_averager3[j] + PCM_averager4[j]) >> 4;
 					//PCM_averager1[j] <= accum_val[j];
 					//PCM_averager2[j] <= PCM_averager1[j];
 					//PCM_averager3[j] <= PCM_averager2[j];

@@ -1,0 +1,70 @@
+Design Assistant report for pdm_to_pcm
+Mon Dec  2 19:34:59 2019
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------+
+; Design Assistant Summary                                              ;
++-----------------------------------+-----------------------------------+
+; Design Assistant Status           ; Failed - Mon Dec  2 19:34:59 2019 ;
+; Revision Name                     ; pdm_to_pcm                        ;
+; Top-level Entity Name             ; pdm_to_pcm                        ;
+; Family                            ; MAX 10                            ;
+; Total Critical Violations         ; 0                                 ;
+; Total High Violations             ; 0                                 ;
+; Total Medium Violations           ; 0                                 ;
+; Total Information only Violations ; 0                                 ;
++-----------------------------------+-----------------------------------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Design Assistant
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Mon Dec  2 19:34:59 2019
+Info: Command: quartus_drc pdm_to_pcm -c pdm_to_pcm
+Warning (125092): Tcl Script File ../synthesis/bform.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
+Info (119006): Selected device 10M08SAE144C8G for design "pdm_to_pcm"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_jq22:auto_generated|ram_block1a5" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Error (12595): Design Assistant information: Design Assistant does not support current family.
+Error: Quartus Prime Design Assistant was unsuccessful. 1 error, 3 warnings
+    Error: Peak virtual memory: 1007 megabytes
+    Error: Processing ended: Mon Dec  2 19:34:59 2019
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
+
+
