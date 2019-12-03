@@ -2,148 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'pdm_clk_gen'
-Slack : -6.232
-TNS   : -914.002
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -5.882
-TNS   : -268.071
+Slack : -4.635
+TNS   : -182.551
 
 Type  : Slow 1200mV 85C Model Setup 'fifo_rdclk'
-Slack : -4.466
-TNS   : -1268.388
-
-Type  : Slow 1200mV 85C Model Setup 'fifo_wrclk'
-Slack : -3.596
-TNS   : -727.033
-
-Type  : Slow 1200mV 85C Model Hold 'fifo_wrclk'
-Slack : 0.220
-TNS   : 0.000
+Slack : -3.417
+TNS   : -950.929
 
 Type  : Slow 1200mV 85C Model Hold 'fifo_rdclk'
-Slack : 0.341
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : 0.360
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'pdm_clk_gen'
-Slack : 0.360
-TNS   : 0.000
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fifo_rdclk'
 Slack : -3.901
-TNS   : -1237.500
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fifo_wrclk'
-Slack : -3.901
-TNS   : -761.094
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pdm_clk_gen'
-Slack : -3.901
-TNS   : -406.261
+TNS   : -1065.258
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -111.551
-
-Type  : Slow 1200mV 0C Model Setup 'pdm_clk_gen'
-Slack : -5.841
-TNS   : -849.596
+TNS   : -92.220
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -5.544
-TNS   : -249.205
+Slack : -4.357
+TNS   : -168.625
 
 Type  : Slow 1200mV 0C Model Setup 'fifo_rdclk'
-Slack : -4.205
-TNS   : -1176.635
-
-Type  : Slow 1200mV 0C Model Setup 'fifo_wrclk'
-Slack : -3.391
-TNS   : -666.279
-
-Type  : Slow 1200mV 0C Model Hold 'fifo_wrclk'
-Slack : 0.199
-TNS   : 0.000
+Slack : -3.182
+TNS   : -873.372
 
 Type  : Slow 1200mV 0C Model Hold 'fifo_rdclk'
-Slack : 0.306
+Slack : 0.305
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.322
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'pdm_clk_gen'
-Slack : 0.322
+Slack : 0.321
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fifo_rdclk'
 Slack : -3.901
-TNS   : -1237.500
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fifo_wrclk'
-Slack : -3.901
-TNS   : -761.094
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pdm_clk_gen'
-Slack : -3.901
-TNS   : -406.261
+TNS   : -1065.258
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -111.551
-
-Type  : Fast 1200mV 0C Model Setup 'pdm_clk_gen'
-Slack : -1.930
-TNS   : -241.367
+TNS   : -92.220
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.732
-TNS   : -65.232
+Slack : -1.159
+TNS   : -37.389
 
 Type  : Fast 1200mV 0C Model Setup 'fifo_rdclk'
-Slack : -1.197
-TNS   : -271.875
-
-Type  : Fast 1200mV 0C Model Setup 'fifo_wrclk'
-Slack : -0.847
-TNS   : -115.798
-
-Type  : Fast 1200mV 0C Model Hold 'pdm_clk_gen'
-Slack : 0.056
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'fifo_wrclk'
-Slack : 0.076
-TNS   : 0.000
+Slack : -0.777
+TNS   : -167.849
 
 Type  : Fast 1200mV 0C Model Hold 'fifo_rdclk'
-Slack : 0.111
+Slack : 0.125
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.150
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -78.324
+TNS   : -64.895
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'fifo_rdclk'
 Slack : -1.000
-TNS   : -540.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'fifo_wrclk'
-Slack : -1.000
 TNS   : -468.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pdm_clk_gen'
-Slack : -1.000
-TNS   : -231.000
 
 ------------------------------------------------------------

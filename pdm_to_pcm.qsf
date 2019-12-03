@@ -90,6 +90,9 @@ set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name OCP_HW_EVAL DISABLE
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name SOURCE_FILE taps.mem
 set_global_assignment -name SYSTEMVERILOG_FILE cic_core/integrator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE cic_core/downsampler.sv
 set_global_assignment -name SYSTEMVERILOG_FILE cic_core/comb.sv
@@ -106,6 +109,12 @@ set_global_assignment -name VERILOG_FILE accum.v
 set_global_assignment -name QIP_FILE fifo2.qip
 set_global_assignment -name QIP_FILE delayline.qip
 set_global_assignment -name QIP_FILE micloc.qip
-set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
-set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VERILOG_FILE genericfir.v
+set_global_assignment -name VERILOG_FILE fastfir.v
+set_global_assignment -name VERILOG_FILE firtap.v
+set_global_assignment -name HEX_FILE taps.hex
+set_location_assignment PIN_86 -to tc_out[0]
+set_location_assignment PIN_84 -to tc_out[1]
+set_location_assignment PIN_81 -to tc_out[2]
+set_location_assignment PIN_79 -to tc_out[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
