@@ -2,37 +2,57 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'beamformer:beaf|clk'
+Slack : -14.944
+TNS   : -2472.545
+
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -18.053
-TNS   : -591.903
+Slack : -7.175
+TNS   : -180.551
 
 Type  : Slow 1200mV 85C Model Setup 'pdm_clk_gen'
-Slack : -5.062
-TNS   : -384.978
+Slack : -5.478
+TNS   : -444.365
 
 Type  : Slow 1200mV 85C Model Setup 'fifo_rdclk'
-Slack : -3.681
-TNS   : -797.875
+Slack : -4.983
+TNS   : -881.255
 
 Type  : Slow 1200mV 85C Model Setup 'gen_ACC_clk:gpc|outclk'
-Slack : -3.307
-TNS   : -628.444
+Slack : -4.582
+TNS   : -711.180
+
+Type  : Slow 1200mV 85C Model Setup 'beam_clk'
+Slack : -1.031
+TNS   : -1.031
 
 Type  : Slow 1200mV 85C Model Hold 'gen_ACC_clk:gpc|outclk'
-Slack : 0.287
+Slack : 0.219
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'beamformer:beaf|clk'
+Slack : 0.350
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'fifo_rdclk'
-Slack : 0.332
+Slack : 0.352
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.341
+Slack : 0.359
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pdm_clk_gen'
-Slack : 0.342
+Slack : 0.362
 TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'beam_clk'
+Slack : 0.905
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'beamformer:beaf|clk'
+Slack : -3.901
+TNS   : -8751.150
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fifo_rdclk'
 Slack : -3.901
@@ -42,45 +62,69 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gen_ACC_clk:gpc|outclk'
 Slack : -3.901
 TNS   : -680.796
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : -3.901
-TNS   : -378.787
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pdm_clk_gen'
 Slack : -3.901
-TNS   : -214.843
+TNS   : -229.713
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -80.324
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'beam_clk'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'beamformer:beaf|clk'
+Slack : -14.011
+TNS   : -2011.196
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -16.580
-TNS   : -545.350
+Slack : -6.868
+TNS   : -168.784
 
 Type  : Slow 1200mV 0C Model Setup 'pdm_clk_gen'
-Slack : -4.666
-TNS   : -351.222
+Slack : -5.107
+TNS   : -407.377
 
 Type  : Slow 1200mV 0C Model Setup 'fifo_rdclk'
-Slack : -3.479
-TNS   : -741.543
+Slack : -4.738
+TNS   : -820.951
 
 Type  : Slow 1200mV 0C Model Setup 'gen_ACC_clk:gpc|outclk'
-Slack : -3.111
-TNS   : -584.219
+Slack : -4.307
+TNS   : -662.389
+
+Type  : Slow 1200mV 0C Model Setup 'beam_clk'
+Slack : -0.858
+TNS   : -0.858
 
 Type  : Slow 1200mV 0C Model Hold 'gen_ACC_clk:gpc|outclk'
-Slack : 0.261
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'beamformer:beaf|clk'
+Slack : 0.207
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'fifo_rdclk'
-Slack : 0.298
+Slack : 0.316
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.305
+Slack : 0.320
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pdm_clk_gen'
-Slack : 0.307
+Slack : 0.324
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'beam_clk'
+Slack : 0.792
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'beamformer:beaf|clk'
+Slack : -3.901
+TNS   : -8765.312
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fifo_rdclk'
 Slack : -3.901
@@ -90,49 +134,73 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gen_ACC_clk:gpc|outclk'
 Slack : -3.901
 TNS   : -680.796
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.901
-TNS   : -378.787
-
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pdm_clk_gen'
 Slack : -3.901
-TNS   : -214.843
+TNS   : -229.713
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -80.324
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'beam_clk'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'beamformer:beaf|clk'
+Slack : -4.971
+TNS   : -120.130
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -5.974
-TNS   : -143.401
+Slack : -2.243
+TNS   : -44.558
 
 Type  : Fast 1200mV 0C Model Setup 'pdm_clk_gen'
-Slack : -1.375
-TNS   : -88.269
+Slack : -1.599
+TNS   : -109.916
 
 Type  : Fast 1200mV 0C Model Setup 'fifo_rdclk'
-Slack : -0.928
-TNS   : -151.386
+Slack : -1.448
+TNS   : -182.091
 
 Type  : Fast 1200mV 0C Model Setup 'gen_ACC_clk:gpc|outclk'
-Slack : -0.756
-TNS   : -105.046
+Slack : -1.262
+TNS   : -132.419
 
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.094
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Setup 'beam_clk'
+Slack : -0.125
+TNS   : -0.125
 
 Type  : Fast 1200mV 0C Model Hold 'gen_ACC_clk:gpc|outclk'
-Slack : 0.094
+Slack : 0.075
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'pdm_clk_gen'
+Type  : Fast 1200mV 0C Model Hold 'beamformer:beaf|clk'
 Slack : 0.094
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'fifo_rdclk'
-Slack : 0.109
+Slack : 0.120
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pdm_clk_gen'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'beam_clk'
+Slack : 0.367
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -228.460
+TNS   : -56.743
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'beamformer:beaf|clk'
+Slack : -1.000
+TNS   : -5864.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'gen_ACC_clk:gpc|outclk'
 Slack : -1.000
@@ -144,6 +212,10 @@ TNS   : -396.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pdm_clk_gen'
 Slack : -1.000
-TNS   : -125.000
+TNS   : -135.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'beam_clk'
+Slack : -1.000
+TNS   : -1.000
 
 ------------------------------------------------------------

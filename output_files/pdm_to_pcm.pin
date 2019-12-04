@@ -143,10 +143,10 @@ pdm_clk                      : 70        : output : 3.3-V LVCMOS      :         
 VCCA5                        : 71        : power  :                   : 3.0V/3.3V :           :                
 VCC_ONE                      : 72        : power  :                   : 3.0V/3.3V :           :                
 VCC_ONE                      : 73        : power  :                   : 3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 74        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 75        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 76        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 77        :        :                   :         : 5         :                
+dc[7]                        : 74        : output : 2.5 V             :         : 5         : Y              
+dc[6]                        : 75        : output : 2.5 V             :         : 5         : Y              
+dc[5]                        : 76        : output : 2.5 V             :         : 5         : Y              
+dc[4]                        : 77        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 78        :        :                   :         : 5         :                
 dc[3]                        : 79        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :         : 5         :                

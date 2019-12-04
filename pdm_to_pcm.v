@@ -41,7 +41,7 @@ module pdm_to_pcm #(
 	 // Debug signals
 	 output accum_clk,
 	 
-	 output wire [3:0] dc
+	 output wire [7:0] dc
 	 );
 	 
 	 ///////////////////////////////////////////////////////////////
@@ -49,7 +49,7 @@ module pdm_to_pcm #(
 	 ///////////////////////////////////////////////////////////////
 	 
 	 wire spi_byte_received;
-	 wire[7:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
+	 wire[15:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
 	 wire spi_data_needed;
 	 
 	 // Counter used in PDM clock divider
@@ -64,14 +64,14 @@ module pdm_to_pcm #(
 	 reg[1:0] accu_clk_edge;
 	 
 	 // SPI interface registers
-	 reg[7:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
+	 reg[15:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
 	 
 	 // FIFO interface registers
-	 reg[BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
+	 reg[2*BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
 	 reg fifo_rdclk;
 	 reg[NUM_MICS-1:0] fifo_rdreq;
 	 reg[NUM_MICS-1:0] fifo_wrreq;
-	 wire[BIT_WIDTH-1:0] fifo_data_out [0:NUM_MICS-1];
+	 wire[2*BIT_WIDTH-1:0] fifo_data_out [0:NUM_MICS-1];
 	 wire[NUM_MICS-1:0] fifo_rdempty;
 	 wire[NUM_MICS-1:0] fifo_wrfull;
 	 
@@ -80,9 +80,8 @@ module pdm_to_pcm #(
 	 reg[1:0] data_needed_edge;
 	 reg[4:0] mic_counter; // calculated as roundup(log2(NUM_MICS))
 	 
-	 reg[BIT_WIDTH-1:0] PCM_averager1 [0:NUM_MICS-1], PCM_averager2 [0:NUM_MICS-1], PCM_averager3 [0:NUM_MICS-1], PCM_averager4 [0:NUM_MICS-1];
-	 
 	 reg steering_angle_clk;
+	 reg beam_clk;
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   MODULE INSTANTIATION   //////////////////////////////////
@@ -130,12 +129,12 @@ module pdm_to_pcm #(
 		 
 	 wire update_steering_angle;
 	 wire [BIT_WIDTH-1:0] steering_angle_hori_in, steering_angle_vert_in;
-	 wire[BIT_WIDTH-1:0] tmp;
+	 wire[2*BIT_WIDTH-1:0] tmp;
 	 assign steering_angle_hori_in = 8'd20;
 	 assign steering_angle_vert_in = 8'd00;
 	 assign update_steering_angle = steering_angle_clk;
 	 beamformer beaf(
-		.clk(accum_clk),
+		.double_clk(beam_clk),
 		.steering_angle_en_async(update_steering_angle),
 		.steering_angle_hori(steering_angle_hori_in),
 		.steering_angle_vert(steering_angle_vert_in),
@@ -178,7 +177,7 @@ module pdm_to_pcm #(
 					spi_data_to_send = 7;
 					
 				mic_counter = mic_counter + 1;
-				if(mic_counter == 25) begin
+				if(mic_counter == NUM_MICS) begin
 					mic_counter = 0;
 					fifo_rdclk = 1;
 				end
@@ -199,13 +198,11 @@ module pdm_to_pcm #(
 		  // Perform latching of accumulator values into the FIFO buffer if we are on a (rising) clock edge
 		  if(!accu_clk_edge[1] & accu_clk_edge[0]) begin
 				for (j=0; j<NUM_MICS; j=j+1) begin
-					fifo_data_in[j] <= tmp;//accum_val[j];//(PCM_averager1[j] + PCM_averager2[j] + PCM_averager3[j] + PCM_averager4[j]) >> 4;
-					//PCM_averager1[j] <= accum_val[j];
-					//PCM_averager2[j] <= PCM_averager1[j];
-					//PCM_averager3[j] <= PCM_averager2[j];
-					//PCM_averager4[j] <= PCM_averager3[j];
+					fifo_data_in[j] <= tmp;
 					fifo_wrreq[j] <= ~fifo_wrfull[j];// & ssel;
 				end
+				
+				beam_clk <= ~beam_clk;
 		  end
 		  
 		  // Generate PDM clock by decimating from system clock

@@ -1,5 +1,5 @@
 Timing Analyzer report for pdm_to_pcm
-Mon Dec  2 21:51:44 2019
+Wed Dec  4 18:27:21 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -92,15 +92,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.79        ;
+; Average used               ; 2.96        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  12.0%      ;
-;     Processor 3            ;  11.3%      ;
-;     Processor 4            ;  11.1%      ;
-;     Processors 5-8         ;  11.1%      ;
+;     Processor 2            ;  30.3%      ;
+;     Processor 3            ;  28.9%      ;
+;     Processor 4            ;  27.4%      ;
+;     Processors 5-8         ;  27.4%      ;
 +----------------------------+-------------+
 
 
@@ -109,6 +109,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
 ; Clock Name             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                    ;
 +------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+; beam_clk               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { beam_clk }               ;
+; beamformer:beaf|clk    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { beamformer:beaf|clk }    ;
 ; clk                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                    ;
 ; fifo_rdclk             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fifo_rdclk }             ;
 ; gen_ACC_clk:gpc|outclk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { gen_ACC_clk:gpc|outclk } ;
@@ -116,16 +118,17 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                     ;
-+------------+-----------------+------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                           ;
-+------------+-----------------+------------------------+------------------------------------------------+
-; 52.49 MHz  ; 52.49 MHz       ; clk                    ;                                                ;
-; 164.96 MHz ; 164.96 MHz      ; pdm_clk_gen            ;                                                ;
-; 213.63 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
-; 232.18 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------------------+------------------------------------------------+
++--------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                           ;
++------------+-----------------+------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note ;
++------------+-----------------+------------------------+------+
+; 62.72 MHz  ; 62.72 MHz       ; beamformer:beaf|clk    ;      ;
+; 154.37 MHz ; 154.37 MHz      ; pdm_clk_gen            ;      ;
+; 155.3 MHz  ; 155.3 MHz       ; clk                    ;      ;
+; 167.14 MHz ; 167.14 MHz      ; fifo_rdclk             ;      ;
+; 179.15 MHz ; 179.15 MHz      ; gen_ACC_clk:gpc|outclk ;      ;
++------------+-----------------+------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -134,10 +137,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+---------+---------------+
 ; Clock                  ; Slack   ; End Point TNS ;
 +------------------------+---------+---------------+
-; clk                    ; -18.053 ; -591.903      ;
-; pdm_clk_gen            ; -5.062  ; -384.978      ;
-; fifo_rdclk             ; -3.681  ; -797.875      ;
-; gen_ACC_clk:gpc|outclk ; -3.307  ; -628.444      ;
+; beamformer:beaf|clk    ; -14.944 ; -2472.545     ;
+; clk                    ; -7.175  ; -180.551      ;
+; pdm_clk_gen            ; -5.478  ; -444.365      ;
+; fifo_rdclk             ; -4.983  ; -881.255      ;
+; gen_ACC_clk:gpc|outclk ; -4.582  ; -711.180      ;
+; beam_clk               ; -1.031  ; -1.031        ;
 +------------------------+---------+---------------+
 
 
@@ -146,10 +151,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; gen_ACC_clk:gpc|outclk ; 0.287 ; 0.000         ;
-; fifo_rdclk             ; 0.332 ; 0.000         ;
-; clk                    ; 0.341 ; 0.000         ;
-; pdm_clk_gen            ; 0.342 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.219 ; 0.000         ;
+; beamformer:beaf|clk    ; 0.350 ; 0.000         ;
+; fifo_rdclk             ; 0.352 ; 0.000         ;
+; clk                    ; 0.359 ; 0.000         ;
+; pdm_clk_gen            ; 0.362 ; 0.000         ;
+; beam_clk               ; 0.905 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -170,10 +177,12 @@ No paths to report.
 +------------------------+--------+-----------------+
 ; Clock                  ; Slack  ; End Point TNS   ;
 +------------------------+--------+-----------------+
+; beamformer:beaf|clk    ; -3.901 ; -8751.150       ;
 ; fifo_rdclk             ; -3.901 ; -784.386        ;
 ; gen_ACC_clk:gpc|outclk ; -3.901 ; -680.796        ;
-; clk                    ; -3.901 ; -378.787        ;
-; pdm_clk_gen            ; -3.901 ; -214.843        ;
+; pdm_clk_gen            ; -3.901 ; -229.713        ;
+; clk                    ; -3.000 ; -80.324         ;
+; beam_clk               ; -1.487 ; -1.487          ;
 +------------------------+--------+-----------------+
 
 
@@ -184,16 +193,17 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                      ;
-+------------+-----------------+------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                           ;
-+------------+-----------------+------------------------+------------------------------------------------+
-; 56.88 MHz  ; 56.88 MHz       ; clk                    ;                                                ;
-; 176.49 MHz ; 176.49 MHz      ; pdm_clk_gen            ;                                                ;
-; 223.26 MHz ; 204.04 MHz      ; fifo_rdclk             ; limit due to minimum period restriction (tmin) ;
-; 243.25 MHz ; 204.04 MHz      ; gen_ACC_clk:gpc|outclk ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------------------+------------------------------------------------+
++--------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                            ;
++------------+-----------------+------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note ;
++------------+-----------------+------------------------+------+
+; 66.62 MHz  ; 66.62 MHz       ; beamformer:beaf|clk    ;      ;
+; 163.75 MHz ; 163.75 MHz      ; pdm_clk_gen            ;      ;
+; 164.91 MHz ; 164.91 MHz      ; clk                    ;      ;
+; 174.28 MHz ; 174.28 MHz      ; fifo_rdclk             ;      ;
+; 188.43 MHz ; 188.43 MHz      ; gen_ACC_clk:gpc|outclk ;      ;
++------------+-----------------+------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -202,10 +212,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+---------+---------------+
 ; Clock                  ; Slack   ; End Point TNS ;
 +------------------------+---------+---------------+
-; clk                    ; -16.580 ; -545.350      ;
-; pdm_clk_gen            ; -4.666  ; -351.222      ;
-; fifo_rdclk             ; -3.479  ; -741.543      ;
-; gen_ACC_clk:gpc|outclk ; -3.111  ; -584.219      ;
+; beamformer:beaf|clk    ; -14.011 ; -2011.196     ;
+; clk                    ; -6.868  ; -168.784      ;
+; pdm_clk_gen            ; -5.107  ; -407.377      ;
+; fifo_rdclk             ; -4.738  ; -820.951      ;
+; gen_ACC_clk:gpc|outclk ; -4.307  ; -662.389      ;
+; beam_clk               ; -0.858  ; -0.858        ;
 +------------------------+---------+---------------+
 
 
@@ -214,10 +226,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; gen_ACC_clk:gpc|outclk ; 0.261 ; 0.000         ;
-; fifo_rdclk             ; 0.298 ; 0.000         ;
-; clk                    ; 0.305 ; 0.000         ;
-; pdm_clk_gen            ; 0.307 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.199 ; 0.000         ;
+; beamformer:beaf|clk    ; 0.207 ; 0.000         ;
+; fifo_rdclk             ; 0.316 ; 0.000         ;
+; clk                    ; 0.320 ; 0.000         ;
+; pdm_clk_gen            ; 0.324 ; 0.000         ;
+; beam_clk               ; 0.792 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -238,10 +252,12 @@ No paths to report.
 +------------------------+--------+----------------+
 ; Clock                  ; Slack  ; End Point TNS  ;
 +------------------------+--------+----------------+
+; beamformer:beaf|clk    ; -3.901 ; -8765.312      ;
 ; fifo_rdclk             ; -3.901 ; -784.386       ;
 ; gen_ACC_clk:gpc|outclk ; -3.901 ; -680.796       ;
-; clk                    ; -3.901 ; -378.787       ;
-; pdm_clk_gen            ; -3.901 ; -214.843       ;
+; pdm_clk_gen            ; -3.901 ; -229.713       ;
+; clk                    ; -3.000 ; -80.324        ;
+; beam_clk               ; -1.487 ; -1.487         ;
 +------------------------+--------+----------------+
 
 
@@ -257,10 +273,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+--------+---------------+
 ; Clock                  ; Slack  ; End Point TNS ;
 +------------------------+--------+---------------+
-; clk                    ; -5.974 ; -143.401      ;
-; pdm_clk_gen            ; -1.375 ; -88.269       ;
-; fifo_rdclk             ; -0.928 ; -151.386      ;
-; gen_ACC_clk:gpc|outclk ; -0.756 ; -105.046      ;
+; beamformer:beaf|clk    ; -4.971 ; -120.130      ;
+; clk                    ; -2.243 ; -44.558       ;
+; pdm_clk_gen            ; -1.599 ; -109.916      ;
+; fifo_rdclk             ; -1.448 ; -182.091      ;
+; gen_ACC_clk:gpc|outclk ; -1.262 ; -132.419      ;
+; beam_clk               ; -0.125 ; -0.125        ;
 +------------------------+--------+---------------+
 
 
@@ -269,10 +287,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+-------+---------------+
 ; Clock                  ; Slack ; End Point TNS ;
 +------------------------+-------+---------------+
-; clk                    ; 0.094 ; 0.000         ;
-; gen_ACC_clk:gpc|outclk ; 0.094 ; 0.000         ;
-; pdm_clk_gen            ; 0.094 ; 0.000         ;
-; fifo_rdclk             ; 0.109 ; 0.000         ;
+; gen_ACC_clk:gpc|outclk ; 0.075 ; 0.000         ;
+; beamformer:beaf|clk    ; 0.094 ; 0.000         ;
+; fifo_rdclk             ; 0.120 ; 0.000         ;
+; clk                    ; 0.148 ; 0.000         ;
+; pdm_clk_gen            ; 0.152 ; 0.000         ;
+; beam_clk               ; 0.367 ; 0.000         ;
 +------------------------+-------+---------------+
 
 
@@ -293,10 +313,12 @@ No paths to report.
 +------------------------+--------+----------------+
 ; Clock                  ; Slack  ; End Point TNS  ;
 +------------------------+--------+----------------+
-; clk                    ; -3.000 ; -228.460       ;
+; clk                    ; -3.000 ; -56.743        ;
+; beamformer:beaf|clk    ; -1.000 ; -5864.000      ;
 ; gen_ACC_clk:gpc|outclk ; -1.000 ; -414.000       ;
 ; fifo_rdclk             ; -1.000 ; -396.000       ;
-; pdm_clk_gen            ; -1.000 ; -125.000       ;
+; pdm_clk_gen            ; -1.000 ; -135.000       ;
+; beam_clk               ; -1.000 ; -1.000         ;
 +------------------------+--------+----------------+
 
 
@@ -307,22 +329,26 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+---------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                   ;
-+-------------------------+----------+-------+----------+---------+---------------------+
-; Clock                   ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack        ; -18.053  ; 0.094 ; N/A      ; N/A     ; -3.901              ;
-;  clk                    ; -18.053  ; 0.094 ; N/A      ; N/A     ; -3.901              ;
-;  fifo_rdclk             ; -3.681   ; 0.109 ; N/A      ; N/A     ; -3.901              ;
-;  gen_ACC_clk:gpc|outclk ; -3.307   ; 0.094 ; N/A      ; N/A     ; -3.901              ;
-;  pdm_clk_gen            ; -5.062   ; 0.094 ; N/A      ; N/A     ; -3.901              ;
-; Design-wide TNS         ; -2403.2  ; 0.0   ; 0.0      ; 0.0     ; -2058.812           ;
-;  clk                    ; -591.903 ; 0.000 ; N/A      ; N/A     ; -378.787            ;
-;  fifo_rdclk             ; -797.875 ; 0.000 ; N/A      ; N/A     ; -784.386            ;
-;  gen_ACC_clk:gpc|outclk ; -628.444 ; 0.000 ; N/A      ; N/A     ; -680.796            ;
-;  pdm_clk_gen            ; -384.978 ; 0.000 ; N/A      ; N/A     ; -214.843            ;
-+-------------------------+----------+-------+----------+---------+---------------------+
++----------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                    ;
++-------------------------+-----------+-------+----------+---------+---------------------+
+; Clock                   ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack        ; -14.944   ; 0.075 ; N/A      ; N/A     ; -3.901              ;
+;  beam_clk               ; -1.031    ; 0.367 ; N/A      ; N/A     ; -1.487              ;
+;  beamformer:beaf|clk    ; -14.944   ; 0.094 ; N/A      ; N/A     ; -3.901              ;
+;  clk                    ; -7.175    ; 0.148 ; N/A      ; N/A     ; -3.000              ;
+;  fifo_rdclk             ; -4.983    ; 0.120 ; N/A      ; N/A     ; -3.901              ;
+;  gen_ACC_clk:gpc|outclk ; -4.582    ; 0.075 ; N/A      ; N/A     ; -3.901              ;
+;  pdm_clk_gen            ; -5.478    ; 0.152 ; N/A      ; N/A     ; -3.901              ;
+; Design-wide TNS         ; -4690.927 ; 0.0   ; 0.0      ; 0.0     ; -10542.018          ;
+;  beam_clk               ; -1.031    ; 0.000 ; N/A      ; N/A     ; -1.487              ;
+;  beamformer:beaf|clk    ; -2472.545 ; 0.000 ; N/A      ; N/A     ; -8765.312           ;
+;  clk                    ; -180.551  ; 0.000 ; N/A      ; N/A     ; -80.324             ;
+;  fifo_rdclk             ; -881.255  ; 0.000 ; N/A      ; N/A     ; -784.386            ;
+;  gen_ACC_clk:gpc|outclk ; -711.180  ; 0.000 ; N/A      ; N/A     ; -680.796            ;
+;  pdm_clk_gen            ; -444.365  ; 0.000 ; N/A      ; N/A     ; -229.713            ;
++-------------------------+-----------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -333,6 +359,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; pdm_clk      ; 3.3-V LVCMOS ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; miso         ; 3.3-V LVCMOS ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; accum_clk    ; 3.3-V LVCMOS ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[0]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[1]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[2]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[3]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[4]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[5]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[6]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dc[7]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
@@ -346,15 +380,15 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; clk                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ssel                ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; sck                 ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[8]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[7]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[6]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[5]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[4]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[3]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[0]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; pdm[2]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; pdm[1]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
-; pdm[0]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[3]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[4]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[5]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[6]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[7]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; pdm[8]              ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -373,6 +407,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; pdm_clk      ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.68e-08 V                   ; 3.12 V              ; -0.0411 V           ; 0.283 V                              ; 0.209 V                              ; 9e-10 s                     ; 1.03e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 3.68e-08 V                  ; 3.12 V             ; -0.0411 V          ; 0.283 V                             ; 0.209 V                             ; 9e-10 s                    ; 1.03e-09 s                 ; No                        ; No                        ;
 ; miso         ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.68e-08 V                   ; 3.12 V              ; -0.0411 V           ; 0.283 V                              ; 0.209 V                              ; 9e-10 s                     ; 1.03e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 3.68e-08 V                  ; 3.12 V             ; -0.0411 V          ; 0.283 V                             ; 0.209 V                             ; 9e-10 s                    ; 1.03e-09 s                 ; No                        ; No                        ;
 ; accum_clk    ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.68e-08 V                   ; 3.12 V              ; -0.0417 V           ; 0.287 V                              ; 0.209 V                              ; 8.99e-10 s                  ; 1.03e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 3.68e-08 V                  ; 3.12 V             ; -0.0417 V          ; 0.287 V                             ; 0.209 V                             ; 8.99e-10 s                 ; 1.03e-09 s                 ; No                        ; No                        ;
+; dc[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0932 V           ; 0.135 V                              ; 0.16 V                               ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0932 V          ; 0.135 V                             ; 0.16 V                              ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0905 V           ; 0.135 V                              ; 0.167 V                              ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0905 V          ; 0.135 V                             ; 0.167 V                             ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0932 V           ; 0.135 V                              ; 0.16 V                               ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0932 V          ; 0.135 V                             ; 0.16 V                              ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0905 V           ; 0.135 V                              ; 0.167 V                              ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0905 V          ; 0.135 V                             ; 0.167 V                             ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0932 V           ; 0.135 V                              ; 0.16 V                               ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0932 V          ; 0.135 V                             ; 0.16 V                              ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0932 V           ; 0.135 V                              ; 0.16 V                               ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0932 V          ; 0.135 V                             ; 0.16 V                              ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0905 V           ; 0.135 V                              ; 0.167 V                              ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0905 V          ; 0.135 V                             ; 0.167 V                             ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
+; dc[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.47e-09 V                   ; 2.4 V               ; -0.0905 V           ; 0.135 V                              ; 0.167 V                              ; 4.43e-10 s                  ; 4.36e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.47e-09 V                  ; 2.4 V              ; -0.0905 V          ; 0.135 V                             ; 0.167 V                             ; 4.43e-10 s                 ; 4.36e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.49e-09 V                   ; 2.38 V              ; -0.0491 V           ; 0.231 V                              ; 0.154 V                              ; 4.84e-10 s                  ; 6.18e-10 s                  ; Yes                        ; No                         ; 2.32 V                      ; 7.49e-09 V                  ; 2.38 V             ; -0.0491 V          ; 0.231 V                             ; 0.154 V                             ; 4.84e-10 s                 ; 6.18e-10 s                 ; Yes                       ; No                        ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -385,6 +427,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; pdm_clk      ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.3e-06 V                    ; 3.1 V               ; -0.018 V            ; 0.27 V                               ; 0.216 V                              ; 1.11e-09 s                  ; 1.22e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.3e-06 V                   ; 3.1 V              ; -0.018 V           ; 0.27 V                              ; 0.216 V                             ; 1.11e-09 s                 ; 1.22e-09 s                 ; Yes                       ; Yes                       ;
 ; miso         ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.3e-06 V                    ; 3.1 V               ; -0.018 V            ; 0.27 V                               ; 0.216 V                              ; 1.11e-09 s                  ; 1.22e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.3e-06 V                   ; 3.1 V              ; -0.018 V           ; 0.27 V                              ; 0.216 V                             ; 1.11e-09 s                 ; 1.22e-09 s                 ; Yes                       ; Yes                       ;
 ; accum_clk    ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.3e-06 V                    ; 3.1 V               ; -0.018 V            ; 0.27 V                               ; 0.217 V                              ; 1.11e-09 s                  ; 1.22e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.3e-06 V                   ; 3.1 V              ; -0.018 V           ; 0.27 V                              ; 0.217 V                             ; 1.11e-09 s                 ; 1.22e-09 s                 ; Yes                       ; Yes                       ;
+; dc[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0521 V           ; 0.17 V                               ; 0.231 V                              ; 4.74e-10 s                  ; 4.79e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0521 V          ; 0.17 V                              ; 0.231 V                             ; 4.74e-10 s                 ; 4.79e-10 s                 ; Yes                       ; Yes                       ;
+; dc[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0526 V           ; 0.169 V                              ; 0.23 V                               ; 4.75e-10 s                  ; 4.8e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0526 V          ; 0.169 V                             ; 0.23 V                              ; 4.75e-10 s                 ; 4.8e-10 s                  ; Yes                       ; Yes                       ;
+; dc[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0521 V           ; 0.17 V                               ; 0.231 V                              ; 4.74e-10 s                  ; 4.79e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0521 V          ; 0.17 V                              ; 0.231 V                             ; 4.74e-10 s                 ; 4.79e-10 s                 ; Yes                       ; Yes                       ;
+; dc[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0526 V           ; 0.169 V                              ; 0.23 V                               ; 4.75e-10 s                  ; 4.8e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0526 V          ; 0.169 V                             ; 0.23 V                              ; 4.75e-10 s                 ; 4.8e-10 s                  ; Yes                       ; Yes                       ;
+; dc[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0521 V           ; 0.17 V                               ; 0.231 V                              ; 4.74e-10 s                  ; 4.79e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0521 V          ; 0.17 V                              ; 0.231 V                             ; 4.74e-10 s                 ; 4.79e-10 s                 ; Yes                       ; Yes                       ;
+; dc[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0521 V           ; 0.17 V                               ; 0.231 V                              ; 4.74e-10 s                  ; 4.79e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0521 V          ; 0.17 V                              ; 0.231 V                             ; 4.74e-10 s                 ; 4.79e-10 s                 ; Yes                       ; Yes                       ;
+; dc[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0526 V           ; 0.169 V                              ; 0.23 V                               ; 4.75e-10 s                  ; 4.8e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0526 V          ; 0.169 V                             ; 0.23 V                              ; 4.75e-10 s                 ; 4.8e-10 s                  ; Yes                       ; Yes                       ;
+; dc[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.66e-07 V                   ; 2.37 V              ; -0.0526 V           ; 0.169 V                              ; 0.23 V                               ; 4.75e-10 s                  ; 4.8e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.66e-07 V                  ; 2.37 V             ; -0.0526 V          ; 0.169 V                             ; 0.23 V                              ; 4.75e-10 s                 ; 4.8e-10 s                  ; Yes                       ; Yes                       ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.88e-07 V                   ; 2.36 V              ; -0.0208 V           ; 0.162 V                              ; 0.123 V                              ; 6.58e-10 s                  ; 7.78e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.88e-07 V                  ; 2.36 V             ; -0.0208 V          ; 0.162 V                             ; 0.123 V                             ; 6.58e-10 s                 ; 7.78e-10 s                 ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -397,6 +447,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; pdm_clk      ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.46 V                       ; 8.93e-07 V                   ; 3.52 V              ; -0.0321 V           ; 0.324 V                              ; 0.176 V                              ; 6.87e-10 s                  ; 8.14e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 8.93e-07 V                  ; 3.52 V             ; -0.0321 V          ; 0.324 V                             ; 0.176 V                             ; 6.87e-10 s                 ; 8.14e-10 s                 ; No                        ; Yes                       ;
 ; miso         ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.46 V                       ; 8.93e-07 V                   ; 3.52 V              ; -0.0321 V           ; 0.324 V                              ; 0.176 V                              ; 6.87e-10 s                  ; 8.14e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 8.93e-07 V                  ; 3.52 V             ; -0.0321 V          ; 0.324 V                             ; 0.176 V                             ; 6.87e-10 s                 ; 8.14e-10 s                 ; No                        ; Yes                       ;
 ; accum_clk    ; 3.3-V LVCMOS ; 0 s                 ; 0 s                 ; 3.46 V                       ; 8.93e-07 V                   ; 3.53 V              ; -0.0325 V           ; 0.324 V                              ; 0.176 V                              ; 6.87e-10 s                  ; 8.14e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 8.93e-07 V                  ; 3.53 V             ; -0.0325 V          ; 0.324 V                             ; 0.176 V                             ; 6.87e-10 s                 ; 8.14e-10 s                 ; No                        ; Yes                       ;
+; dc[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; dc[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0396 V           ; 0.362 V                              ; 0.108 V                              ; 3.11e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0396 V          ; 0.362 V                             ; 0.108 V                             ; 3.11e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -406,18 +464,22 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------+------------------------+----------+----------+----------+----------+
 ; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------+------------------------+----------+----------+----------+----------+
-; clk                    ; clk                    ; 12574104 ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; clk                    ; 3816     ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; clk                    ; 69       ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; beam_clk               ; 1        ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; beamformer:beaf|clk    ; 1106821  ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; beamformer:beaf|clk    ; 73       ; 0        ; 0        ; 0        ;
+; clk                    ; clk                    ; 1264     ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; clk                    ; 4248     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; clk                    ; 1        ; 1        ; 0        ; 0        ;
 ; clk                    ; fifo_rdclk             ; 252      ; 0        ; 0        ; 0        ;
 ; fifo_rdclk             ; fifo_rdclk             ; 4797     ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 72       ; 0        ; 0        ; 0        ;
 ; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 72       ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 4077     ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 243      ; 0        ; 0        ; 0        ;
-; clk                    ; pdm_clk_gen            ; 4        ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 279      ; 0        ; 0        ; 0        ;
+; beam_clk               ; pdm_clk_gen            ; 1        ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; pdm_clk_gen            ; 8        ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 146      ; 2        ; 0        ; 0        ;
-; pdm_clk_gen            ; pdm_clk_gen            ; 1730     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; pdm_clk_gen            ; 1758     ; 0        ; 0        ; 0        ;
 +------------------------+------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -427,18 +489,22 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------+------------------------+----------+----------+----------+----------+
 ; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------+------------------------+----------+----------+----------+----------+
-; clk                    ; clk                    ; 12574104 ; 0        ; 0        ; 0        ;
-; fifo_rdclk             ; clk                    ; 3816     ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; clk                    ; 69       ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; beam_clk               ; 1        ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; beamformer:beaf|clk    ; 1106821  ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; beamformer:beaf|clk    ; 73       ; 0        ; 0        ; 0        ;
+; clk                    ; clk                    ; 1264     ; 0        ; 0        ; 0        ;
+; fifo_rdclk             ; clk                    ; 4248     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; clk                    ; 1        ; 1        ; 0        ; 0        ;
 ; clk                    ; fifo_rdclk             ; 252      ; 0        ; 0        ; 0        ;
 ; fifo_rdclk             ; fifo_rdclk             ; 4797     ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; fifo_rdclk             ; 72       ; 0        ; 0        ; 0        ;
 ; fifo_rdclk             ; gen_ACC_clk:gpc|outclk ; 72       ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; 4077     ; 0        ; 0        ; 0        ;
-; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 243      ; 0        ; 0        ; 0        ;
-; clk                    ; pdm_clk_gen            ; 4        ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; gen_ACC_clk:gpc|outclk ; 279      ; 0        ; 0        ; 0        ;
+; beam_clk               ; pdm_clk_gen            ; 1        ; 1        ; 0        ; 0        ;
+; beamformer:beaf|clk    ; pdm_clk_gen            ; 8        ; 0        ; 0        ; 0        ;
 ; gen_ACC_clk:gpc|outclk ; pdm_clk_gen            ; 146      ; 2        ; 0        ; 0        ;
-; pdm_clk_gen            ; pdm_clk_gen            ; 1730     ; 0        ; 0        ; 0        ;
+; pdm_clk_gen            ; pdm_clk_gen            ; 1758     ; 0        ; 0        ; 0        ;
 +------------------------+------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -463,9 +529,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 11    ; 11   ;
-; Unconstrained Input Port Paths  ; 120   ; 120  ;
-; Unconstrained Output Ports      ; 3     ; 3    ;
-; Unconstrained Output Port Paths ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 129   ; 129  ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 11    ; 11   ;
 +---------------------------------+-------+------+
 
 
@@ -474,6 +540,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------------------+------------------------+------+-------------+
 ; Target                 ; Clock                  ; Type ; Status      ;
 +------------------------+------------------------+------+-------------+
+; beam_clk               ; beam_clk               ; Base ; Constrained ;
+; beamformer:beaf|clk    ; beamformer:beaf|clk    ; Base ; Constrained ;
 ; clk                    ; clk                    ; Base ; Constrained ;
 ; fifo_rdclk             ; fifo_rdclk             ; Base ; Constrained ;
 ; gen_ACC_clk:gpc|outclk ; gen_ACC_clk:gpc|outclk ; Base ; Constrained ;
@@ -506,6 +574,14 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; accum_clk   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; miso        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm_clk     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -536,6 +612,14 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; accum_clk   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dc[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; miso        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; pdm_clk     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -547,7 +631,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Dec  2 21:51:43 2019
+    Info: Processing started: Wed Dec  4 18:27:18 2019
 Info: Command: quartus_sta pdm_to_pcm -c pdm_to_pcm
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -562,38 +646,46 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'pdm
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name pdm_clk_gen pdm_clk_gen
+    Info (332105): create_clock -period 1.000 -name beamformer:beaf|clk beamformer:beaf|clk
+    Info (332105): create_clock -period 1.000 -name beam_clk beam_clk
     Info (332105): create_clock -period 1.000 -name fifo_rdclk fifo_rdclk
     Info (332105): create_clock -period 1.000 -name gen_ACC_clk:gpc|outclk gen_ACC_clk:gpc|outclk
-    Info (332105): create_clock -period 1.000 -name pdm_clk_gen pdm_clk_gen
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -18.053
+Info (332146): Worst-case setup slack is -14.944
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -18.053            -591.903 clk 
-    Info (332119):    -5.062            -384.978 pdm_clk_gen 
-    Info (332119):    -3.681            -797.875 fifo_rdclk 
-    Info (332119):    -3.307            -628.444 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.287
+    Info (332119):   -14.944           -2472.545 beamformer:beaf|clk 
+    Info (332119):    -7.175            -180.551 clk 
+    Info (332119):    -5.478            -444.365 pdm_clk_gen 
+    Info (332119):    -4.983            -881.255 fifo_rdclk 
+    Info (332119):    -4.582            -711.180 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -1.031              -1.031 beam_clk 
+Info (332146): Worst-case hold slack is 0.219
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.287               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.332               0.000 fifo_rdclk 
-    Info (332119):     0.341               0.000 clk 
-    Info (332119):     0.342               0.000 pdm_clk_gen 
+    Info (332119):     0.219               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.350               0.000 beamformer:beaf|clk 
+    Info (332119):     0.352               0.000 fifo_rdclk 
+    Info (332119):     0.359               0.000 clk 
+    Info (332119):     0.362               0.000 pdm_clk_gen 
+    Info (332119):     0.905               0.000 beam_clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.901
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -3.901           -8751.150 beamformer:beaf|clk 
     Info (332119):    -3.901            -784.386 fifo_rdclk 
     Info (332119):    -3.901            -680.796 gen_ACC_clk:gpc|outclk 
-    Info (332119):    -3.901            -378.787 clk 
-    Info (332119):    -3.901            -214.843 pdm_clk_gen 
+    Info (332119):    -3.901            -229.713 pdm_clk_gen 
+    Info (332119):    -3.000             -80.324 clk 
+    Info (332119):    -1.487              -1.487 beam_clk 
 Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
@@ -601,65 +693,77 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -16.580
+Info (332146): Worst-case setup slack is -14.011
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -16.580            -545.350 clk 
-    Info (332119):    -4.666            -351.222 pdm_clk_gen 
-    Info (332119):    -3.479            -741.543 fifo_rdclk 
-    Info (332119):    -3.111            -584.219 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.261
+    Info (332119):   -14.011           -2011.196 beamformer:beaf|clk 
+    Info (332119):    -6.868            -168.784 clk 
+    Info (332119):    -5.107            -407.377 pdm_clk_gen 
+    Info (332119):    -4.738            -820.951 fifo_rdclk 
+    Info (332119):    -4.307            -662.389 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -0.858              -0.858 beam_clk 
+Info (332146): Worst-case hold slack is 0.199
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.261               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.298               0.000 fifo_rdclk 
-    Info (332119):     0.305               0.000 clk 
-    Info (332119):     0.307               0.000 pdm_clk_gen 
+    Info (332119):     0.199               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.207               0.000 beamformer:beaf|clk 
+    Info (332119):     0.316               0.000 fifo_rdclk 
+    Info (332119):     0.320               0.000 clk 
+    Info (332119):     0.324               0.000 pdm_clk_gen 
+    Info (332119):     0.792               0.000 beam_clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.901
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -3.901           -8765.312 beamformer:beaf|clk 
     Info (332119):    -3.901            -784.386 fifo_rdclk 
     Info (332119):    -3.901            -680.796 gen_ACC_clk:gpc|outclk 
-    Info (332119):    -3.901            -378.787 clk 
-    Info (332119):    -3.901            -214.843 pdm_clk_gen 
+    Info (332119):    -3.901            -229.713 pdm_clk_gen 
+    Info (332119):    -3.000             -80.324 clk 
+    Info (332119):    -1.487              -1.487 beam_clk 
 Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.974
+Info (332146): Worst-case setup slack is -4.971
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.974            -143.401 clk 
-    Info (332119):    -1.375             -88.269 pdm_clk_gen 
-    Info (332119):    -0.928            -151.386 fifo_rdclk 
-    Info (332119):    -0.756            -105.046 gen_ACC_clk:gpc|outclk 
-Info (332146): Worst-case hold slack is 0.094
+    Info (332119):    -4.971            -120.130 beamformer:beaf|clk 
+    Info (332119):    -2.243             -44.558 clk 
+    Info (332119):    -1.599            -109.916 pdm_clk_gen 
+    Info (332119):    -1.448            -182.091 fifo_rdclk 
+    Info (332119):    -1.262            -132.419 gen_ACC_clk:gpc|outclk 
+    Info (332119):    -0.125              -0.125 beam_clk 
+Info (332146): Worst-case hold slack is 0.075
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.094               0.000 clk 
-    Info (332119):     0.094               0.000 gen_ACC_clk:gpc|outclk 
-    Info (332119):     0.094               0.000 pdm_clk_gen 
-    Info (332119):     0.109               0.000 fifo_rdclk 
+    Info (332119):     0.075               0.000 gen_ACC_clk:gpc|outclk 
+    Info (332119):     0.094               0.000 beamformer:beaf|clk 
+    Info (332119):     0.120               0.000 fifo_rdclk 
+    Info (332119):     0.148               0.000 clk 
+    Info (332119):     0.152               0.000 pdm_clk_gen 
+    Info (332119):     0.367               0.000 beam_clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -228.460 clk 
+    Info (332119):    -3.000             -56.743 clk 
+    Info (332119):    -1.000           -5864.000 beamformer:beaf|clk 
     Info (332119):    -1.000            -414.000 gen_ACC_clk:gpc|outclk 
     Info (332119):    -1.000            -396.000 fifo_rdclk 
-    Info (332119):    -1.000            -125.000 pdm_clk_gen 
+    Info (332119):    -1.000            -135.000 pdm_clk_gen 
+    Info (332119):    -1.000              -1.000 beam_clk 
 Info (332114): Report Metastability: Found 153 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 927 megabytes
-    Info: Processing ended: Mon Dec  2 21:51:44 2019
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 979 megabytes
+    Info: Processing ended: Wed Dec  4 18:27:21 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:10
 
 

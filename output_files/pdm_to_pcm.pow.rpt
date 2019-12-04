@@ -1,5 +1,5 @@
 Power Analyzer report for pdm_to_pcm
-Mon Dec  2 21:51:42 2019
+Wed Dec  4 18:27:17 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -53,29 +53,29 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.84        ;
+; Average used               ; 2.43        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;  12.0%      ;
+;     Processors 2-8         ;  20.5%      ;
 +----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Mon Dec  2 21:51:42 2019            ;
+; Power Analyzer Status                  ; Successful - Wed Dec  4 18:27:17 2019            ;
 ; Quartus Prime Version                  ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition      ;
 ; Revision Name                          ; pdm_to_pcm                                       ;
 ; Top-level Entity Name                  ; pdm_to_pcm                                       ;
 ; Family                                 ; MAX 10                                           ;
 ; Device                                 ; 10M08SAE144C8G                                   ;
 ; Power Models                           ; Final                                            ;
-; Total Thermal Power Dissipation        ; 135.61 mW                                        ;
+; Total Thermal Power Dissipation        ; 135.65 mW                                        ;
 ; Core Dynamic Thermal Power Dissipation ; 0.00 mW                                          ;
 ; Core Static Thermal Power Dissipation  ; 110.66 mW                                        ;
-; I/O Thermal Power Dissipation          ; 24.95 mW                                         ;
+; I/O Thermal Power Dissipation          ; 24.99 mW                                         ;
 ; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
 +----------------------------------------+--------------------------------------------------+
 
@@ -115,19 +115,20 @@ https://fpgasoftware.intel.com/eula.
 ; clk                            ; No valid clock domain found ;
 ; ssel                           ; No valid clock domain found ;
 ; sck                            ; No valid clock domain found ;
-; pdm[8]                         ; No valid clock domain found ;
-; pdm[7]                         ; No valid clock domain found ;
-; pdm[6]                         ; No valid clock domain found ;
-; pdm[5]                         ; No valid clock domain found ;
-; pdm[4]                         ; No valid clock domain found ;
-; pdm[3]                         ; No valid clock domain found ;
+; pdm[0]                         ; No valid clock domain found ;
 ; pdm[2]                         ; No valid clock domain found ;
 ; pdm[1]                         ; No valid clock domain found ;
-; pdm[0]                         ; No valid clock domain found ;
-; fifo_rdclk~clkctrl             ; No valid clock domain found ;
-; clk~inputclkctrl               ; No valid clock domain found ;
-; gen_ACC_clk:gpc|outclk~clkctrl ; No valid clock domain found ;
+; pdm[3]                         ; No valid clock domain found ;
+; pdm[4]                         ; No valid clock domain found ;
+; pdm[5]                         ; No valid clock domain found ;
+; pdm[6]                         ; No valid clock domain found ;
+; pdm[7]                         ; No valid clock domain found ;
+; pdm[8]                         ; No valid clock domain found ;
 ; pdm_clk_gen~clkctrl            ; No valid clock domain found ;
+; gen_ACC_clk:gpc|outclk~clkctrl ; No valid clock domain found ;
+; clk~inputclkctrl               ; No valid clock domain found ;
+; beamformer:beaf|clk~clkctrl    ; No valid clock domain found ;
+; fifo_rdclk~clkctrl             ; No valid clock domain found ;
 +--------------------------------+-----------------------------+
 
 
@@ -172,7 +173,7 @@ https://fpgasoftware.intel.com/eula.
 ; Combinational cell  ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
 ; Clock control block ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
 ; Register cell       ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
-; I/O                 ; 0.70 mW                           ; 0.00 mW                     ; 0.70 mW                        ; 0.00 mW                       ;    0.000                                                  ;
+; I/O                 ; 0.74 mW                           ; 0.00 mW                     ; 0.74 mW                        ; 0.00 mW                       ;    0.000                                                  ;
 ; Voltage Regulator   ; 0.00 mW                           ; 0.00 mW                     ; 0.00 mW                        ; --                            ; --                                                        ;
 +---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 (1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
@@ -183,14 +184,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Compilation Hierarchy Node                      ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                                                       ;
 +-------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; |pdm_to_pcm                                     ; 0.70 mW (0.70 mW)                    ; 0.00 mW (0.00 mW)               ; 0.70 mW (0.70 mW)                 ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm                                                                                                                               ;
+; |pdm_to_pcm                                     ; 0.74 mW (0.74 mW)                    ; 0.00 mW (0.00 mW)               ; 0.74 mW (0.74 mW)                 ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm                                                                                                                               ;
 ;     |hard_block:auto_generated_inst             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|hard_block:auto_generated_inst                                                                                                ;
 ;     |beamformer:beaf                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|beamformer:beaf                                                                                                               ;
 ;         |micloc:miclocROM                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM                                                                                              ;
 ;             |altsyncram:altsyncram_component    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component                                                              ;
-;                 |altsyncram_jq22:auto_generated ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_jq22:auto_generated                               ;
+;                 |altsyncram_qb42:auto_generated ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_qb42:auto_generated                               ;
 ;     |gen_ACC_clk:gpc                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|gen_ACC_clk:gpc                                                                                                               ;
 ;     |accum:module_gen[0].accum_i                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i                                                                                                   ;
+;         |altshift_taps:buffer_rtl_0             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0                                                                        ;
+;             |shift_taps_til:auto_generated      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated                                          ;
+;                 |altsyncram_ms71:altsyncram2    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2              ;
+;                 |cntr_97f:cntr1                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1                           ;
+;                     |cmpr_krb:cmpr4             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1|cmpr_krb:cmpr4            ;
 ;     |fifo2:module_gen[0].fifo_i                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i                                                                                                    ;
 ;         |dcfifo:dcfifo_component                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component                                                                            ;
 ;             |dcfifo_csi1:auto_generated         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ;
@@ -204,11 +210,6 @@ https://fpgasoftware.intel.com/eula.
 ;                 |alt_synch_pipe_m9l:ws_dgrp     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ;
 ;                     |dffpipe_7v8:dffpipe9       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp|dffpipe_7v8:dffpipe9 ;
 ;     |accum:module_gen[1].accum_i                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i                                                                                                   ;
-;         |altshift_taps:buffer_rtl_0             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0                                                                        ;
-;             |shift_taps_til:auto_generated      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated                                          ;
-;                 |altsyncram_ms71:altsyncram2    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2              ;
-;                 |cntr_97f:cntr1                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1                           ;
-;                     |cmpr_krb:cmpr4             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1|cmpr_krb:cmpr4            ;
 ;     |fifo2:module_gen[1].fifo_i                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[1].fifo_i                                                                                                    ;
 ;         |dcfifo:dcfifo_component                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component                                                                            ;
 ;             |dcfifo_csi1:auto_generated         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |pdm_to_pcm|fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ;
@@ -333,7 +334,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; VCCIO          ; 7.92 mA                 ; 0.00 mA                   ; 7.92 mA                  ; 7.92 mA                          ;
+; VCCIO          ; 7.94 mA                 ; 0.00 mA                   ; 7.94 mA                  ; 7.94 mA                          ;
 ; VCCA           ; 0.00 mA                 ; 0.00 mA                   ; 0.00 mA                  ; 0.00 mA                          ;
 ; VCC_ONE        ; 36.89 mA                ; 0.00 mA                   ; 36.89 mA                 ; 36.89 mA                         ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
@@ -351,7 +352,7 @@ https://fpgasoftware.intel.com/eula.
 ; 2        ; 2.5V          ; 0.27 mA             ; 0.00 mA               ; 0.27 mA              ;
 ; 3        ; 3.3V          ; 1.65 mA             ; 0.00 mA               ; 1.65 mA              ;
 ; 4        ; 3.3V          ; 1.65 mA             ; 0.00 mA               ; 1.65 mA              ;
-; 5        ; 2.5V          ; 0.25 mA             ; 0.00 mA               ; 0.25 mA              ;
+; 5        ; 2.5V          ; 0.27 mA             ; 0.00 mA               ; 0.27 mA              ;
 ; 6        ; 3.3V          ; 1.71 mA             ; 0.00 mA               ; 1.71 mA              ;
 ; 7        ; 3.3V          ; 1.62 mA             ; 0.00 mA               ; 1.62 mA              ;
 ; 8        ; 2.5V          ; 0.26 mA             ; 0.00 mA               ; 0.26 mA              ;
@@ -363,38 +364,38 @@ https://fpgasoftware.intel.com/eula.
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; 2.5V          ; 1.29 mA                 ; 0.00 mA                   ; 1.29 mA                  ; 1.29 mA                          ;
+; 2.5V          ; 1.31 mA                 ; 0.00 mA                   ; 1.31 mA                  ; 1.31 mA                          ;
 ; 3.3V          ; 6.63 mA                 ; 0.00 mA                   ; 6.63 mA                  ; 6.63 mA                          ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 (1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
 (2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Confidence Metric Details                                                                                                                          ;
-+----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
-; Data Source                                                                            ; Total        ; Pin        ; Registered    ; Combinational ;
-+----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
-; Simulation (from file)                                                                 ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
-;                                                                                        ;              ;            ;               ;               ;
-; Node, entity or clock assignment                                                       ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 4 (0.2%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 4 (0.3%)      ;
-;                                                                                        ;              ;            ;               ;               ;
-; Vectorless estimation                                                                  ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 2523 (99.2%) ; 4 (16.7%)  ; 1107 (100.0%) ; 1412 (100.0%) ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 46 (1.8%)    ; 1 (4.2%)   ; 11 (1.0%)     ; 34 (2.4%)     ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 2519 (99.1%) ; 4 (16.7%)  ; 1107 (100.0%) ; 1408 (99.7%)  ;
-;                                                                                        ;              ;            ;               ;               ;
-; Default assignment                                                                     ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Default assignment               ; 20 (0.8%)    ; 20 (83.3%) ; 0 (0.0%)      ; 0 (0.0%)      ;
-;                                                                                        ;              ;            ;               ;               ;
-; Assumed 0                                                                              ;              ;            ;               ;               ;
-;     -- Number of signals with Toggle Rate assumed 0                                    ; 20 (0.8%)    ; 20 (83.3%) ; 0 (0.0%)      ; 0 (0.0%)      ;
-+----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                           ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
+; Data Source                                                                            ; Total         ; Pin        ; Registered    ; Combinational ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
+; Simulation (from file)                                                                 ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Node, entity or clock assignment                                                       ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 5 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 5 (0.1%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Vectorless estimation                                                                  ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 13742 (99.9%) ; 12 (37.5%) ; 6817 (100.0%) ; 6913 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 33 (0.2%)     ; 1 (3.1%)   ; 3 (0.0%)      ; 29 (0.4%)     ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 13737 (99.8%) ; 12 (37.5%) ; 6817 (100.0%) ; 6908 (99.9%)  ;
+;                                                                                        ;               ;            ;               ;               ;
+; Default assignment                                                                     ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 20 (0.1%)     ; 20 (62.5%) ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Assumed 0                                                                              ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 20 (0.1%)     ; 20 (62.5%) ; 0 (0.0%)      ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -411,7 +412,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Dec  2 21:51:40 2019
+    Info: Processing started: Wed Dec  4 18:27:12 2019
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (125092): Tcl Script File ../synthesis/bform.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
@@ -424,13 +425,17 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_6v8:dffpipe6|dffe7a* 
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pdm_to_pcm.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Warning (332060): Node: clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register spi_slave:spislv|dataToSendBuffer[7] is being clocked by clk
-Warning (332060): Node: fifo_rdclk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|rdptr_g[1] is being clocked by fifo_rdclk
-Warning (332060): Node: gen_ACC_clk:gpc|outclk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|delayed_wrptr_g[5] is being clocked by gen_ACC_clk:gpc|outclk
+    Info (13166): Register spi_slave:spislv|bitcnt[1] is being clocked by clk
 Warning (332060): Node: pdm_clk_gen was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register gen_ACC_clk:gpc|outclk is being clocked by pdm_clk_gen
+    Info (13166): Register gen_ACC_clk:gpc|counter[0] is being clocked by pdm_clk_gen
+Warning (332060): Node: beamformer:beaf|clk was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register beamformer:beaf|mic_count[0] is being clocked by beamformer:beaf|clk
+Warning (332060): Node: beam_clk was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register beamformer:beaf|clk is being clocked by beam_clk
+Warning (332060): Node: fifo_rdclk was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|rdptr_g[1] is being clocked by fifo_rdclk
+Warning (332060): Node: gen_ACC_clk:gpc|outclk was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|delayed_wrptr_g[3] is being clocked by gen_ACC_clk:gpc|outclk
 Warning (332068): No clocks defined in design.
 Info (223000): Starting Vectorless Power Activity Estimation
 Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
@@ -439,11 +444,11 @@ Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specifi
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
-Info (215031): Total thermal power estimate for the design is 135.61 mW
-Info: Quartus Prime Power Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 1310 megabytes
-    Info: Processing ended: Mon Dec  2 21:51:42 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+Info (215031): Total thermal power estimate for the design is 135.65 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 1348 megabytes
+    Info: Processing ended: Wed Dec  4 18:27:17 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:10
 
 
