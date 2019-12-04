@@ -81,13 +81,14 @@ module beamformer #(
 		end
 		else begin
 			mic_count <= mic_count + 5'd1;
-			if( ROMcounter_vert < GRID_SIZE )
-				if( ROMcounter_hori < GRID_SIZE ) 
+			if( ROMcounter_vert < GRID_SIZE ) begin
+				if( ROMcounter_hori < GRID_SIZE-1) 
 					ROMcounter_hori <= ROMcounter_hori + 3'd1;
 				else begin
 					ROMcounter_hori <= 0;
 					ROMcounter_vert <= ROMcounter_vert + 3'd1;
 				end
+			end
 			else 
 				ROMcounter_vert <= GRID_SIZE;
 		end
@@ -101,7 +102,7 @@ module beamformer #(
 			ROM_rd_en <= 0;
 			
 		lookup_delays[mic_count] <= hori_delay;	// latch. kinda ugly
-		delay_check <= ROMcounter_vert[2:0];
+		delay_check <= hori_delay[3:0];
 	end
 	
 	///////////////////////

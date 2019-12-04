@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Tue Dec  3 23:24:37 2019
+Analysis & Synthesis Status : Successful - Wed Dec  4 00:03:32 2019
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : pdm_to_pcm
 Top-level Entity Name : pdm_to_pcm
 Family : MAX 10
-Total logic elements : 1,059
-    Total combinational functions : 566
-    Dedicated logic registers : 778
-Total registers : 778
+Total logic elements : 1,066
+    Total combinational functions : 571
+    Dedicated logic registers : 781
+Total registers : 781
 Total pins : 20
 Total virtual pins : 0
-Total memory bits : 9,216
+Total memory bits : 9,552
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
 UFM blocks : 0
