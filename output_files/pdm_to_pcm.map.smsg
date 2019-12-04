@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at pdm_to_pcm.v(194): always construct contains both blocking and non-blocking assignments File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 194

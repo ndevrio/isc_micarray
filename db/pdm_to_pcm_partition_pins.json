@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "dc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dc[1]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

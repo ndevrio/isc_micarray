@@ -39,7 +39,9 @@ module pdm_to_pcm #(
 	 output miso,
 	 
 	 // Debug signals
-	 output accum_clk
+	 output accum_clk,
+	 
+	 output wire [3:0] dc
 	 );
 	 
 	 ///////////////////////////////////////////////////////////////
@@ -52,6 +54,7 @@ module pdm_to_pcm #(
 	 
 	 // Counter used in PDM clock divider
 	 reg[3:0] pdm_clk_counter; // calculated as roundup(log2(PDM_CLK_DEC_FACTOR))
+	 reg[3:0] steering_clk_counter;
 	 
 	 // Registers used to store accumulated PDM values
 	 wire[BIT_WIDTH-1:0] accum_val [0:NUM_MICS-1];
@@ -78,6 +81,8 @@ module pdm_to_pcm #(
 	 reg[4:0] mic_counter; // calculated as roundup(log2(NUM_MICS))
 	 
 	 reg[BIT_WIDTH-1:0] PCM_averager1 [0:NUM_MICS-1], PCM_averager2 [0:NUM_MICS-1], PCM_averager3 [0:NUM_MICS-1], PCM_averager4 [0:NUM_MICS-1];
+	 
+	 reg steering_angle_clk;
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   MODULE INSTANTIATION   //////////////////////////////////
@@ -120,15 +125,24 @@ module pdm_to_pcm #(
 		 .byteReceived(spi_byte_received),
 		 .receivedData(spi_received_data),
 		 .dataNeeded(spi_data_needed),
-		 .dataToSend(spi_data_to_send));
+		 .dataToSend(spi_data_to_send)
+	 );
 		 
 	 wire update_steering_angle;
 	 wire [BIT_WIDTH-1:0] steering_angle_hori_in, steering_angle_vert_in;
 	 wire[BIT_WIDTH-1:0] tmp;
-	 assign steering_angle_hori_in = 8'd00;
-	 assign steering_angle_vert_in = 8'd20;
-	 assign update_steering_angle = 0;
-	 beamformer beaf(.clk(accum_clk), .steering_angle_en_async(update_steering_angle), .steering_angle_hori(steering_angle_hori_in), .steering_angle_vert(steering_angle_vert_in), .pcm_data_in(accum_val), .delay_sum_data_out(tmp));
+	 assign steering_angle_hori_in = 8'd20;
+	 assign steering_angle_vert_in = 8'd00;
+	 assign update_steering_angle = steering_angle_clk;
+	 beamformer beaf(
+		.clk(accum_clk),
+		.steering_angle_en_async(update_steering_angle),
+		.steering_angle_hori(steering_angle_hori_in),
+		.steering_angle_vert(steering_angle_vert_in),
+		.pcm_data_in(accum_val),
+		.delay_sum_data_out(tmp),
+		.delay_check(dc)
+	 );
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   SYNCHRONOUS BLOCKS   ////////////////////////////////////
@@ -192,6 +206,13 @@ module pdm_to_pcm #(
 					//PCM_averager4[j] <= PCM_averager3[j];
 					fifo_wrreq[j] <= ~fifo_wrfull[j];// & ssel;
 				end
+		  end
+		  
+		  // Generate PDM clock by decimating from system clock
+		  steering_clk_counter = steering_clk_counter + 1;
+		  if(steering_clk_counter == NUM_MICS) begin
+		     steering_clk_counter = 0;
+			  steering_angle_clk = ~steering_angle_clk; 
 		  end
 	 end
 	 

@@ -148,14 +148,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 75        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 76        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 77        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 78        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 79        :        :                   :         : 5         :                
+dc[3]                        : 79        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 81        :        :                   :         : 5         :                
+dc[2]                        : 81        : output : 2.5 V             :         : 5         : Y              
 VCCIO5                       : 82        : power  :                   : 2.5V    : 5         :                
 GND                          : 83        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
+dc[1]                        : 84        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
+dc[0]                        : 86        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 pdm[5]                       : 88        : input  : 3.3-V LVCMOS      :         : 6         : Y              
 pdm[6]                       : 89        : input  : 3.3-V LVCMOS      :         : 6         : Y              

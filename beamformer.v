@@ -29,11 +29,13 @@ module beamformer #(
 	input clk,
 
 	input steering_angle_en_async,
-	input [4:0] steering_angle_hori,
-	input [4:0] steering_angle_vert,
+	input signed [6:0] steering_angle_hori,
+	input signed [6:0] steering_angle_vert,
 	input [BIT_WIDTH-1:0] pcm_data_in [0:NUM_MICS-1],
 
-	output reg [BIT_WIDTH-1:0] delay_sum_data_out
+	output reg [BIT_WIDTH-1:0] delay_sum_data_out,
+	
+	output reg [3:0] delay_check
 	);
 	
 	/////////////////////////
@@ -60,15 +62,15 @@ module beamformer #(
 	micloc miclocROM(.address_a(idx_hori), .address_b(idx_vert), .clock(clk), .rden_a(ROM_rd_en), .rden_b(ROM_rd_en), .q_a(hori_delay), .q_b(vert_delay));
 	
 	wire [7:0] abs_steering_angle_vert, abs_steering_angle_hori;
-	assign abs_steering_angle_vert = (steering_angle_vert >= 0) ? steering_angle_vert : 5'd1-steering_angle_vert;
-	assign abs_steering_angle_hori = (steering_angle_hori >= 0) ? steering_angle_hori : 5'd1-steering_angle_hori;
+	assign abs_steering_angle_vert = (steering_angle_vert >= 0) ? steering_angle_vert : -steering_angle_vert;
+	assign abs_steering_angle_hori = (steering_angle_hori >= 0) ? steering_angle_hori : -steering_angle_hori;
 	
 	assign calcDelays = steering_angle_en_sync == 2'b01;
-	assign raw_idx_vert = ROMcounter_vert << 6 + abs_steering_angle_vert;
-	assign raw_idx_hori = ROMcounter_hori << 6 + abs_steering_angle_hori;
+	assign raw_idx_vert = ROMcounter_vert * 28 + abs_steering_angle_vert;
+	assign raw_idx_hori = ROMcounter_hori * 28 + abs_steering_angle_hori;
 	
-	assign idx_vert = (steering_angle_vert > 0) ? raw_idx_vert : GRID_SIZE - ROMcounter_vert << 6 + abs_steering_angle_vert;
-	assign idx_hori = (steering_angle_hori > 0) ? raw_idx_hori : GRID_SIZE - ROMcounter_hori << 6 + abs_steering_angle_hori;
+	assign idx_vert = (steering_angle_vert > 0) ? raw_idx_vert : (GRID_SIZE-1 - ROMcounter_vert) * 28 + abs_steering_angle_vert;
+	assign idx_hori = (steering_angle_hori > 0) ? raw_idx_hori : (GRID_SIZE-1 - ROMcounter_hori) * 28 + abs_steering_angle_hori;
 	
 	// Sweep mics from left to right, top to bottom
 	always @ (posedge clk)begin
@@ -99,6 +101,7 @@ module beamformer #(
 			ROM_rd_en <= 0;
 			
 		lookup_delays[mic_count] <= hori_delay;	// latch. kinda ugly
+		delay_check <= ROMcounter_vert[2:0];
 	end
 	
 	///////////////////////
