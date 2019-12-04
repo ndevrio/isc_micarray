@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pdm_to_pcm
-Tue Dec  3 16:19:40 2019
+Tue Dec  3 21:28:19 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -103,27 +103,74 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  95. Source assignments for fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_cvi1:auto_generated|alt_synch_pipe_s9l:ws_dgrp|dffpipe_dv8:dffpipe9
  96. Parameter Settings for User Entity Instance: Top-level Entity: |pdm_to_pcm
  97. Parameter Settings for User Entity Instance: fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component
- 98. Parameter Settings for User Entity Instance: fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component
- 99. Parameter Settings for User Entity Instance: fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component
-100. Parameter Settings for User Entity Instance: fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component
-101. Parameter Settings for User Entity Instance: fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component
-102. Parameter Settings for User Entity Instance: fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component
-103. Parameter Settings for User Entity Instance: fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component
-104. Parameter Settings for User Entity Instance: fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component
-105. Parameter Settings for User Entity Instance: fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component
-106. Parameter Settings for User Entity Instance: cic_d:cic_filter
-107. Parameter Settings for User Entity Instance: cic_d:cic_filter|integrator:int_stage[0].int_inst
-108. Parameter Settings for User Entity Instance: cic_d:cic_filter|integrator:int_stage[1].int_inst
-109. Parameter Settings for User Entity Instance: cic_d:cic_filter|downsampler:u1
-110. Parameter Settings for User Entity Instance: cic_d:cic_filter|comb:comb_stage[0].comb_inst
-111. Parameter Settings for User Entity Instance: cic_d:cic_filter|comb:comb_stage[1].comb_inst
-112. dcfifo Parameter Settings by Entity Instance
-113. Port Connectivity Checks: "spi_slave:spislv"
-114. Port Connectivity Checks: "cic_d:cic_filter|downsampler:u1"
-115. Port Connectivity Checks: "cic_d:cic_filter"
-116. Post-Synthesis Netlist Statistics for Top Partition
-117. Elapsed Time Per Partition
-118. Analysis & Synthesis Messages
+ 98. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i
+ 99. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|integrator:int_stage[0].int_inst
+100. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|integrator:int_stage[1].int_inst
+101. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|downsampler:u1
+102. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|comb:comb_stage[0].comb_inst
+103. Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|comb:comb_stage[1].comb_inst
+104. Parameter Settings for User Entity Instance: fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component
+105. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i
+106. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|integrator:int_stage[0].int_inst
+107. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|integrator:int_stage[1].int_inst
+108. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|downsampler:u1
+109. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|comb:comb_stage[0].comb_inst
+110. Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|comb:comb_stage[1].comb_inst
+111. Parameter Settings for User Entity Instance: fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component
+112. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i
+113. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|integrator:int_stage[0].int_inst
+114. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|integrator:int_stage[1].int_inst
+115. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|downsampler:u1
+116. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|comb:comb_stage[0].comb_inst
+117. Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|comb:comb_stage[1].comb_inst
+118. Parameter Settings for User Entity Instance: fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component
+119. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i
+120. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|integrator:int_stage[0].int_inst
+121. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|integrator:int_stage[1].int_inst
+122. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|downsampler:u1
+123. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|comb:comb_stage[0].comb_inst
+124. Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|comb:comb_stage[1].comb_inst
+125. Parameter Settings for User Entity Instance: fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component
+126. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i
+127. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|integrator:int_stage[0].int_inst
+128. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|integrator:int_stage[1].int_inst
+129. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|downsampler:u1
+130. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|comb:comb_stage[0].comb_inst
+131. Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|comb:comb_stage[1].comb_inst
+132. Parameter Settings for User Entity Instance: fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component
+133. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i
+134. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|integrator:int_stage[0].int_inst
+135. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|integrator:int_stage[1].int_inst
+136. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|downsampler:u1
+137. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|comb:comb_stage[0].comb_inst
+138. Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|comb:comb_stage[1].comb_inst
+139. Parameter Settings for User Entity Instance: fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component
+140. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i
+141. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|integrator:int_stage[0].int_inst
+142. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|integrator:int_stage[1].int_inst
+143. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|downsampler:u1
+144. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|comb:comb_stage[0].comb_inst
+145. Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|comb:comb_stage[1].comb_inst
+146. Parameter Settings for User Entity Instance: fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component
+147. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i
+148. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|integrator:int_stage[0].int_inst
+149. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|integrator:int_stage[1].int_inst
+150. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|downsampler:u1
+151. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|comb:comb_stage[0].comb_inst
+152. Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|comb:comb_stage[1].comb_inst
+153. Parameter Settings for User Entity Instance: fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component
+154. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i
+155. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|integrator:int_stage[0].int_inst
+156. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|integrator:int_stage[1].int_inst
+157. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|downsampler:u1
+158. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|comb:comb_stage[0].comb_inst
+159. Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|comb:comb_stage[1].comb_inst
+160. dcfifo Parameter Settings by Entity Instance
+161. Port Connectivity Checks: "spi_slave:spislv"
+162. Port Connectivity Checks: "cic_d:module_gen[0].cic_filter_i|downsampler:u1"
+163. Post-Synthesis Netlist Statistics for Top Partition
+164. Elapsed Time Per Partition
+165. Analysis & Synthesis Messages
 
 
 
@@ -150,15 +197,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  3 16:19:40 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  3 21:28:19 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,354                                       ;
-;     Total combinational functions  ; 770                                         ;
-;     Dedicated logic registers      ; 1,011                                       ;
-; Total registers                    ; 1011                                        ;
+; Total logic elements               ; 2,329                                       ;
+;     Total combinational functions  ; 1,625                                       ;
+;     Dedicated logic registers      ; 1,987                                       ;
+; Total registers                    ; 1987                                        ;
 ; Total pins                         ; 16                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 34,560                                      ;
@@ -273,7 +320,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -320,37 +367,37 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 1,354      ;
-;                                             ;            ;
-; Total combinational functions               ; 770        ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 442        ;
-;     -- 3 input functions                    ; 151        ;
-;     -- <=2 input functions                  ; 177        ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 702        ;
-;     -- arithmetic mode                      ; 68         ;
-;                                             ;            ;
-; Total registers                             ; 1011       ;
-;     -- Dedicated logic registers            ; 1011       ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 16         ;
-; Total memory bits                           ; 34560      ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; fifo_wrclk ;
-; Maximum fan-out                             ; 577        ;
-; Total fan-out                               ; 7951       ;
-; Average fan-out                             ; 4.08       ;
-+---------------------------------------------+------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 2,329       ;
+;                                             ;             ;
+; Total combinational functions               ; 1625        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 442         ;
+;     -- 3 input functions                    ; 615         ;
+;     -- <=2 input functions                  ; 568         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 1093        ;
+;     -- arithmetic mode                      ; 532         ;
+;                                             ;             ;
+; Total registers                             ; 1987        ;
+;     -- Dedicated logic registers            ; 1987        ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 16          ;
+; Total memory bits                           ; 34560       ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; pdm_clk_gen ;
+; Maximum fan-out                             ; 1120        ;
+; Total fan-out                               ; 13295       ;
+; Average fan-out                             ; 3.52        ;
++---------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -358,13 +405,61 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                       ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |pdm_to_pcm                               ; 770 (144)           ; 1011 (64)                 ; 34560       ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                               ; pdm_to_pcm         ; work         ;
-;    |cic_d:cic_filter|                     ; 119 (0)             ; 115 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter                                                                                                              ; cic_d              ; work         ;
-;       |comb:comb_stage[0].comb_inst|      ; 31 (31)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter|comb:comb_stage[0].comb_inst                                                                                 ; comb               ; work         ;
-;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter|comb:comb_stage[1].comb_inst                                                                                 ; comb               ; work         ;
-;       |downsampler:u1|                    ; 26 (26)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter|downsampler:u1                                                                                               ; downsampler        ; work         ;
-;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter|integrator:int_stage[0].int_inst                                                                             ; integrator         ; work         ;
-;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:cic_filter|integrator:int_stage[1].int_inst                                                                             ; integrator         ; work         ;
+; |pdm_to_pcm                               ; 1625 (143)          ; 1987 (184)                ; 34560       ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                               ; pdm_to_pcm         ; work         ;
+;    |cic_d:module_gen[0].cic_filter_i|     ; 118 (0)             ; 115 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 26 (26)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[1].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[1].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[2].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[2].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[3].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[3].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[4].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[4].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[5].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[5].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[6].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[7].cic_filter_i|     ; 108 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 31 (31)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
+;    |cic_d:module_gen[8].cic_filter_i|     ; 107 (0)             ; 107 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i                                                                                              ; cic_d              ; work         ;
+;       |comb:comb_stage[0].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i|comb:comb_stage[0].comb_inst                                                                 ; comb               ; work         ;
+;       |comb:comb_stage[1].comb_inst|      ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i|comb:comb_stage[1].comb_inst                                                                 ; comb               ; work         ;
+;       |downsampler:u1|                    ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i|downsampler:u1                                                                               ; downsampler        ; work         ;
+;       |integrator:int_stage[0].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i|integrator:int_stage[0].int_inst                                                             ; integrator         ; work         ;
+;       |integrator:int_stage[1].int_inst|  ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|cic_d:module_gen[8].cic_filter_i|integrator:int_stage[1].int_inst                                                             ; integrator         ; work         ;
 ;    |fifo2:module_gen[0].fifo_i|           ; 52 (0)              ; 89 (0)                    ; 3840        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i                                                                                                    ; fifo2              ; work         ;
 ;       |dcfifo:dcfifo_component|           ; 52 (0)              ; 89 (0)                    ; 3840        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
 ;          |dcfifo_cvi1:auto_generated|     ; 52 (6)              ; 89 (27)                   ; 3840        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_cvi1:auto_generated                                                 ; dcfifo_cvi1        ; work         ;
@@ -845,134 +940,78 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; fifo_data_in[4][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[7][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[8][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[5][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[6][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[4][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[3][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[2][14]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][0]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][1]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][2]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][3]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][4]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][5]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][6]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][7]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][8]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][9]                      ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][10]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][11]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][12]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][13]                     ; Stuck at GND due to stuck port data_in ;
-; fifo_data_in[0][14]                     ; Stuck at GND due to stuck port data_in ;
-; spi_data_to_send[15..23]                ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 129 ;                                        ;
-+-----------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                  ;
++------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                              ; Reason for Removal                                                     ;
++------------------------------------------------------------+------------------------------------------------------------------------+
+; spi_data_to_send[15..23]                                   ; Stuck at GND due to stuck port data_in                                 ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|dv         ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|dv         ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[6] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[5] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[5] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[4] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[4] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[3] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[3] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[2] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[2] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[1] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[1] ;
+; cic_d:module_gen[1].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[2].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[3].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[4].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[5].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[6].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[7].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; cic_d:module_gen[8].cic_filter_i|downsampler:u1|counter[0] ; Merged with cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[0] ;
+; Total Number of Removed Registers = 73                     ;                                                                        ;
++------------------------------------------------------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -980,12 +1019,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1011  ;
-; Number of registers using Synchronous Clear  ; 103   ;
+; Total registers                              ; 1987  ;
+; Number of registers using Synchronous Clear  ; 599   ;
 ; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 399   ;
+; Number of registers using Clock Enable       ; 1119  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -995,7 +1034,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                    ; Fan out ;
 +----------------------------------------------------------------------------------------------------------------------+---------+
-; cic_reset_n[0]                                                                                                       ; 112     ;
+; cic_reset_n[0]                                                                                                       ; 968     ;
 ; cic_reset_n[1]                                                                                                       ; 2       ;
 ; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_cvi1:auto_generated|a_graycounter_h26:rdptr_g1p|counter5a0 ; 7       ;
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_cvi1:auto_generated|a_graycounter_h26:rdptr_g1p|counter5a0 ; 7       ;
@@ -1037,20 +1076,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
-; 3:1                ; 60 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |pdm_to_pcm|cic_d:cic_filter|comb:comb_stage[0].comb_inst|data_reg[0][5] ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |pdm_to_pcm|cic_d:cic_filter|downsampler:u1|data_out[5]                  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|mic_counter[0]                                               ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |pdm_to_pcm|cic_d:cic_filter|downsampler:u1|counter[0]                   ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[22]                        ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[12]                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|bitcnt[2]                                   ;
-; 17:1               ; 15 bits   ; 165 LEs       ; 90 LEs               ; 75 LEs                 ; Yes        ; |pdm_to_pcm|spi_data_to_send[11]                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; 3:1                ; 540 bits  ; 1080 LEs      ; 540 LEs              ; 540 LEs                ; Yes        ; |pdm_to_pcm|cic_d:module_gen[7].cic_filter_i|comb:comb_stage[0].comb_inst|data_reg[0][14] ;
+; 3:1                ; 135 bits  ; 270 LEs       ; 135 LEs              ; 135 LEs                ; Yes        ; |pdm_to_pcm|cic_d:module_gen[6].cic_filter_i|downsampler:u1|data_out[8]                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|mic_counter[3]                                                                ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |pdm_to_pcm|cic_d:module_gen[0].cic_filter_i|downsampler:u1|counter[6]                    ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[16]                                         ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[4]                                          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|bitcnt[3]                                                    ;
+; 17:1               ; 15 bits   ; 165 LEs       ; 90 LEs               ; 75 LEs                 ; Yes        ; |pdm_to_pcm|spi_data_to_send[0]                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -1954,6 +1993,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[0].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component ;
 +-------------------------+-------------+---------------------------------------------------------+
@@ -1985,6 +2095,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_ACLR_SYNCH         ; OFF         ; Untyped                                                 ;
 ; CBXI_PARAMETER          ; dcfifo_cvi1 ; Untyped                                                 ;
 +-------------------------+-------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[1].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2022,6 +2203,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[2].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component ;
 +-------------------------+-------------+---------------------------------------------------------+
@@ -2053,6 +2305,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_ACLR_SYNCH         ; OFF         ; Untyped                                                 ;
 ; CBXI_PARAMETER          ; dcfifo_cvi1 ; Untyped                                                 ;
 +-------------------------+-------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[3].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2090,6 +2413,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[4].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component ;
 +-------------------------+-------------+---------------------------------------------------------+
@@ -2121,6 +2515,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_ACLR_SYNCH         ; OFF         ; Untyped                                                 ;
 ; CBXI_PARAMETER          ; dcfifo_cvi1 ; Untyped                                                 ;
 +-------------------------+-------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[5].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2158,6 +2623,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[6].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component ;
 +-------------------------+-------------+---------------------------------------------------------+
@@ -2189,6 +2725,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_ACLR_SYNCH         ; OFF         ; Untyped                                                 ;
 ; CBXI_PARAMETER          ; dcfifo_cvi1 ; Untyped                                                 ;
 +-------------------------+-------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[7].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2226,74 +2833,74 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; idw            ; 1     ; Signed Integer                       ;
-; odw            ; 15    ; Signed Integer                       ;
-; r              ; 128   ; Signed Integer                       ;
-; m              ; 2     ; Signed Integer                       ;
-; g              ; 1     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; idw            ; 1     ; Signed Integer                                       ;
+; odw            ; 15    ; Signed Integer                                       ;
+; r              ; 128   ; Signed Integer                                       ;
+; m              ; 2     ; Signed Integer                                       ;
+; g              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter|integrator:int_stage[0].int_inst ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; idw            ; 16    ; Signed Integer                                                        ;
-; odw            ; 16    ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|integrator:int_stage[0].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter|integrator:int_stage[1].int_inst ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; idw            ; 16    ; Signed Integer                                                        ;
-; odw            ; 16    ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|integrator:int_stage[1].int_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; idw            ; 16    ; Signed Integer                                                                        ;
+; odw            ; 16    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter|downsampler:u1 ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; dw             ; 16    ; Signed Integer                                      ;
-; r              ; 128   ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|downsampler:u1 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; dw             ; 16    ; Signed Integer                                                      ;
+; r              ; 128   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter|comb:comb_stage[0].comb_inst ;
-+----------------+-------+-------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                              ;
-+----------------+-------+-------------------------------------------------------------------+
-; idw            ; 15    ; Signed Integer                                                    ;
-; odw            ; 15    ; Signed Integer                                                    ;
-; g              ; 1     ; Signed Integer                                                    ;
-+----------------+-------+-------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|comb:comb_stage[0].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cic_d:cic_filter|comb:comb_stage[1].comb_inst ;
-+----------------+-------+-------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                              ;
-+----------------+-------+-------------------------------------------------------------------+
-; idw            ; 15    ; Signed Integer                                                    ;
-; odw            ; 15    ; Signed Integer                                                    ;
-; g              ; 1     ; Signed Integer                                                    ;
-+----------------+-------+-------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cic_d:module_gen[8].cic_filter_i|comb:comb_stage[1].comb_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; idw            ; 15    ; Signed Integer                                                                    ;
+; odw            ; 15    ; Signed Integer                                                                    ;
+; g              ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2371,21 +2978,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cic_d:cic_filter|downsampler:u1"                                                           ;
+; Port Connectivity Checks: "cic_d:module_gen[0].cic_filter_i|downsampler:u1"                                           ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; data_out[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cic_d:cic_filter"                                                                                                                                                           ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; data_out ; Output ; Warning  ; Output or bidir port (15 bits) is smaller than the port expression (22 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -2394,26 +2992,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 16                          ;
-; cycloneiii_ff         ; 1011                        ;
-;     ENA               ; 335                         ;
-;     ENA SCLR          ; 49                          ;
+; cycloneiii_ff         ; 1987                        ;
+;     ENA               ; 815                         ;
+;     ENA SCLR          ; 289                         ;
 ;     ENA SCLR SLD      ; 15                          ;
-;     SCLR              ; 39                          ;
+;     SCLR              ; 295                         ;
 ;     plain             ; 573                         ;
-; cycloneiii_lcell_comb ; 770                         ;
-;     arith             ; 68                          ;
+; cycloneiii_lcell_comb ; 1625                        ;
+;     arith             ; 532                         ;
 ;         2 data inputs ; 10                          ;
-;         3 data inputs ; 58                          ;
-;     normal            ; 702                         ;
-;         0 data inputs ; 1                           ;
+;         3 data inputs ; 522                         ;
+;     normal            ; 1093                        ;
 ;         1 data inputs ; 30                          ;
-;         2 data inputs ; 136                         ;
+;         2 data inputs ; 528                         ;
 ;         3 data inputs ; 93                          ;
 ;         4 data inputs ; 442                         ;
 ; cycloneiii_ram_block  ; 135                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.15                        ;
+; Average LUT depth     ; 2.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2432,21 +3029,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Dec  3 16:19:23 2019
+    Info: Processing started: Tue Dec  3 21:28:01 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (125092): Tcl Script File ../synthesis/bform.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "cic.qsys"
-Info (12250): 2019.12.03.16:19:30 Progress: Loading isc_micarray/cic.qsys
-Info (12250): 2019.12.03.16:19:30 Progress: Reading input file
-Info (12250): 2019.12.03.16:19:30 Progress: Adding cic_ii_0 [altera_cic_ii 19.1]
-Info (12250): 2019.12.03.16:19:30 Progress: Parameterizing module cic_ii_0
-Info (12250): 2019.12.03.16:19:30 Progress: Building connections
-Info (12250): 2019.12.03.16:19:30 Progress: Parameterizing connections
-Info (12250): 2019.12.03.16:19:30 Progress: Validating
-Info (12250): 2019.12.03.16:19:30 Progress: Done reading input file
+Info (12250): 2019.12.03.21:28:07 Progress: Loading isc_micarray/cic.qsys
+Info (12250): 2019.12.03.21:28:07 Progress: Reading input file
+Info (12250): 2019.12.03.21:28:07 Progress: Adding cic_ii_0 [altera_cic_ii 19.1]
+Info (12250): 2019.12.03.21:28:07 Progress: Parameterizing module cic_ii_0
+Info (12250): 2019.12.03.21:28:07 Progress: Building connections
+Info (12250): 2019.12.03.21:28:07 Progress: Parameterizing connections
+Info (12250): 2019.12.03.21:28:07 Progress: Validating
+Info (12250): 2019.12.03.21:28:07 Progress: Done reading input file
 Info (12250): Cic: Generating cic "cic" for QUARTUS_SYNTH
 Info (12250): Cic_ii_0: "cic" instantiated altera_cic_ii "cic_ii_0"
 Info (12250): Cic: Done "cic" with 2 modules, 30 files
@@ -2561,7 +3158,7 @@ Warning (10036): Verilog HDL or VHDL warning at pdm_to_pcm.v(78): object "cic_ou
 Warning (10036): Verilog HDL or VHDL warning at pdm_to_pcm.v(92): object "cic_channel_counter" assigned a value but never read File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 92
 Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(172): truncated value with size 32 to match size of target (4) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 172
 Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(198): truncated value with size 32 to match size of target (5) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 198
-Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(255): truncated value with size 19 to match size of target (15) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 255
+Warning (10230): Verilog HDL assignment warning at pdm_to_pcm.v(254): truncated value with size 19 to match size of target (15) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 254
 Info (12128): Elaborating entity "fifo2" for hierarchy "fifo2:module_gen[0].fifo_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 115
 Info (12128): Elaborating entity "dcfifo" for hierarchy "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 80
 Info (12130): Elaborated megafunction instantiation "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/fifo2.v Line: 80
@@ -2605,40 +3202,31 @@ Info (12128): Elaborating entity "dffpipe_dv8" for hierarchy "fifo2:module_gen[0
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5h5.tdf
     Info (12023): Found entity 1: cmpr_5h5 File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/cmpr_5h5.tdf Line: 23
 Info (12128): Elaborating entity "cmpr_5h5" for hierarchy "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_cvi1:auto_generated|cmpr_5h5:rdempty_eq_comp" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/dcfifo_cvi1.tdf Line: 60
-Info (12128): Elaborating entity "cic_d" for hierarchy "cic_d:cic_filter" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 150
+Info (12128): Elaborating entity "cic_d" for hierarchy "cic_d:module_gen[0].cic_filter_i" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 123
 Warning (10230): Verilog HDL assignment warning at cic_package.sv(90): truncated value with size 64 to match size of target (32) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_package.sv Line: 90
-Info (12128): Elaborating entity "integrator" for hierarchy "cic_d:cic_filter|integrator:int_stage[0].int_inst" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 33
-Info (12128): Elaborating entity "downsampler" for hierarchy "cic_d:cic_filter|downsampler:u1" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 48
+Info (12128): Elaborating entity "integrator" for hierarchy "cic_d:module_gen[0].cic_filter_i|integrator:int_stage[0].int_inst" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 33
+Info (12128): Elaborating entity "downsampler" for hierarchy "cic_d:module_gen[0].cic_filter_i|downsampler:u1" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 48
 Warning (10230): Verilog HDL assignment warning at downsampler.sv(23): truncated value with size 32 to match size of target (7) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/downsampler.sv Line: 23
-Info (12128): Elaborating entity "comb" for hierarchy "cic_d:cic_filter|comb:comb_stage[0].comb_inst" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 62
+Info (12128): Elaborating entity "comb" for hierarchy "cic_d:module_gen[0].cic_filter_i|comb:comb_stage[0].comb_inst" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/cic_core/cic_d.sv Line: 62
 Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:spislv" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 163
 Warning (10230): Verilog HDL assignment warning at spi_slave.v(45): truncated value with size 32 to match size of target (5) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/spi_slave.v Line: 45
 Warning (12193): Intel FPGA IP Evaluation Mode feature will not be used - it has been explicitly disabled for this design
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 19 assignments for entity "cic" -- entity does not exist in design
 Warning (20013): Ignored 59 assignments for entity "cic_cic_ii_0" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "pdm[1]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[2]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[3]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[4]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[5]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[6]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[7]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
-    Warning (15610): No output dependent on input pin "pdm[8]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 32
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mosi" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 38
-Info (21057): Implemented 1508 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2483 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 1357 logic cells
+    Info (21061): Implemented 2332 logic cells
     Info (21064): Implemented 135 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 1105 megabytes
-    Info: Processing ended: Tue Dec  3 16:19:40 2019
-    Info: Elapsed time: 00:00:17
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 1118 megabytes
+    Info: Processing ended: Tue Dec  3 21:28:19 2019
+    Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:41
 
 

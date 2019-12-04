@@ -78,9 +78,9 @@ module pdm_to_pcm #(
 	 reg cic_out_ready = 1; // ?
 	 reg[1:0] cic_reset_n = 2'b11;
 	 wire cic_in_ready;
-	 wire[18:0] cic_out_data;
+	 wire[18:0] cic_out_data [0:NUM_MICS-1]; // still used
 	 wire[1:0] cic_out_error;
-	 wire cic_out_valid;
+	 wire[NUM_MICS-1:0]  cic_out_valid; // still used
 	 wire cic_out_startofpacket;
 	 wire cic_out_endofpacket;
 	 wire[3:0] cic_out_channel;
@@ -113,6 +113,14 @@ module pdm_to_pcm #(
 				 .rdempty(fifo_rdempty[i]),
 				 .wrfull(fifo_wrfull[i])
 			 );
+			 
+			 cic_d cic_filter_i(
+				 .clk(pdm_clk),
+				 .reset_n(cic_reset_n[0]),
+				 .data_in(pdm[i]),
+				 .data_out(cic_out_data[i]),
+				 .out_dv(cic_out_valid[i])
+			 );
 		 end
 	 endgenerate
 	 
@@ -140,14 +148,6 @@ module pdm_to_pcm #(
 		 .out_endofpacket(cic_out_endofpacket),
 		 .out_channel(cic_out_channel),
 	 );*/
-	 
-	 cic_d cic_filter(
-		 .clk(pdm_clk),
-		 .reset_n(cic_reset_n[0]),
-		 .data_in(pdm[0]),
-		 .data_out(cic_out_data),
-		 .out_dv(cic_out_valid)
-	 );
 	 
 	 // Create an instance of our SPI slave controller
 	 spi_slave spislv(
@@ -251,10 +251,7 @@ module pdm_to_pcm #(
 			 end*/
 			 
 			 for (j=0; j<NUM_MICS; j=j+1) begin
-				 if(j == 1)
-					fifo_data_in[j] = cic_out_data;
-				 else
-				   fifo_data_in[j] = 0;
+				 fifo_data_in[j] = cic_out_data[j];
 				 fifo_wrreq[j] = ~fifo_wrfull[j];
 			 end
 			 
