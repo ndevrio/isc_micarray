@@ -98,7 +98,7 @@ module beamformer #(
 		else 
 			ROM_rd_en <= 0;
 			
-		lookup_delays[mic_count] <= hori_delay + vert_delay;	// latch. kinda ugly
+		lookup_delays[mic_count] <= hori_delay;	// latch. kinda ugly
 	end
 	
 	///////////////////////
@@ -129,9 +129,10 @@ module beamformer #(
 		for (b = 0; b < NUM_MICS; b=b+1 ) begin : mic
 			always @ (posedge clk) begin
 				integer l;
-				for ( l = 1; l < 255; l=l+1 ) begin
-					mic_delay[b].ffshiftreg[l] <= {mic_delay[b].ffshiftreg[l-1], pcm_data_in[b]};
+				for ( l = 255; l > 0; l=l-1 ) begin
+						mic_delay[b].ffshiftreg[l] <= mic_delay[b].ffshiftreg[l-1];
 				end
+				mic_delay[b].ffshiftreg[0] <= 128;//pcm_data_in[b];
 			end
 		end
 	endgenerate

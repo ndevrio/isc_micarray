@@ -128,7 +128,7 @@ module pdm_to_pcm #(
 	 assign steering_angle_hori_in = 8'd00;
 	 assign steering_angle_vert_in = 8'd20;
 	 assign update_steering_angle = 0;
-	 beamformer beaf(.clk(clk), .steering_angle_en_async(update_steering_angle), .steering_angle_hori(steering_angle_hori_in), .steering_angle_vert(steering_angle_vert_in), .pcm_data_in(accum_val), .delay_sum_data_out(tmp));
+	 beamformer beaf(.clk(accum_clk), .steering_angle_en_async(update_steering_angle), .steering_angle_hori(steering_angle_hori_in), .steering_angle_vert(steering_angle_vert_in), .pcm_data_in(accum_val), .delay_sum_data_out(tmp));
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   SYNCHRONOUS BLOCKS   ////////////////////////////////////
@@ -161,7 +161,7 @@ module pdm_to_pcm #(
 				if(~fifo_rdempty[mic_counter])
 					spi_data_to_send = fifo_data_out[mic_counter]; // MODIFY BASED ON BIT WIDTH
 				else
-					spi_data_to_send = 0;
+					spi_data_to_send = 7;
 					
 				mic_counter = mic_counter + 1;
 				if(mic_counter == 25) begin

@@ -26,42 +26,6 @@
 				{
 					"name" : "sck",
 					"strict" : false
-				},
-				{
-					"name" : "pdm[8]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pdm[0]",
-					"strict" : false
 				}
 			]
 		}
