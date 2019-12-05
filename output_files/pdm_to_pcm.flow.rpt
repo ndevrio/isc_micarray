@@ -1,5 +1,5 @@
 Flow report for pdm_to_pcm
-Wed Dec  4 20:00:20 2019
+Wed Dec  4 20:29:52 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,14 +41,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Dec  4 20:00:20 2019       ;
+; Flow Status                        ; Successful - Wed Dec  4 20:29:52 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08SAE144C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,818 / 8,064 ( 97 % )                      ;
+; Total logic elements               ; 7,837 / 8,064 ( 97 % )                      ;
 ;     Total combinational functions  ; 4,687 / 8,064 ( 58 % )                      ;
 ;     Dedicated logic registers      ; 6,729 / 8,064 ( 83 % )                      ;
 ; Total registers                    ; 6729                                        ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/04/2019 19:59:29 ;
+; Start date & time ; 12/04/2019 20:29:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pdm_to_pcm          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 5311873721677.157550756928538          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 5311873721677.157550934204896          ; --            ; --          ; --                                ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Precision Synthesis                    ; <None>        ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -120,10 +120,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 1138 MB             ; 00:00:26                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 1135 MB             ; 00:00:27                           ;
 ; Fitter               ; 00:00:33     ; 1.6                     ; 2112 MB             ; 00:01:20                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 863 MB              ; 00:00:01                           ;
-; Total                ; 00:00:48     ; --                      ; --                  ; 00:01:47                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 867 MB              ; 00:00:01                           ;
+; Total                ; 00:00:49     ; --                      ; --                  ; 00:01:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
