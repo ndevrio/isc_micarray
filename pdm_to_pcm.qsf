@@ -75,11 +75,11 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to miso
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mosi
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sck
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ssel
-set_location_assignment PIN_88 -to pdm[3]
-set_location_assignment PIN_106 -to pdm[2]
-set_location_assignment PIN_105 -to pdm[1]
-set_location_assignment PIN_101 -to pdm[0]
-set_location_assignment PIN_89 -to pdm[4]
+set_location_assignment PIN_100 -to pdm[3]
+set_location_assignment PIN_102 -to pdm[2]
+set_location_assignment PIN_112 -to pdm[1]
+set_location_assignment PIN_118 -to pdm[0]
+set_location_assignment PIN_98 -to pdm[4]
 set_location_assignment PIN_92 -to pdm[5]
 set_location_assignment PIN_96 -to pdm[6]
 set_location_assignment PIN_91 -to pdm[7]

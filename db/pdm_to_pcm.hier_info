@@ -9,12 +9,12 @@ pdm[5] => cic_d:module_gen[5].cic_filter_i.data_in[0]
 pdm[6] => cic_d:module_gen[6].cic_filter_i.data_in[0]
 pdm[7] => cic_d:module_gen[7].cic_filter_i.data_in[0]
 pdm[8] => cic_d:module_gen[8].cic_filter_i.data_in[0]
-pdm_clk <= pdm_clk_gen.DB_MAX_OUTPUT_PORT_TYPE
+pdm_clk << pdm_clk_gen.DB_MAX_OUTPUT_PORT_TYPE
 ssel => ssel.IN1
 sck => sck.IN1
 mosi => mosi.IN1
-miso <= spi_slave:spislv.miso
-accum_clk <= fifo_wrclk.DB_MAX_OUTPUT_PORT_TYPE
+miso << spi_slave:spislv.miso
+accum_clk << fifo_wrclk.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |pdm_to_pcm|fifo2:module_gen[0].fifo_i
