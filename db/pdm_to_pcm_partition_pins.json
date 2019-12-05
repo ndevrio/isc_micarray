@@ -60,11 +60,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "pdm[0]",
+					"name" : "pdm[2]",
 					"strict" : false
 				},
 				{
-					"name" : "pdm[2]",
+					"name" : "pdm[0]",
 					"strict" : false
 				},
 				{

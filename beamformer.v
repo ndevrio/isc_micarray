@@ -21,10 +21,10 @@
 
 
 module beamformer #(
-	parameter BIT_WIDTH=4'd8,
+	parameter BIT_WIDTH=8,
 	parameter SUM_WIDTH=16,
-	parameter NUM_MICS=4'd9,
-	parameter GRID_SIZE=3'd3
+	parameter NUM_MICS=9,
+	parameter GRID_SIZE=3
 	) 
 	(
 	input double_clk,
@@ -110,7 +110,7 @@ module beamformer #(
 			ROM_rd_en <= 0;
 			
 		lookup_delays[mic_count] <= hori_delay;	// latch. kinda ugly
-		delay_check <= tapped_data[0];
+		delay_check <= delay_sum_data_out[7:0];
 	end
 	
 	///////////////////////
@@ -119,7 +119,7 @@ module beamformer #(
 	wire [127:0] _taps [0:NUM_MICS-1];
 	
 	wire [7:0] dummy [0:NUM_MICS-1];
-	wire [BIT_WIDTH-1:0] tapped_data [0:NUM_MICS-1];
+	wire [2*BIT_WIDTH-1:0] tapped_data [0:NUM_MICS-1];
 	reg [SUM_WIDTH-1:0] summed_data;
 	generate
 		genvar k;
@@ -132,7 +132,7 @@ module beamformer #(
 	generate
 	genvar j;
 	for(j = 0; j < NUM_MICS; j=j+1) begin : tapped_dat
-		assign tapped_data[j] = mic_delay[j].ffshiftreg[lookup_delays[j]];
+		assign tapped_data[j] = {8'h00, mic_delay[j].ffshiftreg[lookup_delays[j]]};
 	end
 	endgenerate
 	
@@ -152,9 +152,9 @@ module beamformer #(
 	integer i;
 	// SUM
 	always @* begin
-		summed_data = {(SUM_WIDTH){1'b0}};	
-		for(i = 0; i < NUM_MICS; i=i+1)
-			summed_data = summed_data + tapped_data[i];
+		summed_data = (tapped_data[0] + tapped_data[1] + tapped_data[2] + tapped_data[3] +
+		              tapped_data[4] + tapped_data[5] + tapped_data[6] + tapped_data[7] + 
+						  tapped_data[8]);
 	end
 	// Clock sync of summed output
 	always @ (posedge clk) begin

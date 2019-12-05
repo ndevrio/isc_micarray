@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pdm_to_pcm
-Wed Dec  4 18:26:36 2019
+Wed Dec  4 19:59:44 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -103,7 +103,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  95. Source assignments for fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp
  96. Source assignments for fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp|dffpipe_7v8:dffpipe9
  97. Source assignments for beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_qb42:auto_generated
- 98. Source assignments for accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2
+ 98. Source assignments for accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2
  99. Parameter Settings for User Entity Instance: Top-level Entity: |pdm_to_pcm
 100. Parameter Settings for User Entity Instance: gen_ACC_clk:gpc
 101. Parameter Settings for User Entity Instance: accum:module_gen[0].accum_i
@@ -126,7 +126,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 118. Parameter Settings for User Entity Instance: fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component
 119. Parameter Settings for User Entity Instance: beamformer:beaf
 120. Parameter Settings for User Entity Instance: beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component
-121. Parameter Settings for Inferred Entity Instance: accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0
+121. Parameter Settings for Inferred Entity Instance: accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0
 122. dcfifo Parameter Settings by Entity Instance
 123. altsyncram Parameter Settings by Entity Instance
 124. altshift_taps Parameter Settings by Entity Instance
@@ -172,13 +172,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec  4 18:26:36 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec  4 19:59:44 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 11,020                                      ;
-;     Total combinational functions  ; 4,689                                       ;
+; Total logic elements               ; 11,026                                      ;
+;     Total combinational functions  ; 4,687                                       ;
 ;     Dedicated logic registers      ; 6,729                                       ;
 ; Total registers                    ; 6729                                        ;
 ; Total pins                         ; 24                                          ;
@@ -296,7 +296,7 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.2%      ;
+;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
@@ -360,16 +360,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 11,020              ;
+; Estimated Total logic elements              ; 11,026              ;
 ;                                             ;                     ;
-; Total combinational functions               ; 4689                ;
+; Total combinational functions               ; 4687                ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 4166                ;
-;     -- 3 input functions                    ; 180                 ;
-;     -- <=2 input functions                  ; 343                 ;
+;     -- 4 input functions                    ; 4176                ;
+;     -- 3 input functions                    ; 172                 ;
+;     -- <=2 input functions                  ; 339                 ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 4479                ;
+;     -- normal mode                          ; 4477                ;
 ;     -- arithmetic mode                      ; 210                 ;
 ;                                             ;                     ;
 ; Total registers                             ; 6729                ;
@@ -383,7 +383,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; beamformer:beaf|clk ;
 ; Maximum fan-out                             ; 5859                ;
-; Total fan-out                               ; 33222               ;
+; Total fan-out                               ; 33230               ;
 ; Average fan-out                             ; 2.88                ;
 +---------------------------------------------+---------------------+
 
@@ -393,14 +393,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                       ; Entity Name        ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |pdm_to_pcm                                  ; 4689 (119)          ; 6729 (55)                 ; 12081       ; 0          ; 0            ; 0       ; 0         ; 24   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                               ; pdm_to_pcm         ; work         ;
-;    |accum:module_gen[0].accum_i|             ; 36 (17)             ; 17 (9)                    ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i                                                                                                   ; accum              ; work         ;
-;       |altshift_taps:buffer_rtl_0|           ; 19 (0)              ; 8 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0                                                                        ; altshift_taps      ; work         ;
-;          |shift_taps_til:auto_generated|     ; 19 (0)              ; 8 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated                                          ; shift_taps_til     ; work         ;
-;             |altsyncram_ms71:altsyncram2|    ; 0 (0)               ; 0 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2              ; altsyncram_ms71    ; work         ;
-;             |cntr_97f:cntr1|                 ; 19 (17)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1                           ; cntr_97f           ; work         ;
-;                |cmpr_krb:cmpr4|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1|cmpr_krb:cmpr4            ; cmpr_krb           ; work         ;
-;    |accum:module_gen[1].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i                                                                                                   ; accum              ; work         ;
+; |pdm_to_pcm                                  ; 4687 (121)          ; 6729 (55)                 ; 12081       ; 0          ; 0            ; 0       ; 0         ; 24   ; 0            ; 0          ; |pdm_to_pcm                                                                                                                               ; pdm_to_pcm         ; work         ;
+;    |accum:module_gen[0].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[0].accum_i                                                                                                   ; accum              ; work         ;
+;    |accum:module_gen[1].accum_i|             ; 36 (17)             ; 17 (9)                    ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i                                                                                                   ; accum              ; work         ;
+;       |altshift_taps:buffer_rtl_0|           ; 19 (0)              ; 8 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0                                                                        ; altshift_taps      ; work         ;
+;          |shift_taps_til:auto_generated|     ; 19 (0)              ; 8 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated                                          ; shift_taps_til     ; work         ;
+;             |altsyncram_ms71:altsyncram2|    ; 0 (0)               ; 0 (0)                     ; 2277        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2              ; altsyncram_ms71    ; work         ;
+;             |cntr_97f:cntr1|                 ; 19 (17)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1                           ; cntr_97f           ; work         ;
+;                |cmpr_krb:cmpr4|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|cntr_97f:cntr1|cmpr_krb:cmpr4            ; cmpr_krb           ; work         ;
 ;    |accum:module_gen[2].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[2].accum_i                                                                                                   ; accum              ; work         ;
 ;    |accum:module_gen[3].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[3].accum_i                                                                                                   ; accum              ; work         ;
 ;    |accum:module_gen[4].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[4].accum_i                                                                                                   ; accum              ; work         ;
@@ -408,15 +408,15 @@ https://fpgasoftware.intel.com/eula.
 ;    |accum:module_gen[6].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[6].accum_i                                                                                                   ; accum              ; work         ;
 ;    |accum:module_gen[7].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[7].accum_i                                                                                                   ; accum              ; work         ;
 ;    |accum:module_gen[8].accum_i|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|accum:module_gen[8].accum_i                                                                                                   ; accum              ; work         ;
-;    |beamformer:beaf|                         ; 3920 (3920)         ; 5852 (5852)               ; 588         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|beamformer:beaf                                                                                                               ; beamformer         ; work         ;
+;    |beamformer:beaf|                         ; 3919 (3919)         ; 5852 (5852)               ; 588         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|beamformer:beaf                                                                                                               ; beamformer         ; work         ;
 ;       |micloc:miclocROM|                     ; 0 (0)               ; 0 (0)                     ; 588         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM                                                                                              ; micloc             ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 588         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component                                                              ; altsyncram         ; work         ;
 ;             |altsyncram_qb42:auto_generated| ; 0 (0)               ; 0 (0)                     ; 588         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_qb42:auto_generated                               ; altsyncram_qb42    ; work         ;
-;    |fifo2:module_gen[0].fifo_i|              ; 48 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i                                                                                                    ; fifo2              ; work         ;
-;       |dcfifo:dcfifo_component|              ; 48 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
-;          |dcfifo_csi1:auto_generated|        ; 48 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
+;    |fifo2:module_gen[0].fifo_i|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i                                                                                                    ; fifo2              ; work         ;
+;       |dcfifo:dcfifo_component|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
+;          |dcfifo_csi1:auto_generated|        ; 49 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
 ;             |a_graycounter_cgb:wrptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p                     ; a_graycounter_cgb  ; work         ;
-;             |a_graycounter_g26:rdptr_g1p|    ; 17 (17)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
+;             |a_graycounter_g26:rdptr_g1p|    ; 18 (18)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
 ;             |alt_synch_pipe_l9l:rs_dgwp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp                      ; alt_synch_pipe_l9l ; work         ;
 ;                |dffpipe_6v8:dffpipe6|        ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp|dffpipe_6v8:dffpipe6 ; dffpipe_6v8        ; work         ;
 ;             |alt_synch_pipe_m9l:ws_dgrp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ; alt_synch_pipe_m9l ; work         ;
@@ -460,11 +460,11 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_lf51:fifo_ram|       ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram                        ; altsyncram_lf51    ; work         ;
 ;             |cmpr_4h5:rdempty_eq_comp|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp                        ; cmpr_4h5           ; work         ;
 ;             |cmpr_4h5:wrfull_eq_comp|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:wrfull_eq_comp                         ; cmpr_4h5           ; work         ;
-;    |fifo2:module_gen[4].fifo_i|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i                                                                                                    ; fifo2              ; work         ;
-;       |dcfifo:dcfifo_component|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
-;          |dcfifo_csi1:auto_generated|        ; 49 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
+;    |fifo2:module_gen[4].fifo_i|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i                                                                                                    ; fifo2              ; work         ;
+;       |dcfifo:dcfifo_component|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
+;          |dcfifo_csi1:auto_generated|        ; 47 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
 ;             |a_graycounter_cgb:wrptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p                     ; a_graycounter_cgb  ; work         ;
-;             |a_graycounter_g26:rdptr_g1p|    ; 18 (18)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
+;             |a_graycounter_g26:rdptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
 ;             |alt_synch_pipe_l9l:rs_dgwp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp                      ; alt_synch_pipe_l9l ; work         ;
 ;                |dffpipe_6v8:dffpipe6|        ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp|dffpipe_6v8:dffpipe6 ; dffpipe_6v8        ; work         ;
 ;             |alt_synch_pipe_m9l:ws_dgrp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ; alt_synch_pipe_m9l ; work         ;
@@ -472,11 +472,11 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_lf51:fifo_ram|       ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram                        ; altsyncram_lf51    ; work         ;
 ;             |cmpr_4h5:rdempty_eq_comp|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp                        ; cmpr_4h5           ; work         ;
 ;             |cmpr_4h5:wrfull_eq_comp|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:wrfull_eq_comp                         ; cmpr_4h5           ; work         ;
-;    |fifo2:module_gen[5].fifo_i|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i                                                                                                    ; fifo2              ; work         ;
-;       |dcfifo:dcfifo_component|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
-;          |dcfifo_csi1:auto_generated|        ; 49 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
+;    |fifo2:module_gen[5].fifo_i|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i                                                                                                    ; fifo2              ; work         ;
+;       |dcfifo:dcfifo_component|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
+;          |dcfifo_csi1:auto_generated|        ; 47 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
 ;             |a_graycounter_cgb:wrptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p                     ; a_graycounter_cgb  ; work         ;
-;             |a_graycounter_g26:rdptr_g1p|    ; 18 (18)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
+;             |a_graycounter_g26:rdptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
 ;             |alt_synch_pipe_l9l:rs_dgwp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp                      ; alt_synch_pipe_l9l ; work         ;
 ;                |dffpipe_6v8:dffpipe6|        ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp|dffpipe_6v8:dffpipe6 ; dffpipe_6v8        ; work         ;
 ;             |alt_synch_pipe_m9l:ws_dgrp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ; alt_synch_pipe_m9l ; work         ;
@@ -484,11 +484,11 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_lf51:fifo_ram|       ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram                        ; altsyncram_lf51    ; work         ;
 ;             |cmpr_4h5:rdempty_eq_comp|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp                        ; cmpr_4h5           ; work         ;
 ;             |cmpr_4h5:wrfull_eq_comp|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:wrfull_eq_comp                         ; cmpr_4h5           ; work         ;
-;    |fifo2:module_gen[6].fifo_i|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i                                                                                                    ; fifo2              ; work         ;
-;       |dcfifo:dcfifo_component|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
-;          |dcfifo_csi1:auto_generated|        ; 47 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
+;    |fifo2:module_gen[6].fifo_i|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i                                                                                                    ; fifo2              ; work         ;
+;       |dcfifo:dcfifo_component|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
+;          |dcfifo_csi1:auto_generated|        ; 49 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
 ;             |a_graycounter_cgb:wrptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p                     ; a_graycounter_cgb  ; work         ;
-;             |a_graycounter_g26:rdptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
+;             |a_graycounter_g26:rdptr_g1p|    ; 18 (18)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
 ;             |alt_synch_pipe_l9l:rs_dgwp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp                      ; alt_synch_pipe_l9l ; work         ;
 ;                |dffpipe_6v8:dffpipe6|        ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp|dffpipe_6v8:dffpipe6 ; dffpipe_6v8        ; work         ;
 ;             |alt_synch_pipe_m9l:ws_dgrp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ; alt_synch_pipe_m9l ; work         ;
@@ -496,11 +496,11 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_lf51:fifo_ram|       ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram                        ; altsyncram_lf51    ; work         ;
 ;             |cmpr_4h5:rdempty_eq_comp|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp                        ; cmpr_4h5           ; work         ;
 ;             |cmpr_4h5:wrfull_eq_comp|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:wrfull_eq_comp                         ; cmpr_4h5           ; work         ;
-;    |fifo2:module_gen[7].fifo_i|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i                                                                                                    ; fifo2              ; work         ;
-;       |dcfifo:dcfifo_component|              ; 49 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
-;          |dcfifo_csi1:auto_generated|        ; 49 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
+;    |fifo2:module_gen[7].fifo_i|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i                                                                                                    ; fifo2              ; work         ;
+;       |dcfifo:dcfifo_component|              ; 47 (0)              ; 78 (0)                    ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component                                                                            ; dcfifo             ; work         ;
+;          |dcfifo_csi1:auto_generated|        ; 47 (5)              ; 78 (24)                   ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated                                                 ; dcfifo_csi1        ; work         ;
 ;             |a_graycounter_cgb:wrptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p                     ; a_graycounter_cgb  ; work         ;
-;             |a_graycounter_g26:rdptr_g1p|    ; 18 (18)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
+;             |a_graycounter_g26:rdptr_g1p|    ; 16 (16)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p                     ; a_graycounter_g26  ; work         ;
 ;             |alt_synch_pipe_l9l:rs_dgwp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp                      ; alt_synch_pipe_l9l ; work         ;
 ;                |dffpipe_6v8:dffpipe6|        ; 0 (0)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_l9l:rs_dgwp|dffpipe_6v8:dffpipe6 ; dffpipe_6v8        ; work         ;
 ;             |alt_synch_pipe_m9l:ws_dgrp|     ; 0 (0)               ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pdm_to_pcm|fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|alt_synch_pipe_m9l:ws_dgrp                      ; alt_synch_pipe_m9l ; work         ;
@@ -531,7 +531,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------+
 ; Name                                                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
 +-----------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------+
-; accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 253          ; 9            ; 253          ; 9            ; 2277 ; None         ;
+; accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 253          ; 9            ; 253          ; 9            ; 2277 ; None         ;
 ; beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_qb42:auto_generated|ALTSYNCRAM                  ; M9K  ; True Dual Port   ; 84           ; 8            ; 84           ; 8            ; 672  ; rom_half.hex ;
 ; fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram|ALTSYNCRAM           ; M9K  ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None         ;
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|altsyncram_lf51:fifo_ram|ALTSYNCRAM           ; M9K  ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None         ;
@@ -961,12 +961,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
 ; fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
 ; fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
-; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 6       ;
-; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
-; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
-; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
+; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
+; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 6       ;
+; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 6       ;
+; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 6       ;
 ; fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|counter5a0 ; 7       ;
-; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 7       ;
+; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
 ; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
@@ -974,23 +974,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
 ; fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
 ; fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
-; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 7       ;
-; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 3       ;
+; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
+; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
 ; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
-; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
-; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
-; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
+; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 3       ;
+; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 7       ;
+; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 3       ;
 ; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
-; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
+; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 3       ;
 ; fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|counter8a0 ; 6       ;
 ; fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_g26:rdptr_g1p|parity6    ; 4       ;
-; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 3       ;
+; fifo2:module_gen[2].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; fifo2:module_gen[1].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; fifo2:module_gen[3].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
-; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 3       ;
+; fifo2:module_gen[6].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; fifo2:module_gen[5].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
-; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
+; fifo2:module_gen[4].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 3       ;
 ; fifo2:module_gen[7].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; fifo2:module_gen[8].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|a_graycounter_cgb:wrptr_g1p|parity9    ; 4       ;
 ; Total number of inverted registers = 36                                                                              ;         ;
@@ -1002,15 +1002,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------+------------------------------------------+------------+
 ; Register Name                              ; Megafunction                             ; Type       ;
 +--------------------------------------------+------------------------------------------+------------+
-; accum:module_gen[0].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[1].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[2].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[4].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[3].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[6].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[5].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[8].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
-; accum:module_gen[7].accum_i|buffer[1..255] ; accum:module_gen[0].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[1].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[0].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[2].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[4].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[3].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[6].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[5].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[8].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
+; accum:module_gen[7].accum_i|buffer[1..255] ; accum:module_gen[1].accum_i|buffer_rtl_0 ; SHIFT_TAPS ;
 +--------------------------------------------+------------------------------------------+------------+
 
 
@@ -1019,22 +1019,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|bitcnt[2]            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|mic_counter[1]                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[14] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[3]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|bitcnt[1]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pdm_to_pcm|fifo_rdclk                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[11] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |pdm_to_pcm|spi_slave:spislv|dataToSendBuffer[6]  ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pdm_to_pcm|beamformer:beaf|ROMcounter_hori[0]    ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |pdm_to_pcm|beamformer:beaf|ROMcounter_vert[0]    ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |pdm_to_pcm|spi_data_to_send[5]                   ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux7                  ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux8                  ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux18                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux33                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux24                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux54                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux41                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux69                 ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux61                 ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |pdm_to_pcm|spi_data_to_send[0]                   ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux15                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux2                  ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux23                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux37                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux30                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux53                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux42                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux66                 ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 432 LEs              ; 248 LEs                ; No         ; |pdm_to_pcm|beamformer:beaf|Mux60                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -1903,7 +1903,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2 ;
+; Source assignments for accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0|shift_taps_til:auto_generated|altsyncram_ms71:altsyncram2 ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                        ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------+
@@ -2343,10 +2343,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------+
 ; Parameter Name ; Value ; Type                                ;
 +----------------+-------+-------------------------------------+
-; BIT_WIDTH      ; 1000  ; Unsigned Binary                     ;
+; BIT_WIDTH      ; 8     ; Signed Integer                      ;
 ; SUM_WIDTH      ; 16    ; Signed Integer                      ;
-; NUM_MICS       ; 1001  ; Unsigned Binary                     ;
-; GRID_SIZE      ; 011   ; Unsigned Binary                     ;
+; NUM_MICS       ; 9     ; Signed Integer                      ;
+; GRID_SIZE      ; 3     ; Signed Integer                      ;
 +----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2413,7 +2413,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0 ;
+; Parameter Settings for Inferred Entity Instance: accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0 ;
 +----------------+----------------+-----------------------------------------------------------------------+
 ; Parameter Name ; Value          ; Type                                                                  ;
 +----------------+----------------+-----------------------------------------------------------------------+
@@ -2516,7 +2516,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                       ; Value                                                  ;
 +----------------------------+--------------------------------------------------------+
 ; Number of entity instances ; 1                                                      ;
-; Entity Instance            ; accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0 ;
+; Entity Instance            ; accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0 ;
 ;     -- NUMBER_OF_TAPS      ; 1                                                      ;
 ;     -- TAP_DISTANCE        ; 255                                                    ;
 ;     -- WIDTH               ; 9                                                      ;
@@ -2659,16 +2659,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR SLD      ; 5                           ;
 ;     SCLR              ; 6                           ;
 ;     plain             ; 6392                        ;
-; cycloneiii_lcell_comb ; 4689                        ;
+; cycloneiii_lcell_comb ; 4687                        ;
 ;     arith             ; 210                         ;
 ;         2 data inputs ; 145                         ;
 ;         3 data inputs ; 65                          ;
-;     normal            ; 4479                        ;
+;     normal            ; 4477                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 54                          ;
-;         2 data inputs ; 142                         ;
-;         3 data inputs ; 115                         ;
-;         4 data inputs ; 4166                        ;
+;         2 data inputs ; 138                         ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 4176                        ;
 ; cycloneiii_ram_block  ; 88                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.70                       ;
@@ -2691,7 +2691,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Dec  4 18:26:21 2019
+    Info: Processing started: Wed Dec  4 19:59:29 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 Warning (125092): Tcl Script File ../synthesis/bform.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ../synthesis/bform.qip
@@ -2768,6 +2768,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
 Info (12128): Elaborating entity "cmpr_4h5" for hierarchy "fifo2:module_gen[0].fifo_i|dcfifo:dcfifo_component|dcfifo_csi1:auto_generated|cmpr_4h5:rdempty_eq_comp" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/dcfifo_csi1.tdf Line: 60
 Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:spislv" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 128
 Info (12128): Elaborating entity "beamformer" for hierarchy "beamformer:beaf" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 144
+Warning (10230): Verilog HDL assignment warning at beamformer.v(80): truncated value with size 32 to match size of target (9) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v Line: 80
+Warning (10230): Verilog HDL assignment warning at beamformer.v(81): truncated value with size 32 to match size of target (9) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v Line: 81
+Warning (10230): Verilog HDL assignment warning at beamformer.v(101): truncated value with size 32 to match size of target (3) File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v Line: 101
 Info (12128): Elaborating entity "micloc" for hierarchy "beamformer:beaf|micloc:miclocROM" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/beamformer.v Line: 70
 Info (12128): Elaborating entity "altsyncram" for hierarchy "beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/micloc.v Line: 100
 Info (12130): Elaborated megafunction instantiation "beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/micloc.v Line: 100
@@ -2804,12 +2807,12 @@ Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "beamformer:beaf|micloc:miclocROM|altsyncram:altsyncram_component|altsyncram_qb42:auto_generated|q_a[7]" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/db/altsyncram_qb42.tdf Line: 307
 Info (19000): Inferred 1 megafunctions from design logic
-    Info (276034): Inferred altshift_taps megafunction from the following design logic: "accum:module_gen[0].accum_i|buffer_rtl_0"
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "accum:module_gen[1].accum_i|buffer_rtl_0"
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
         Info (286033): Parameter TAP_DISTANCE set to 255
         Info (286033): Parameter WIDTH set to 9
-Info (12130): Elaborated megafunction instantiation "accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0"
-Info (12133): Instantiated megafunction "accum:module_gen[0].accum_i|altshift_taps:buffer_rtl_0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0"
+Info (12133): Instantiated megafunction "accum:module_gen[1].accum_i|altshift_taps:buffer_rtl_0" with the following parameter:
     Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
     Info (12134): Parameter "TAP_DISTANCE" = "255"
     Info (12134): Parameter "WIDTH" = "9"
@@ -2828,15 +2831,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mosi" File: /home/tejas/intelFPGA_lite/19.1/quartus/bin/isc_micarray/pdm_to_pcm.v Line: 38
-Info (21057): Implemented 11158 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11156 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 11046 logic cells
+    Info (21061): Implemented 11044 logic cells
     Info (21064): Implemented 88 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 1139 megabytes
-    Info: Processing ended: Wed Dec  4 18:26:37 2019
-    Info: Elapsed time: 00:00:16
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 1142 megabytes
+    Info: Processing ended: Wed Dec  4 19:59:44 2019
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:27
 
 

@@ -1,5 +1,5 @@
 Flow report for pdm_to_pcm
-Wed Dec  4 18:27:23 2019
+Wed Dec  4 20:00:20 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Dec  4 18:27:23 2019       ;
+; Flow Status                        ; Successful - Wed Dec  4 20:00:20 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; pdm_to_pcm                                  ;
 ; Top-level Entity Name              ; pdm_to_pcm                                  ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08SAE144C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,811 / 8,064 ( 97 % )                      ;
-;     Total combinational functions  ; 4,689 / 8,064 ( 58 % )                      ;
+; Total logic elements               ; 7,818 / 8,064 ( 97 % )                      ;
+;     Total combinational functions  ; 4,687 / 8,064 ( 58 % )                      ;
 ;     Dedicated logic registers      ; 6,729 / 8,064 ( 83 % )                      ;
 ; Total registers                    ; 6729                                        ;
 ; Total pins                         ; 24 / 101 ( 24 % )                           ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/04/2019 18:26:22 ;
+; Start date & time ; 12/04/2019 19:59:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pdm_to_pcm          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 5311873721677.157550198216319          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 5311873721677.157550756928538          ; --            ; --          ; --                                ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Precision Synthesis                    ; <None>        ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -120,13 +120,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 1139 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:32     ; 1.6                     ; 2114 MB             ; 00:01:18                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 865 MB              ; 00:00:01                           ;
-; Power Analyzer       ; 00:00:05     ; 2.4                     ; 1348 MB             ; 00:00:10                           ;
-; Timing Analyzer      ; 00:00:03     ; 3.0                     ; 979 MB              ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1137 MB             ; 00:00:01                           ;
-; Total                ; 00:00:57     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 1138 MB             ; 00:00:26                           ;
+; Fitter               ; 00:00:33     ; 1.6                     ; 2112 MB             ; 00:01:20                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 863 MB              ; 00:00:01                           ;
+; Total                ; 00:00:48     ; --                      ; --                  ; 00:01:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -138,9 +135,6 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
 ; Fitter               ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
 ; Assembler            ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
-; Power Analyzer       ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
-; Timing Analyzer      ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
-; EDA Netlist Writer   ; atlas            ; Ubuntu 18.04.3 ; 18         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -150,9 +144,6 @@ https://fpgasoftware.intel.com/eula.
 quartus_map --read_settings_files=on --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 quartus_fit --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 quartus_asm --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
-quartus_pow --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
-quartus_sta pdm_to_pcm -c pdm_to_pcm
-quartus_eda --read_settings_files=off --write_settings_files=off pdm_to_pcm -c pdm_to_pcm
 
 
 

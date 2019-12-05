@@ -9,20 +9,20 @@ pdm[5] => pdm[5].IN1
 pdm[6] => pdm[6].IN1
 pdm[7] => pdm[7].IN1
 pdm[8] => pdm[8].IN1
-pdm_clk <= pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
+pdm_clk << pdm_clk.DB_MAX_OUTPUT_PORT_TYPE
 ssel => ssel.IN1
 sck => sck.IN1
 mosi => mosi.IN1
-miso <= spi_slave:spislv.miso
-accum_clk <= accum_clk.DB_MAX_OUTPUT_PORT_TYPE
-dc[0] <= beamformer:beaf.delay_check[0]
-dc[1] <= beamformer:beaf.delay_check[1]
-dc[2] <= beamformer:beaf.delay_check[2]
-dc[3] <= beamformer:beaf.delay_check[3]
-dc[4] <= beamformer:beaf.delay_check[4]
-dc[5] <= beamformer:beaf.delay_check[5]
-dc[6] <= beamformer:beaf.delay_check[6]
-dc[7] <= beamformer:beaf.delay_check[7]
+miso << spi_slave:spislv.miso
+accum_clk << accum_clk.DB_MAX_OUTPUT_PORT_TYPE
+dc[0] << beamformer:beaf.delay_check[0]
+dc[1] << beamformer:beaf.delay_check[1]
+dc[2] << beamformer:beaf.delay_check[2]
+dc[3] << beamformer:beaf.delay_check[3]
+dc[4] << beamformer:beaf.delay_check[4]
+dc[5] << beamformer:beaf.delay_check[5]
+dc[6] << beamformer:beaf.delay_check[6]
+dc[7] << beamformer:beaf.delay_check[7]
 
 
 |pdm_to_pcm|gen_ACC_clk:gpc
