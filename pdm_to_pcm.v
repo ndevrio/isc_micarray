@@ -21,9 +21,11 @@
 
 
 module pdm_to_pcm #(
-	 parameter BIT_WIDTH=8,
+	 parameter BIT_WIDTH=24,
 	 parameter NUM_MICS=9,
-	 parameter PDM_CLK_DEC_FACTOR=12
+	 parameter PDM_CLK_DEC_FACTOR=12,
+	 parameter BEAM_SR_SIZE=1024,
+	 parameter BEAM_SR_SIZE_LOG2=10
 	 ) 
 	 (
 	 input clk,
@@ -49,7 +51,7 @@ module pdm_to_pcm #(
 	 ///////////////////////////////////////////////////////////////
 	 
 	 wire spi_byte_received;
-	 wire[15:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
+	 wire[23:0] spi_received_data; // round BIT_WIDTH up to next multiple of 8
 	 wire spi_data_needed;
 	 
 	 // Counter used in PDM clock divider
@@ -64,14 +66,15 @@ module pdm_to_pcm #(
 	 reg[1:0] accu_clk_edge;
 	 
 	 // SPI interface registers
-	 reg[15:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
+	 reg[23:0] spi_data_to_send; // round BIT_WIDTH up to next multiple of 8
 	 
 	 // FIFO interface registers
-	 reg[2*BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
+	 reg[BIT_WIDTH-1:0] fifo_data_in [0:NUM_MICS-1];
 	 reg fifo_rdclk;
+	 reg fifo_wrclk;
 	 reg[NUM_MICS-1:0] fifo_rdreq;
 	 reg[NUM_MICS-1:0] fifo_wrreq;
-	 wire[2*BIT_WIDTH-1:0] fifo_data_out [0:NUM_MICS-1];
+	 wire[BIT_WIDTH-1:0] fifo_data_out [0:NUM_MICS-1];
 	 wire[NUM_MICS-1:0] fifo_rdempty;
 	 wire[NUM_MICS-1:0] fifo_wrfull;
 	 
@@ -83,12 +86,26 @@ module pdm_to_pcm #(
 	 reg steering_angle_clk;
 	 reg beam_clk;
 	 
+	 // Beamforming registers
+	 reg[15:0] beam_wr_data [0:NUM_MICS-1];
+	 reg[BEAM_SR_SIZE_LOG2:0] beam_rdaddress [0:NUM_MICS-1];
+	 reg[BEAM_SR_SIZE_LOG2:0] beam_wraddress;
+	 reg beam_wren;
+	 wire[15:0] beam_dout [0:NUM_MICS-1];
+	 reg[BEAM_SR_SIZE_LOG2:0] lookup_delays [0:NUM_MICS-1];
+	 reg[23:0] beam_sum;
+	 
+	 // CIC interface registers
+	 reg[1:0] cic_reset_n = 2'b11;
+	 wire[23:0] cic_out_data [0:NUM_MICS-1];
+	 wire[NUM_MICS-1:0]  cic_out_valid;
+	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   MODULE INSTANTIATION   //////////////////////////////////
 	 ///////////////////////////////////////////////////////////////
 	 
 	 // Generate a special clock that will go high whenever our accumulator is full
-	 gen_ACC_clk gpc(pdm_clk, accum_clk);
+	 //gen_ACC_clk gpc(pdm_clk, accum_clk);
 		
 	 generate
 		 genvar i;
@@ -105,12 +122,29 @@ module pdm_to_pcm #(
 				 .data(fifo_data_in[i]), 
 				 .rdclk(fifo_rdclk), 
 				 .rdreq(fifo_rdreq[i]),
-				 .wrclk(accum_clk),
+				 .wrclk(fifo_wrclk),
 				 .wrreq(fifo_wrreq[i]),
 				 .q(fifo_data_out[i]),
 				 .rdempty(fifo_rdempty[i]),
 				 .wrfull(fifo_wrfull[i])
 			 );
+			 // Instances of RAM modules for beamforming circular buffers
+			 ram ram_i(
+				.clock(pdm_clk),
+				.data(beam_wr_data[i]),
+				.rdaddress(beam_rdaddress[i]),
+				.wraddress(beam_wraddress),
+				.wren(beam_wren),
+				.q(beam_dout[i])
+			 );	
+		
+			 cic_d cic_filter_i(
+				 .clk(pdm_clk),
+				 .reset_n(cic_reset_n[0]),
+				 .data_in(pdm[i]),
+				 .data_out(cic_out_data[i]),
+				 .out_dv(cic_out_valid[i])
+			 );		
 		 end
 	 endgenerate
 	 
@@ -128,25 +162,27 @@ module pdm_to_pcm #(
 	 );
 		 
 	 wire update_steering_angle;
-	 wire [BIT_WIDTH-1:0] steering_angle_hori_in, steering_angle_vert_in;
-	 wire[2*BIT_WIDTH-1:0] tmp;
-	 assign steering_angle_hori_in = 8'd20;
-	 assign steering_angle_vert_in = 8'd00;
+	 wire signed [BIT_WIDTH-1:0] steering_angle_hori_in, steering_angle_vert_in;
+	 wire[BIT_WIDTH-1:0] tmp;
+	 assign steering_angle_hori_in = 24'd27;
+	 assign steering_angle_vert_in = 24'd27;
 	 assign update_steering_angle = steering_angle_clk;
 	 beamformer beaf(
-		.double_clk(beam_clk),
+		.double_clk(clk),
 		.steering_angle_en_async(update_steering_angle),
 		.steering_angle_hori(steering_angle_hori_in),
 		.steering_angle_vert(steering_angle_vert_in),
 		.pcm_data_in(accum_val),
-		.delay_sum_data_out(tmp),
-		.delay_check(dc)
+		.lookup_delays(lookup_delays)
+		//.delay_sum_data_out(tmp),
+		//.delay_check(dc)
 	 );
 	 
 	 ///////////////////////////////////////////////////////////////
 	 ///   SYNCHRONOUS BLOCKS   ////////////////////////////////////
 	 ///////////////////////////////////////////////////////////////
 	
+	 integer x;
 	 // Generate the PDM clock from the source clk
 	 always@(posedge clk) begin
 		  // Generate PDM clock by decimating from system clock
@@ -187,24 +223,42 @@ module pdm_to_pcm #(
 				
 				fifo_rdreq[mic_counter] = ~fifo_rdempty[mic_counter];
 		  end
+		  
+		  // Accumulate beamforming outputs
+		  /*for (x=0; x<3; x=x+1) begin
+		      beam_sum = beam_sum + beam_dout[x];
+		  end*/
+		  //beam_sum <= beam_dout[0] + beam_dout[1] + beam_dout[2];
 	 end
 	 
 	 integer j;
 	 always@(posedge pdm_clk) begin
-		  // Update accumulator edge FF
-		  accu_clk_edge[1] <= accu_clk_edge[0];
-		  accu_clk_edge[0] <= accum_clk;
+		  beam_wren <= 1;
+		  // Disable reset for the CIC filter
+		  if(cic_reset_n > 1)
+		      cic_reset_n = cic_reset_n - 2'b01;
 		  
 		  // Perform latching of accumulator values into the FIFO buffer if we are on a (rising) clock edge
-		  if(!accu_clk_edge[1] & accu_clk_edge[0]) begin
+		  if(cic_out_valid) begin
 				for (j=0; j<NUM_MICS; j=j+1) begin
-					fifo_data_in[j] <= tmp;
+					fifo_data_in[j] <= beam_dout[j];
 					fifo_wrreq[j] <= ~fifo_wrfull[j];// & ssel;
+					
+					beam_wr_data[j] <= cic_out_data[j];
+					beam_rdaddress[j] <= (lookup_delays[j] + beam_wraddress) % BEAM_SR_SIZE;
 				end
+				// Increment beam RAM write address and wrap around if needed
+			   if(beam_wraddress == 0)
+					beam_wraddress <= BEAM_SR_SIZE-1;
+			   else
+				   beam_wraddress <= beam_wraddress - 1;
 				
-				beam_clk <= ~beam_clk;
+				//beam_clk <= ~beam_clk;
+				fifo_wrclk <= 1;
 		  end
-		  
+		  else
+			   fifo_wrclk <= 0;
+				
 		  // Generate PDM clock by decimating from system clock
 		  steering_clk_counter = steering_clk_counter + 1;
 		  if(steering_clk_counter == NUM_MICS) begin
@@ -214,7 +268,8 @@ module pdm_to_pcm #(
 	 end
 	 
 	 assign pdm_clk = pdm_clk_gen;
-	 assign accum_rst = !accu_clk_edge[1] & accu_clk_edge[0];
+	 assign accum_clk = fifo_wrclk;
+	 //assign accum_rst = !accu_clk_edge[1] & accu_clk_edge[0];
      
 endmodule 
 
@@ -223,7 +278,7 @@ endmodule
 ///////////////////////////////////////////////////////////////
 
 // Divides input by DEC_FACTOR
-module gen_ACC_clk #(
+/*module gen_ACC_clk #(
 	 parameter DEC_FACTOR_DIV2=64 // 128/2
 	 )
     (
@@ -241,4 +296,4 @@ module gen_ACC_clk #(
         end
     end    
 	 
-endmodule  
+endmodule  */

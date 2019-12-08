@@ -21,22 +21,25 @@
 
 
 module beamformer #(
-	parameter BIT_WIDTH=8,
+	parameter BIT_WIDTH=24,
 	parameter SUM_WIDTH=16,
 	parameter NUM_MICS=9,
-	parameter GRID_SIZE=3
+	parameter GRID_SIZE=3,
+	parameter BEAM_SR_SIZE_LOG2=10
 	) 
 	(
 	input double_clk,
 
 	input steering_angle_en_async,
-	input signed [6:0] steering_angle_hori,
-	input signed [6:0] steering_angle_vert,
+	input signed [BIT_WIDTH-1:0] steering_angle_hori,
+	input signed [BIT_WIDTH-1:0] steering_angle_vert,
 	input [BIT_WIDTH-1:0] pcm_data_in [0:NUM_MICS-1],
-
-	output reg [SUM_WIDTH-1:0] delay_sum_data_out,
 	
-	output reg [7:0] delay_check
+	output [BEAM_SR_SIZE_LOG2-1:0] lookup_delays [0:NUM_MICS-1]
+
+	//output reg [SUM_WIDTH-1:0] delay_sum_data_out,
+	
+	//output reg [7:0] delay_check
 	);
 	
 	/////////////////////////
@@ -63,7 +66,7 @@ module beamformer #(
 	reg row_done;
 	wire [8:0]idx_hori, idx_vert, raw_idx_hori, raw_idx_vert;
 	reg [4:0] mic_count = 5'd0;
-	reg [BIT_WIDTH-1:0] lookup_delays [0:NUM_MICS-1];
+	//reg [BEAM_SR_SIZE_LOG2-1:0] lookup_delays [0:NUM_MICS-1];
 	wire [7:0] hori_delay, vert_delay;
 	
 	// ROM lookup table
@@ -110,13 +113,13 @@ module beamformer #(
 			ROM_rd_en <= 0;
 			
 		lookup_delays[mic_count] <= hori_delay;	// latch. kinda ugly
-		delay_check <= delay_sum_data_out[7:0];
+		//delay_check <= delay_sum_data_out[7:0];
 	end
 	
 	///////////////////////
 	// DELAY AND SUMMING //
 	///////////////////////
-	wire [127:0] _taps [0:NUM_MICS-1];
+	/*wire [127:0] _taps [0:NUM_MICS-1];
 	
 	wire [7:0] dummy [0:NUM_MICS-1];
 	wire [2*BIT_WIDTH-1:0] tapped_data [0:NUM_MICS-1];
@@ -159,8 +162,6 @@ module beamformer #(
 	// Clock sync of summed output
 	always @ (posedge clk) begin
 		delay_sum_data_out <= summed_data;
-	end
-	
-	
+	end*/
 	
 endmodule 
